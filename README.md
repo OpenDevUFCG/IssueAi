@@ -35,11 +35,11 @@ Enquanto não temos uma plataforma, vamos disponibilizar aqui projetos que estam
 
 - [Pomodoro](https://github.com/marianabianca/pomodoro) - Pomodoro Timer feito em Python.
 
-- [musicrict](https://github.com/calluswhatyouwant/musicritic) - Seu metacritic para músicas do Spotify.
+- [musicritic](https://github.com/calluswhatyouwant/musicritic) - Seu metacritic para músicas do Spotify.
 
 - [spotify-web-sdk](https://github.com/calluswhatyouwant/spotify-web-sdk) - Biblioteca Javascript que visa facilitar a comunicação do seu aplicativo com a Web API do Spotify.
 
-
+- [pokedex](https://github.com/paulojbleitao/pokedex) - Pokédex simples feita com React.js e usando a PokeAPI.
 
 
 *Deseja adicionar seu projeto?* Issue Ai! Vai lá, abre uma issue e uma PR adicionando seu projeto a esse README, fala um pouco sobre ele que a gente vai avaliar e te ajudar!
