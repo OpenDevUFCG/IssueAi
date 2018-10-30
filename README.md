@@ -31,7 +31,7 @@ Enquanto não temos uma plataforma, vamos disponibilizar aqui projetos que estam
 
 - [Racharia](https://github.com/OpenDevUFCG/Racharia) - Aplicação Web para facilitar a administração de despesas conjuntas.
 
-- [racharia-server](https://github.com/OpenDevUFCG/racharia-server)  - API Rest do (Racharia)[https://github.com/OpenDevUFCG/Racharia]
+- [racharia-server](https://github.com/OpenDevUFCG/racharia-server)  - API Rest do [Racharia](https://github.com/OpenDevUFCG/Racharia)
 
 - [Pomodoro](https://github.com/marianabianca/pomodoro) - Pomodoro Timer feito em Python.
 
