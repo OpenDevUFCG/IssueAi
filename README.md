@@ -39,7 +39,7 @@ Enquanto não temos uma plataforma, vamos disponibilizar aqui projetos que estam
 
 - [spotify-web-sdk](https://github.com/calluswhatyouwant/spotify-web-sdk) - Spotify web SDK
 
-- [musicritic-server](https://github.com/calluswhatyouwant/musicritic-server) - (musicrict)[https://github.com/calluswhatyouwant/musicritic] server
+- [musicritic-server](https://github.com/calluswhatyouwant/musicritic-server) - [musicrict](https://github.com/calluswhatyouwant/musicritic) server
 
 
 *Deseja adicionar seu projeto?* Issue Ai! Vai lá, abre uma issue e uma PR adicionando seu projeto a esse README, fala um pouco sobre ele que a gente vai avaliar e te ajudar!
