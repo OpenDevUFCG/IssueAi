@@ -29,17 +29,17 @@ Atualmente não temos uma plataforma que possa mostrar todos os projetos que est
 
 Enquanto não temos uma plataforma, vamos disponibilizar aqui projetos que estamos apoiando.
 
-- (Racharia)[https://github.com/OpenDevUFCG/Racharia] - Aplicação Web para facilitar a administração de despesas conjuntas.
+- [Racharia](https://github.com/OpenDevUFCG/Racharia) - Aplicação Web para facilitar a administração de despesas conjuntas.
 
-- (racharia-server)[https://github.com/OpenDevUFCG/racharia-server]  - API Rest do (Racharia)[https://github.com/OpenDevUFCG/Racharia]
+- [racharia-server](https://github.com/OpenDevUFCG/racharia-server)  - API Rest do (Racharia)[https://github.com/OpenDevUFCG/Racharia]
 
-- (Pomodoro)[https://github.com/marianabianca/pomodoro] - Pomodoro Timer feito em Python.
+- [Pomodoro](https://github.com/marianabianca/pomodoro) - Pomodoro Timer feito em Python.
 
-- (musicrict)[https://github.com/calluswhatyouwant/musicritic] - Music critic pessoal.
+- [musicrict](https://github.com/calluswhatyouwant/musicritic) - Music critic pessoal.
 
-- (spotify-web-sdk)[https://github.com/calluswhatyouwant/spotify-web-sdk] - Spotify web SDK
+- [spotify-web-sdk](https://github.com/calluswhatyouwant/spotify-web-sdk) - Spotify web SDK
 
-- (musicritic-server)[https://github.com/calluswhatyouwant/musicritic-server] - (musicrict)[https://github.com/calluswhatyouwant/musicritic] server
+- [musicritic-server](https://github.com/calluswhatyouwant/musicritic-server) - (musicrict)[https://github.com/calluswhatyouwant/musicritic] server
 
 
 *Deseja adicionar seu projeto?* Issue Ai! Vai lá, abre uma issue e uma PR adicionando seu projeto a esse README, fala um pouco sobre ele que a gente vai avaliar e te ajudar!
