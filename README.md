@@ -41,6 +41,8 @@ Enquanto não temos uma plataforma, vamos disponibilizar aqui projetos que estam
 
 - [pokedex](https://github.com/paulojbleitao/pokedex) - Pokédex simples feita com React.js e usando a PokeAPI.
 
+- [Tamburetei](https://github.com/OpenDevUFCG/Tamburetei) - Fazendo de tamburete as cadeiras de CC@UFCG.
+
 
 *Deseja adicionar seu projeto?* Issue Ai! Vai lá, abre uma issue e uma PR adicionando seu projeto a esse README, fala um pouco sobre ele que a gente vai avaliar e te ajudar!
 
