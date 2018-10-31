@@ -43,6 +43,8 @@ Enquanto não temos uma plataforma, vamos disponibilizar aqui projetos que estam
 
 - [Tamburetei](https://github.com/OpenDevUFCG/Tamburetei) - Fazendo de tamburete as cadeiras de CC@UFCG.
 
+- [iskra-webkit-greeter](https://github.com/FelipeMarinho97/iskra-webkit-greeter) - Tela de login bonita e moderna para o LightDM feita usando React.
+
 
 *Deseja adicionar seu projeto?* Issue Ai! Vai lá, abre uma issue e uma PR adicionando seu projeto a esse README, fala um pouco sobre ele que a gente vai avaliar e te ajudar!
 
