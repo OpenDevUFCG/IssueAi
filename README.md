@@ -45,6 +45,9 @@ Enquanto não temos uma plataforma, vamos disponibilizar aqui projetos que estam
 
 - [iskra-webkit-greeter](https://github.com/FelipeMarinho97/iskra-webkit-greeter) - Tela de login bonita e moderna para o LightDM feita usando React.
 
+- [P-Sync](https://github.com/P-Sync/P-Sync) - CLI em Python para sincronização automática de arquivos e diretórios.
+
+- [SubmiBot](https://github.com/SubmiBot/SubmiBot) - Plugin do Eclipse para automatização do processo de submissão de tarefas na disciplina de LP2.
 
 *Deseja adicionar seu projeto?* Issue Ai! Vai lá, abre uma issue e uma PR adicionando seu projeto a esse README, fala um pouco sobre ele que a gente vai avaliar e te ajudar!
 
