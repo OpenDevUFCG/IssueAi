@@ -14,18 +14,13 @@ const queryGetRepos = `
     }
 `;
 
-/* Tem essa forma de fazer, com fragment, como vamos precisar 
-pegar mais infos, acho que fica melhor*/
-
 const queryGetInfo = `
     {
       organization(login: ${ORG_NAME}) {
         ...getMembers,
-        ...getRepositories
       }
     }
     ${getMembersFragment}
-    ${getRepositoriesFragment}
 `;
 
 const getMembersFragment = `
@@ -40,28 +35,48 @@ const getMembersFragment = `
     }
 `;
 
-const getRepositoriesFragment = `
-    fragment getRepositories on Organization {
-      repositories(first: 7) {
-        edges {
-          node {
-            nameWithOwner
-            forkCount
-            stargazers {
-              totalCount
-            }
-            issues {
-              totalCount
-            }
-            pullRequests {
-              totalCount
+const getRepositoriesQuery = (cursor = 'MQ') => {
+    return `
+        {
+          organization(login: ${ORG_NAME}) {
+            repositories(first: 30, after: ${cursor}) {
+              nodes {
+                nameWithOwner
+                forkCount
+                stargazers {
+                  totalCount
+                }
+                issues {
+                  totalCount
+                }
+                pullRequests {
+                  totalCount
+                }
+              }
+              pageInfo {
+                endCursor
+                hasNextPage
+              }
             }
           }
         }
-      }
-    }
-`;
+    `;
+};
 
+const getOrgRepositories = async () => {
+  let data = await requestGithub(getRepositoriesQuery());
+  let { organization: repositories } = data;
+  let { pageInfo: hasNextPage, endCursor } = repositories;
+
+  while (hasNextPage) {
+    data = await requestGithub(getRepositoriesQuery(endCursor));
+    let { organization: paginatedRepositories } = data;
+    repositories.nodes = [...repositories.nodes, ...paginatedRepositories.nodes];
+    let { pageInfo: hasNextPage } = paginatedRepositories;
+  }
+
+  return data;
+};
 
 export const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
