@@ -1,8 +1,9 @@
 // @flow
 import axios from 'axios';
 
+const ORG_NAME = 'OpenDevUFCG'
 const queryGetRepos = `    
-    Organization(login: "OpenDevUFCG") {
+    Organization(login: ${ORG_NAME}) {
         repositories(first: 30) {
             edges {
                 node {
@@ -12,6 +13,25 @@ const queryGetRepos = `
         }
     }
 `;
+
+
+const queryGetMembers = `
+    {
+      organization(login: ${ORG_NAME}) {
+        ...getMembers
+      }
+    }
+    fragment getMembers on Organization {
+      members(first: 30) {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+`;
+
 
 export const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
