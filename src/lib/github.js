@@ -14,18 +14,38 @@ const queryGetRepos = `
     }
 `;
 
+/* Tem essa forma de fazer, com fragment, como vamos precisar 
+pegar mais infos, acho que fica melhor*/
 
-const queryGetMembers = `
+const queryGetInfo = `
     {
       organization(login: ${ORG_NAME}) {
-        ...getMembers
+        ...getMembers,
+        ...getRepositories
       }
     }
+    ${getMembersFragment}
+    ${getRepositoriesFragment}
+`;
+
+const getMembersFragment = `
     fragment getMembers on Organization {
       members(first: 30) {
         edges {
           node {
             name
+          }
+        }
+      }
+    }
+`;
+
+const getRepositoriesFragment = `
+    fragment getRepositories on Organization {
+      repositories(first: 30) {
+        edges {
+          node {
+            nameWithOwner
           }
         }
       }
