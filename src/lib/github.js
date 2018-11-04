@@ -42,10 +42,20 @@ const getMembersFragment = `
 
 const getRepositoriesFragment = `
     fragment getRepositories on Organization {
-      repositories(first: 30) {
+      repositories(first: 7) {
         edges {
           node {
             nameWithOwner
+            forkCount
+            stargazers {
+              totalCount
+            }
+            issues {
+              totalCount
+            }
+            pullRequests {
+              totalCount
+            }
           }
         }
       }
