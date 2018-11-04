@@ -93,6 +93,8 @@ read:org
 
 Após isso, crie um arquivo **.env** semelhante ao **.env.sample** e adicione seu github token.
 
+**Obs: Seu token deve ficar no arquivo .env, não no .env.sample**
+
 ## Como Contribuir
 
 Deseja contribuir? Issue Ai! E PR AI!

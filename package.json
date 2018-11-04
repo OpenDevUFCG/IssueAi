@@ -1,14 +1,15 @@
 {
     "name": "IssueAi",
     "version": "1.0.0",
-    "description": "IssueAi app",
-    "main": "index.js",
+    "description": "O Issue Ai cria um espaço de visibilidade para os projetos open source criado por alunos da UFCG@Campus Campina Grande.",
     "repository": "https://github.com/OpenDevUFCG/IssueAi",
     "author": "OpenDevUFCG",
     "license": "MIT",
     "scripts": {
         "build": "webpack --mode production",
-        "start": "webpack-dev-server --progress --colors --inline --hot"
+        "start": "webpack-dev-server --progress --colors --inline --hot",
+        "lint": "eslint .",
+        "flow": "flow"
     },
     "husky": {
         "hooks": {
