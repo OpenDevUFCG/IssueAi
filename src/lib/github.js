@@ -1,7 +1,7 @@
 // @flow
 import axios from 'axios';
 
-const ORG_NAME = 'OpenDevUFCG'
+const ORG_NAME = 'OpenDevUFCG';
 const queryGetRepos = `    
     Organization(login: ${ORG_NAME}) {
         repositories(first: 30) {
@@ -64,18 +64,21 @@ const getRepositoriesQuery = (cursor = 'MQ') => {
 };
 
 const getOrgRepositories = async () => {
-  let data = await requestGithub(getRepositoriesQuery());
-  let { organization: repositories } = data;
-  let { pageInfo: hasNextPage, endCursor } = repositories;
+    let data = await requestGithub(getRepositoriesQuery());
+    let { organization: repositories } = data;
+    let { pageInfo: hasNextPage, endCursor } = repositories;
 
-  while (hasNextPage) {
-    data = await requestGithub(getRepositoriesQuery(endCursor));
-    let { organization: paginatedRepositories } = data;
-    repositories.nodes = [...repositories.nodes, ...paginatedRepositories.nodes];
-    let { pageInfo: hasNextPage } = paginatedRepositories;
-  }
+    while (hasNextPage) {
+        data = await requestGithub(getRepositoriesQuery(endCursor));
+        let { organization: paginatedRepositories } = data;
+        repositories.nodes = [
+            ...repositories.nodes,
+            ...paginatedRepositories.nodes,
+        ];
+        let { pageInfo: hasNextPage } = paginatedRepositories;
+    }
 
-  return data;
+    return data;
 };
 
 export const getAxiosInstance = () => {
