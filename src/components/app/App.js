@@ -4,17 +4,7 @@ import type { Repository } from '../commons/repository/repository';
 import RepositoryGrid from '../commons/repository/RepositoryGrid';
 import getOrgRepositories from '../../lib/github';
 
-const repo = {
-    name: 'IssueAi',
-    url: 'https://github.com/OpenDevUFCG/IssueAi',
-    owner: 'OpenDevUFCG',
-    description: `O Issue Ai cria um espaço de visibilidade para os
-        projetos open source criado por alunos de Computação@UFCG.`,
-    issuesCount: 21,
-    pullRequestsCount: 10,
-    starsCount: 30,
-    commitsCount: 40,
-};
+import './App.css';
 
 type AppState = {
     repositoryList: Repository[],
@@ -26,9 +16,7 @@ export default class App extends React.Component<void, AppState> {
     };
 
     componentDidMount() {
-        // TODO: Make the request for repos here
         getOrgRepositories().then(data => {
-            console.log(data);
             this.setState({ repositoryList: data });
         });
     }
@@ -37,8 +25,18 @@ export default class App extends React.Component<void, AppState> {
         const { repositoryList } = this.state;
         return (
             <div>
-                <h1>IssueAi</h1>
-                <RepositoryGrid repositories={repositoryList} />
+                <div bp="flex vertical-center" className="header">
+                    <h1 bp="fill">IssueAi</h1>
+                    <a href="#!" className="header-link">
+                        <h3 bp="fit">Quem Somos?</h3>
+                    </a>
+                    <a href="#!" className="header-link">
+                        <h3 bp="fit">Contribuir</h3>
+                    </a>
+                </div>
+                <div className="content">
+                    <RepositoryGrid repositories={repositoryList} />
+                </div>
             </div>
         );
     }
