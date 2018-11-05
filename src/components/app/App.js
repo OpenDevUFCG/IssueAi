@@ -2,6 +2,7 @@
 import * as React from 'react';
 import type { Repository } from '../commons/repository/repository';
 import RepositoryGrid from '../commons/repository/RepositoryGrid';
+import getOrgRepositories from '../../lib/github';
 
 const repo = {
     name: 'IssueAi',
@@ -26,7 +27,10 @@ export default class App extends React.Component<void, AppState> {
 
     componentDidMount() {
         // TODO: Make the request for repos here
-        this.setState({ repositoryList: [repo, repo, repo, repo, repo, repo] });
+        getOrgRepositories().then(data => {
+            console.log(data);
+            this.setState({ repositoryList: data });
+        });
     }
 
     render() {

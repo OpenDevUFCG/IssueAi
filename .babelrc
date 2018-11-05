@@ -1,5 +1,13 @@
 {
-    "presets": ["@babel/env", "@babel/flow", "@babel/react"],
+    "presets": [
+        "@babel/flow", 
+        "@babel/react", 
+        ["@babel/env", {
+            "targets": {
+                "node": "current"
+            }
+        }]
+    ],
     "plugins": [
         "@babel/plugin-proposal-class-properties"
     ]
