@@ -2,38 +2,6 @@
 import axios from 'axios';
 
 const ORG_NAME = 'OpenDevUFCG';
-// const queryGetRepos = `
-//     Organization(login: ${ORG_NAME}) {
-//         repositories(first: 30) {
-//             edges {
-//                 node {
-//                 nameWithOwner
-//                 }
-//             }
-//         }
-//     }
-// `;
-
-// const queryGetInfo = `
-//     {
-//       organization(login: ${ORG_NAME}) {
-//         ...getMembers,
-//       }
-//     }
-//     ${getMembersFragment}
-// `;
-
-// const getMembersFragment = `
-//     fragment getMembers on Organization {
-//       members(first: 30) {
-//         edges {
-//           node {
-//             name
-//           }
-//         }
-//       }
-//     }
-// `;
 
 const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
@@ -65,10 +33,10 @@ const getRepositoriesQuery = (cursor = 'MQ') =>
                 stargazers {
                   totalCount
                 }
-                issues {
+                issues(states: OPEN) {
                   totalCount
                 }
-                pullRequests {
+                pullRequests(states: OPEN) {
                   totalCount
                 }
               }
