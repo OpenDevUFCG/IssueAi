@@ -49,6 +49,32 @@ const getRepositoriesQuery = (cursor = 'MQ') =>
         }
     `;
 
+const getRepoStats = async (owner, name) => {
+    const query = `
+    query RepositoryStats($owner: String!, $name: String!) {
+      repository(owner: $owner, name: $name) {
+      object(expression: "master") {
+        ... on Commit {
+          history {
+            totalCount
+          }
+        }
+      }
+      issues (states: OPEN) {
+        totalCount
+      }
+      pullRequests {
+        totalCount
+      }
+      stargazers {
+        totalCount
+      }
+    }
+  }`;
+    const response = await requestGithub(query, { owner, name });
+    return response;
+};
+
 const getOrgRepositories = async () => {
     let response = await requestGithub(getRepositoriesQuery());
     const { organization: repositories } = response.data;
