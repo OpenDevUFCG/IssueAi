@@ -10,6 +10,7 @@ const config = {
     devServer: {
         port: 8000,
         contentBase: __dirname + '/docs',
+        historyApiFallback: true,
     },
     output: {
         path: path.resolve(__dirname, 'docs'),
