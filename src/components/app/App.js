@@ -1,9 +1,10 @@
 // @flow
 import * as React from 'react';
 import type { Repository } from '../commons/repository/repository';
-import RepositoryGrid from '../commons/repository/RepositoryGrid';
 import getOrgRepositories from '../../lib/github';
+import { Link } from 'react-router-dom';
 
+import Routes from './Routes';
 import './App.css';
 
 type AppState = {
@@ -26,16 +27,18 @@ export default class App extends React.Component<void, AppState> {
         return (
             <div>
                 <div bp="flex vertical-center" className="header">
-                    <h1 bp="fill">IssueAi</h1>
-                    <a href="#!" className="header-link">
+                    <Link to="/" bp="fill" className="main-link">
+                        <h1 bp="fill">IssueAi</h1>
+                    </Link>
+                    <Link to="/quem-somos" className="header-link">
                         <h3 bp="fit">Quem Somos?</h3>
-                    </a>
-                    <a href="#!" className="header-link">
+                    </Link>
+                    <Link to="/contribuir" className="header-link">
                         <h3 bp="fit">Contribuir</h3>
-                    </a>
+                    </Link>
                 </div>
                 <div className="content">
-                    <RepositoryGrid repositories={repositoryList} />
+                    <Routes repositoryList={repositoryList} />
                 </div>
             </div>
         );

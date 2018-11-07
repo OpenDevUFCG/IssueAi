@@ -16,6 +16,15 @@
     color: gray;
 }
 
+.main-link {
+    color: black;
+    text-decoration: none;
+}
+
+.main-link:hover {
+    color: gray;
+}
+
 .content {
     width: 80vw;
     margin: auto;
