@@ -27,9 +27,11 @@ export default class App extends React.Component<void, AppState> {
         return (
             <div>
                 <div bp="flex vertical-center" className="header">
-                    <Link to="/" bp="fill" className="main-link">
-                        <h1 bp="fill">IssueAi</h1>
-                    </Link>
+                    <h1 bp="fill">
+                        <Link to="/" className="main-link">
+                            <span>IssueAi</span>
+                        </Link>
+                    </h1>
                     <Link to="/quem-somos" className="header-link">
                         <h3 bp="fit">Quem Somos?</h3>
                     </Link>
