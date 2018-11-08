@@ -21,6 +21,14 @@ const requestGithub = async (query: string, variables = {}) => {
     return response.data;
 };
 
+const joinSearchNodes = data => {
+    let nodes = [];
+    for (let org in data) {
+        nodes = nodes.concat(data[org].nodes);
+    }
+    return nodes;
+};
+
 const getRepoStats = () =>
     `
   fragment SearchResultFields on SearchResultItemConnection {
@@ -107,8 +115,8 @@ const getOrgRepositories = async () => {
     const { repositories: repositories } = response.data;
     // const { pageInfo } = repositories;
     // lastCursorOrgRepositories = pageInfo.endCursor;
-    console.log(response.data);
-    return response.data;
+    console.log(joinSearchNodes(response.data));
+    return joinSearchNodes(response.data);
 };
 
 export default getOrgRepositories;
