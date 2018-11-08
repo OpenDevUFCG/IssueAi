@@ -81,12 +81,15 @@ const searchRepoQuery = (
 
 const getRepositories = async () => {
     let query = `org:${projects['org']}`;
+
     Object.keys(projects['repositories']).forEach(key => {
         query += ` repo:${projects['repositories'][key]}`;
     });
+
     const response = await requestGithub(
-        searchRepoQuery(query, 'repositories', 30, null)
+        searchRepoQuery(query, 'repositories', 4, lastCursorRepos)
     );
+    lastCursorRepos = response.data.search.pageInfo.endCursor.replace('=', '');
     return response.data.search.nodes;
 };
 

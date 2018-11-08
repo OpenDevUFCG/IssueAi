@@ -11,14 +11,21 @@ type AppState = {
     repositoryList: Repository[],
 };
 
-export default class App extends React.Component<void, AppState> {
-    state = {
-        repositoryList: [],
-    };
-
+export default class App extends React.Component<Props, AppState> {
+    constructor(props: Props) {
+        super(props);
+        this.state = { repositoryList: [] };
+        this.updateRepositoryList = this.updateRepositoryList.bind(this);
+    }
     componentDidMount() {
+        this.updateRepositoryList();
+    }
+
+    updateRepositoryList() {
         getRepositories().then(data => {
-            this.setState({ repositoryList: data });
+            this.setState({
+                repositoryList: [...this.state.repositoryList, ...data],
+            });
         });
     }
 
@@ -41,6 +48,11 @@ export default class App extends React.Component<void, AppState> {
                 </div>
                 <div className="content">
                     <Routes repositoryList={repositoryList} />
+                </div>
+                <div>
+                    <button onClick={this.updateRepositoryList}>
+                        Ver mais
+                    </button>
                 </div>
             </div>
         );
