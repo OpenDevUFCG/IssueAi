@@ -1,5 +1,6 @@
 // @flow
 import axios from 'axios';
+import projects from './data';
 
 const ORG_NAME = 'OpenDevUFCG';
 
@@ -20,68 +21,94 @@ const requestGithub = async (query: string, variables = {}) => {
     return response.data;
 };
 
-const getRepositoriesQuery = cursor =>
+const getRepoStats = () =>
     `
-        {
-          organization(login: ${ORG_NAME}) {
-            repositories(first: 2, after: ${cursor}) {
-              nodes {
-                nameWithOwner
-                url
-                description
-                forkCount
-                stargazers {
-                  totalCount
-                }
-                issues(states: OPEN) {
-                  totalCount
-                }
-                pullRequests(states: OPEN) {
-                  totalCount
-                }
-              }
-              pageInfo {
-                endCursor
-                hasNextPage
-              }
+  fragment SearchResultFields on SearchResultItemConnection {
+    nodes {
+      ... on Repository {
+        nameWithOwner
+        description
+        url
+        forkCount
+        object(expression: "master") {
+          ... on Commit {
+            history {
+              totalCount
             }
           }
         }
-    `;
-
-const getOthersRepo = async (owner: string, name: string) => {
-    const query = `
-    {
-      repository(owner: ${owner}, name: ${name}) {
-        nameWithOwner, 
-        url,
-        description,
-        forkCount,
-        issues (states: OPEN) {
+        issues(states: OPEN) {
           totalCount
         }
-        pullRequests(states: OPEN) {
+        pullRequests {
           totalCount
         }
         stargazers {
           totalCount
         }
+      }
+      
     }
-  }`;
-    const response = await requestGithub(query);
-    return response;
+  }
+`;
+
+const getRepos = (
+    query: string,
+    owner: string,
+    first: number,
+    cursor: string
+) => {
+    const searchQuery = `
+    ${owner}: search(
+      first: ${first},
+      after:${cursor},
+      query: "${query}",
+      type: REPOSITORY
+    ) {
+      ...SearchResultFields
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }  
+    `;
+    return searchQuery;
 };
 
-let lastCursorOrgRepositories = '';
+const getRepositoriesQuery = cursor =>
+    getRepos(`org:${ORG_NAME}`, ORG_NAME, 4, cursor);
+
+const getOthersRepo = (repo, owner) => getRepos(`repo:${repo}`, owner, 2, null);
+
+let lastCursorOrgRepositories = null;
+
+const getAll = () => {
+    let searchQuery = getRepositoriesQuery(lastCursorOrgRepositories);
+    Object.keys(projects).forEach(key => {
+        searchQuery += getOthersRepo(key, projects[key]);
+    });
+    const query = `{
+        ${searchQuery}
+      }
+      ${getRepoStats()}
+    `;
+    return query;
+};
 
 const getOrgRepositories = async () => {
-    const response = await requestGithub(
-        getRepositoriesQuery(lastCursorOrgRepositories)
-    );
-    const { organization: repositories } = response.data;
-    const { pageInfo } = repositories.repositories;
-    lastCursorOrgRepositories = pageInfo.endCursor;
-    return response.data.organization.repositories.nodes;
+    // const response = await requestGithub(
+    //     getRepositoriesQuery(lastCursorOrgRepositories)
+    // );
+    // const { repositories: repositories } = response.data;
+    // const { pageInfo } = repositories;
+    // lastCursorOrgRepositories = pageInfo.endCursor;
+    // return repositories.nodes;
+    const response = await requestGithub(getAll());
+    const { repositories: repositories } = response.data;
+    // const { pageInfo } = repositories;
+    // lastCursorOrgRepositories = pageInfo.endCursor;
+    console.log(response.data);
+    return response.data;
 };
 
 export default getOrgRepositories;
