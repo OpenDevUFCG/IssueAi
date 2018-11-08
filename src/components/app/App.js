@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import type { Repository } from '../commons/repository/repository';
-import getOrgRepositories from '../../lib/github';
+import getRepositories from '../../lib/github';
 import { Link } from 'react-router-dom';
 
 import Routes from './Routes';
@@ -17,7 +17,7 @@ export default class App extends React.Component<void, AppState> {
     };
 
     componentDidMount() {
-        getOrgRepositories().then(data => {
+        getRepositories().then(data => {
             this.setState({ repositoryList: data });
         });
     }
