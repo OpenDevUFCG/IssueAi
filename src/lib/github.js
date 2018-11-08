@@ -13,18 +13,18 @@ const getAxiosInstance = () => {
     return axios.create(config);
 };
 
-const requestGithub = async (query: string) => {
-    const params = { query };
+const requestGithub = async (query: string, variables = {}) => {
+    const params = { query, variables };
     const response = await getAxiosInstance().post('/graphql', params);
 
     return response.data;
 };
 
-const getRepositoriesQuery = (cursor = 'MQ') =>
+const getRepositoriesQuery = cursor =>
     `
         {
           organization(login: ${ORG_NAME}) {
-            repositories(first: 30, after: ${cursor}) {
+            repositories(first: 2, after: ${cursor}) {
               nodes {
                 nameWithOwner
                 url
@@ -49,47 +49,38 @@ const getRepositoriesQuery = (cursor = 'MQ') =>
         }
     `;
 
-const getRepoStats = async (owner, name) => {
+const getOthersRepo = async (owner: string, name: string) => {
     const query = `
-    query RepositoryStats($owner: String!, $name: String!) {
-      repository(owner: $owner, name: $name) {
-      object(expression: "master") {
-        ... on Commit {
-          history {
-            totalCount
-          }
+    {
+      repository(owner: ${owner}, name: ${name}) {
+        nameWithOwner, 
+        url,
+        description,
+        forkCount,
+        issues (states: OPEN) {
+          totalCount
         }
-      }
-      issues (states: OPEN) {
-        totalCount
-      }
-      pullRequests {
-        totalCount
-      }
-      stargazers {
-        totalCount
-      }
+        pullRequests(states: OPEN) {
+          totalCount
+        }
+        stargazers {
+          totalCount
+        }
     }
   }`;
-    const response = await requestGithub(query, { owner, name });
+    const response = await requestGithub(query);
     return response;
 };
 
+let lastCursorOrgRepositories = '';
+
 const getOrgRepositories = async () => {
-    let response = await requestGithub(getRepositoriesQuery());
+    const response = await requestGithub(
+        getRepositoriesQuery(lastCursorOrgRepositories)
+    );
     const { organization: repositories } = response.data;
-    const { pageInfo: hasNextPage, endCursor } = repositories;
-
-    while (hasNextPage) {
-        response = await requestGithub(getRepositoriesQuery(endCursor));
-        let { organization: paginatedRepositories } = response.data;
-        repositories.nodes = [
-            ...repositories.nodes,
-            ...paginatedRepositories.nodes,
-        ];
-        let { pageInfo: hasNextPage } = paginatedRepositories;
-    }
-
+    const { pageInfo } = repositories.repositories;
+    lastCursorOrgRepositories = pageInfo.endCursor;
     return response.data.organization.repositories.nodes;
 };
 
