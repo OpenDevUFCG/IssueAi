@@ -3,7 +3,7 @@ import axios from 'axios';
 import projects from './data';
 
 const ORG_NAME = 'OpenDevUFCG';
-let lastCursorOrgRepositories = null;
+let lastCursorRepos = null; //cursor to paginate repositories
 
 const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
@@ -20,14 +20,6 @@ const requestGithub = async (query: string, variables = {}) => {
     const response = await getAxiosInstance().post('/graphql', params);
 
     return response.data;
-};
-
-const joinSearchNodes = data => {
-    let nodes = [];
-    for (let org in data) {
-        nodes = nodes.concat(data[org].nodes);
-    }
-    return nodes;
 };
 
 const getRepoStats = () =>
@@ -49,7 +41,7 @@ const getRepoStats = () =>
         issues(states: OPEN) {
           totalCount
         }
-        pullRequests {
+        pullRequests(states: OPEN) {
           totalCount
         }
         stargazers {
@@ -68,7 +60,8 @@ const searchRepoQuery = (
     cursor: string
 ) => {
     const searchQuery = `
-    ${owner}: search(
+    {
+      search(
       first: ${first},
       after:${cursor},
       query: "${query}",
@@ -79,34 +72,22 @@ const searchRepoQuery = (
         endCursor
         hasNextPage
       }
-    }  
+    }
+  }
+    ${getRepoStats()}  
     `;
     return searchQuery;
 };
 
-const getOrgReposQuery = cursor =>
-    searchRepoQuery(`org:${ORG_NAME}`, ORG_NAME, 10, cursor);
-
-const getOthersRepoQuery = (repo, owner) =>
-    searchRepoQuery(`repo:${repo}`, owner, 2, null);
-
-const AllReposQuery = () => {
-    let searchQuery = getOrgReposQuery(lastCursorOrgRepositories);
-    Object.keys(projects).forEach(key => {
-        searchQuery += getOthersRepoQuery(key, projects[key]);
-    });
-    const query = `{
-        ${searchQuery}
-      }
-      ${getRepoStats()}
-    `;
-    return query;
-};
-
 const getRepositories = async () => {
-    const response = await requestGithub(AllReposQuery());
-
-    return joinSearchNodes(response.data);
+    let query = `org:${projects['org']}`;
+    Object.keys(projects['repositories']).forEach(key => {
+        query += ` repo:${projects['repositories'][key]}`;
+    });
+    const response = await requestGithub(
+        searchRepoQuery(query, 'repositories', 30, null)
+    );
+    return response.data.search.nodes;
 };
 
 export default getRepositories;

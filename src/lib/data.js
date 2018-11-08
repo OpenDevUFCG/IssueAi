@@ -1,9 +1,22 @@
 const projects = {
-    'calluswhatyouwant/spotify-web-sdk': 'calluswhatyouwant',
-    'calluswhatyouwant/musicritic': 'calluswhatyouwant2',
-    'paulojbleitao/pokedex': 'paulojbleitao',
-    'SubmiBot/SubmiBot': 'SubmiBot',
-    'marianabianca/pomodoro': 'marianabianca',
+    org: 'OpenDevUFCG',
+    repositories: [
+        ('calluswhatyouwant/spotify-web-sdk': {
+            difficulty: 'iniciante',
+        }),
+        ('calluswhatyouwant/musicritic': {
+            difficulty: 'iniciante',
+        }),
+        ('paulojbleitao/pokedex': {
+            difficulty: 'iniciante',
+        }),
+        ('SubmiBot/SubmiBot': {
+            difficulty: 'iniciante',
+        }),
+        ('marianabianca/pomodoro': {
+            difficulty: 'iniciante',
+        }),
+    ],
 };
 
 export default projects;
