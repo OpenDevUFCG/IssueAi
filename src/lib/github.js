@@ -2,8 +2,7 @@
 import axios from 'axios';
 import projects from './data';
 
-const ORG_NAME = 'OpenDevUFCG';
-let lastCursorRepos = null; //cursor to paginate repositories
+let lastCursorRepos = null;
 
 const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
@@ -80,14 +79,14 @@ const searchRepoQuery = (
 };
 
 const getRepositories = async () => {
-    let query = `org:${projects['org']}`;
+    let query = `org:${projects.org}`;
 
-    Object.keys(projects['repositories']).forEach(key => {
-        query += ` repo:${projects['repositories'][key]}`;
+    Object.keys(projects.repositories).forEach(key => {
+        query += ` repo:${projects.repositories[key]}`;
     });
 
     const response = await requestGithub(
-        searchRepoQuery(query, 'repositories', 4, lastCursorRepos)
+        searchRepoQuery(query, 'repositories', 3, lastCursorRepos)
     );
     lastCursorRepos = response.data.search.pageInfo.endCursor.replace('=', '');
     return response.data.search.nodes;

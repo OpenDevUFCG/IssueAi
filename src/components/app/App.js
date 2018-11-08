@@ -49,8 +49,11 @@ export default class App extends React.Component<Props, AppState> {
                 <div className="content">
                     <Routes repositoryList={repositoryList} />
                 </div>
-                <div>
-                    <button onClick={this.updateRepositoryList}>
+                <div bp="grid vertical-center" className="footer">
+                    <button
+                        bp="2 offset-6"
+                        className="seeMore"
+                        onClick={this.updateRepositoryList}>
                         Ver mais
                     </button>
                 </div>
