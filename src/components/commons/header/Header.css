@@ -1,0 +1,20 @@
+.header {
+    width: 80vw;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: gray;
+}
+
+.nav-link a {
+    text-align: right;
+    margin-left: 30px;
+}

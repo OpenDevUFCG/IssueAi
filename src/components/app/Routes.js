@@ -1,20 +1,11 @@
 // @flow
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import type { Repository } from '../commons/repository/repository';
-import RepositoryGrid from '../commons/repository/RepositoryGrid';
+import ProjectsPage from '../projects/ProjectsPage';
 
-type Props = {
-    repositoryList: Repository[],
-};
-
-const Routes = ({ repositoryList }: Props) => (
+const Routes = () => (
     <Switch>
-        <Route
-            exact
-            path="/"
-            render={() => <RepositoryGrid repositories={repositoryList} />}
-        />
+        <Route exact path="/" component={ProjectsPage} />
         <Route path="/quem-somos" render={() => <div />} />
         <Route path="/contribuir" render={() => <div />} />
     </Switch>

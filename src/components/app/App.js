@@ -1,63 +1,25 @@
 // @flow
 import * as React from 'react';
-import type { Repository } from '../commons/repository/repository';
-import getRepositories from '../../lib/github';
-import { Link } from 'react-router-dom';
 
 import Routes from './Routes';
 import './App.css';
+import { Header, HeaderBrand, HeaderNavLink } from '../commons/header/Header';
 
-type AppState = {
-    repositoryList: Repository[],
-};
+const AppHeader = () => (
+    <Header>
+        <HeaderBrand to="/">IssueAi</HeaderBrand>
+        <HeaderNavLink to="/quem-somos">Quem Somos?</HeaderNavLink>
+        <HeaderNavLink to="/contribuir">Contribuir</HeaderNavLink>
+    </Header>
+);
 
-export default class App extends React.Component<Props, AppState> {
-    constructor(props: Props) {
-        super(props);
-        this.state = { repositoryList: [] };
-        this.updateRepositoryList = this.updateRepositoryList.bind(this);
-    }
-    componentDidMount() {
-        this.updateRepositoryList();
-    }
+const App = () => (
+    <div>
+        <AppHeader />
+        <div className="content">
+            <Routes />
+        </div>
+    </div>
+);
 
-    updateRepositoryList() {
-        getRepositories().then(data => {
-            this.setState({
-                repositoryList: [...this.state.repositoryList, ...data],
-            });
-        });
-    }
-
-    render() {
-        const { repositoryList } = this.state;
-        return (
-            <div>
-                <div bp="flex vertical-center" className="header">
-                    <h1 bp="fill">
-                        <Link to="/" className="main-link">
-                            <span>IssueAi</span>
-                        </Link>
-                    </h1>
-                    <Link to="/quem-somos" className="header-link">
-                        <h3 bp="fit">Quem Somos?</h3>
-                    </Link>
-                    <Link to="/contribuir" className="header-link">
-                        <h3 bp="fit">Contribuir</h3>
-                    </Link>
-                </div>
-                <div className="content">
-                    <Routes repositoryList={repositoryList} />
-                </div>
-                <div bp="grid vertical-center" className="footer">
-                    <button
-                        bp="2 offset-6"
-                        className="seeMore"
-                        onClick={this.updateRepositoryList}>
-                        Ver mais
-                    </button>
-                </div>
-            </div>
-        );
-    }
-}
+export default App;
