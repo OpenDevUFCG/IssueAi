@@ -11,13 +11,16 @@ const projects = {
             difficulty: 'intermediario',
         }),
         ('SubmiBot/SubmiBot': {
-            difficulty: 'iniciante',
+            difficulty: 'intermediario',
         }),
         ('marianabianca/pomodoro': {
             difficulty: 'iniciante',
         }),
         ('P-Sync/P-Sync': {
-            difficulty: 'iniciante',
+            difficulty: 'intermediario',
+        }),
+        ('FelipeMarinho97/iskra-webkit-greeter': {
+            difficulty: 'intermediario',
         }),
     ],
 };
