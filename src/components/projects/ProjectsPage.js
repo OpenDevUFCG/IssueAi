@@ -7,7 +7,7 @@ import RepositoryGrid from '../commons/repository/RepositoryGrid';
 
 import './ProjectsPage.css';
 
-let cursor;
+let cursor = null;
 
 type AppState = {
     repositoryList: Repository[],
@@ -25,7 +25,7 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     };
 
     componentDidMount() {
-        cursor = null;
+        // cursor = null;
         this.updateRepositoryList();
     }
 

@@ -95,6 +95,7 @@ const getRepositories = async (after: string | any) => {
     let lastCursor = endCursor;
 
     if (lastCursor) lastCursor = lastCursor.replace('=', '');
+    if (!lastCursor) lastCursor = after;
 
     return { repos, lastCursor };
 };
