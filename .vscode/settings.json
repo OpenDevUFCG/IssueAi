@@ -1,6 +1,6 @@
 {
     "javascript.validate.enable": false,
     "files.associations": {
-        "*.js": "javascriptreact"
+        "/**/components/**/*.js": "javascriptreact"
     }
 }

@@ -1,0 +1,19 @@
+.repository-card {
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    height: 200px;
+    position: relative;
+}
+
+.repository-card-title {
+    text-decoration: none;
+}
+
+.repository-stats {
+    bottom: 30px;
+    position: absolute;
+}

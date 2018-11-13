@@ -1,12 +1,15 @@
 // @flow
 
+export type Stats = {
+    totalCount: number,
+};
+
 export type Repository = {
-    name: string,
+    nameWithOwner: string,
     url: string,
-    owner: string,
     description: string,
-    issuesCount: number,
-    pullRequestsCount: number,
-    starsCount: number,
-    commitsCount: number,
+    issues: Stats,
+    pullRequests: Stats,
+    stargazers: Stats,
+    forkCount: number,
 };

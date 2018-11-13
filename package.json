@@ -1,13 +1,13 @@
 {
     "name": "IssueAi",
     "version": "1.0.0",
-    "description": "O Issue Ai cria um espaço de visibilidade para os projetos open source criado por alunos da UFCG@Campus Campina Grande.",
+    "description": "O IssueAi cria um espaço de visibilidade para os projetos open source criado por alunos da Computação@UFCG.",
     "repository": "https://github.com/OpenDevUFCG/IssueAi",
     "author": "OpenDevUFCG",
     "license": "MIT",
     "scripts": {
         "build": "webpack --mode production",
-        "start": "webpack-dev-server --progress --colors --inline --hot",
+        "start": "webpack-dev-server --progress --colors --inline --hot --host 0.0.0.0",
         "lint": "eslint .",
         "flow": "flow"
     },
@@ -49,6 +49,7 @@
         "axios": "^0.18.0",
         "blueprint-css": "^3.0.0-beta.0",
         "react": "^16.6.0",
-        "react-dom": "^16.6.0"
+        "react-dom": "^16.6.0",
+        "react-router-dom": "^4.3.1"
     }
 }

@@ -1,104 +1,102 @@
 // @flow
 import axios from 'axios';
+import projects from './data';
 
-const ORG_NAME = 'OpenDevUFCG';
-const queryGetRepos = `    
-    Organization(login: ${ORG_NAME}) {
-        repositories(first: 30) {
-            edges {
-                node {
-                nameWithOwner
-                }
-            }
-        }
-    }
-`;
-
-const queryGetInfo = `
-    {
-      organization(login: ${ORG_NAME}) {
-        ...getMembers,
-      }
-    }
-    ${getMembersFragment}
-`;
-
-const getMembersFragment = `
-    fragment getMembers on Organization {
-      members(first: 30) {
-        edges {
-          node {
-            name
-          }
-        }
-      }
-    }
-`;
-
-const getRepositoriesQuery = (cursor = 'MQ') => {
-    return `
-        {
-          organization(login: ${ORG_NAME}) {
-            repositories(first: 30, after: ${cursor}) {
-              nodes {
-                nameWithOwner
-                forkCount
-                stargazers {
-                  totalCount
-                }
-                issues {
-                  totalCount
-                }
-                pullRequests {
-                  totalCount
-                }
-              }
-              pageInfo {
-                endCursor
-                hasNextPage
-              }
-            }
-          }
-        }
-    `;
-};
-
-const getOrgRepositories = async () => {
-    let data = await requestGithub(getRepositoriesQuery());
-    let { organization: repositories } = data;
-    let { pageInfo: hasNextPage, endCursor } = repositories;
-
-    while (hasNextPage) {
-        data = await requestGithub(getRepositoriesQuery(endCursor));
-        let { organization: paginatedRepositories } = data;
-        repositories.nodes = [
-            ...repositories.nodes,
-            ...paginatedRepositories.nodes,
-        ];
-        let { pageInfo: hasNextPage } = paginatedRepositories;
-    }
-
-    return data;
-};
-
-export const getAxiosInstance = () => {
+const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
     const config = {
-        baseUrl: 'https://api.github.com/graphql',
+        baseURL: 'https://api.github.com',
         headers: { Authorization: `Bearer ${token}` },
     };
 
     return axios.create(config);
 };
 
-const requestGithub = async (query: string) => {
-    const params = {
-        params: { q: query, type: 'repository' },
-    };
-
-    const response = await getAxiosInstance().post('/', params);
+const requestGithub = async (query: string, variables = {}) => {
+    const params = { query, variables };
+    const response = await getAxiosInstance().post('/graphql', params);
 
     return response.data;
 };
 
-export const getReposOrg = async () => requestGithub(queryGetRepos);
+const getRepoStats = () =>
+    `
+  fragment SearchResultFields on SearchResultItemConnection {
+    nodes {
+      ... on Repository {
+        nameWithOwner
+        description
+        url
+        forkCount
+        object(expression: "master") {
+          ... on Commit {
+            history {
+              totalCount
+            }
+          }
+        }
+        issues(states: OPEN) {
+          totalCount
+        }
+        pullRequests(states: OPEN) {
+          totalCount
+        }
+        stargazers {
+          totalCount
+        }
+      }
+      
+    }
+  }
+`;
+
+const searchRepoQuery = (
+    query: string,
+    owner: string,
+    first: number,
+    cursor: string
+) => {
+    const searchQuery = `
+    {
+      search(
+      first: ${first},
+      after:${cursor},
+      query: "${query}",
+      type: REPOSITORY
+    ) {
+      ...SearchResultFields
+      repositoryCount
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+    ${getRepoStats()}  
+    `;
+    return searchQuery;
+};
+
+const getRepositories = async (cursor: any) => {
+    let query = `org:${projects.org}`;
+
+    Object.keys(projects.repositories).forEach(key => {
+        query += ` repo:${projects.repositories[key]}`;
+    });
+
+    const response = await requestGithub(
+        searchRepoQuery(query, 'repositories', 12, cursor)
+    );
+    const {
+        nodes: repos,
+        pageInfo: { endCursor },
+    } = response.data.search;
+
+    let lastCursor = endCursor;
+
+    if (lastCursor) lastCursor = lastCursor.replace('=', '');
+
+    return { repos, lastCursor };
+};
+
+export default getRepositories;
