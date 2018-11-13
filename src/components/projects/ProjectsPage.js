@@ -5,6 +5,8 @@ import type { Repository } from '../commons/repository/repository';
 import getRepositories from '../../lib/github';
 import RepositoryGrid from '../commons/repository/RepositoryGrid';
 
+import './ProjectsPage.css';
+
 type AppState = {
     repositoryList: Repository[],
     lastCursor: any,

@@ -65,6 +65,7 @@ const searchRepoQuery = (
       type: REPOSITORY
     ) {
       ...SearchResultFields
+      repositoryCount
       pageInfo {
         endCursor
         hasNextPage
@@ -84,11 +85,18 @@ const getRepositories = async (cursor: any) => {
     });
 
     const response = await requestGithub(
-        searchRepoQuery(query, 'repositories', 3, cursor)
+        searchRepoQuery(query, 'repositories', 12, cursor)
     );
-    const lastCursor = response.data.search.pageInfo.endCursor.replace('=', '');
+    const {
+        nodes: repos,
+        pageInfo: { endCursor },
+    } = response.data.search;
 
-    return { repos: response.data.search.nodes, lastCursor };
+    let lastCursor = endCursor;
+
+    if (lastCursor) lastCursor = lastCursor.replace('=', '');
+
+    return { repos, lastCursor };
 };
 
 export default getRepositories;
