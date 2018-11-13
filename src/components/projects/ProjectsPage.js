@@ -9,10 +9,10 @@ import './ProjectsPage.css';
 
 type AppState = {
     repositoryList: Repository[],
-    lastCursor: any,
+    lastCursor: string | null,
 };
 
-function updateListState(data: Repository[], lastCursor: any) {
+function updateListState(data: Repository[], lastCursor: string | null) {
     return (state: AppState) => ({
         repositoryList: [...state.repositoryList, ...data],
         lastCursor,
