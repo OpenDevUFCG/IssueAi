@@ -2,8 +2,6 @@
 import axios from 'axios';
 import projects from './data';
 
-let lastCursorRepos = null;
-
 const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
     const config = {
@@ -78,7 +76,7 @@ const searchRepoQuery = (
     return searchQuery;
 };
 
-const getRepositories = async () => {
+const getRepositories = async (cursor: any) => {
     let query = `org:${projects.org}`;
 
     Object.keys(projects.repositories).forEach(key => {
@@ -86,10 +84,11 @@ const getRepositories = async () => {
     });
 
     const response = await requestGithub(
-        searchRepoQuery(query, 'repositories', 3, lastCursorRepos)
+        searchRepoQuery(query, 'repositories', 3, cursor)
     );
-    lastCursorRepos = response.data.search.pageInfo.endCursor.replace('=', '');
-    return response.data.search.nodes;
+    const lastCursor = response.data.search.pageInfo.endCursor.replace('=', '');
+
+    return { repos: response.data.search.nodes, lastCursor };
 };
 
 export default getRepositories;

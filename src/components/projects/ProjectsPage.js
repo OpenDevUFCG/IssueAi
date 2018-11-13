@@ -7,17 +7,20 @@ import RepositoryGrid from '../commons/repository/RepositoryGrid';
 
 type AppState = {
     repositoryList: Repository[],
+    lastCursor: any,
 };
 
-function updateListState(data: Repository[]) {
+function updateListState(data: Repository[], lastCursor: any) {
     return (state: AppState) => ({
         repositoryList: [...state.repositoryList, ...data],
+        lastCursor,
     });
 }
 
 export default class ProjectsPage extends React.Component<void, AppState> {
     state = {
         repositoryList: [],
+        lastCursor: null,
     };
 
     componentDidMount() {
@@ -25,8 +28,9 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     }
 
     updateRepositoryList = () => {
-        getRepositories().then(data => {
-            this.setState(updateListState(data));
+        const { lastCursor } = this.state;
+        getRepositories(lastCursor).then(data => {
+            this.setState(updateListState(data.repos, data.lastCursor));
         });
     };
 
