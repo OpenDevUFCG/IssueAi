@@ -54,13 +54,13 @@ const searchRepoQuery = (
     query: string,
     owner: string,
     first: number,
-    cursor: string
+    after: string
 ) => {
     const searchQuery = `
     {
       search(
       first: ${first},
-      after:${cursor},
+      after:${after},
       query: "${query}",
       type: REPOSITORY
     ) {
@@ -77,7 +77,7 @@ const searchRepoQuery = (
     return searchQuery;
 };
 
-const getRepositories = async (cursor: any) => {
+const getRepositories = async (after: string | any) => {
     let query = `org:${projects.org}`;
 
     Object.keys(projects.repositories).forEach(key => {
@@ -85,7 +85,7 @@ const getRepositories = async (cursor: any) => {
     });
 
     const response = await requestGithub(
-        searchRepoQuery(query, 'repositories', 12, cursor)
+        searchRepoQuery(query, 'repositories', 9, after)
     );
     const {
         nodes: repos,
