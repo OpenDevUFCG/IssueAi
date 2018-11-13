@@ -25,7 +25,6 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     };
 
     componentDidMount() {
-        // cursor = null;
         this.updateRepositoryList();
     }
 
