@@ -1,0 +1,15 @@
+.show-more {
+    font-family: 'Inconsolata', monospace;
+    background-color: white;
+    border: solid 1px #828282;
+    border-radius: 5px;
+}
+
+.show-more:hover {
+    cursor: pointer;
+    color: gray;
+}
+
+.show-more:focus {
+    outline: none;
+}

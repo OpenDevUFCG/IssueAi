@@ -1,9 +1,24 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
+
+import Routes from './Routes';
+import './App.css';
+import { Header, HeaderBrand, HeaderNavLink } from '../commons/header/Header';
+
+const AppHeader = () => (
+    <Header>
+        <HeaderBrand to="/">IssueAi</HeaderBrand>
+        <HeaderNavLink to="/quem-somos">Quem Somos?</HeaderNavLink>
+        <HeaderNavLink to="/contribuir">Contribuir</HeaderNavLink>
+    </Header>
+);
 
 const App = () => (
     <div>
-        <p>Hello World</p>
+        <AppHeader />
+        <div className="content">
+            <Routes />
+        </div>
     </div>
 );
 
