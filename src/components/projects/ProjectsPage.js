@@ -7,21 +7,22 @@ import RepositoryGrid from '../commons/repository/RepositoryGrid';
 
 import './ProjectsPage.css';
 
-let cursor = null;
-
 type AppState = {
     repositoryList: Repository[],
+    cursor: string | null
 };
 
-function updateListState(data: Repository[]) {
+function updateListState(data: Repository[], cursor) {
     return (state: AppState) => ({
         repositoryList: [...state.repositoryList, ...data],
+        cursor
     });
 }
 
 export default class ProjectsPage extends React.Component<void, AppState> {
     state = {
         repositoryList: [],
+        cursor: null,
     };
 
     componentDidMount() {
@@ -29,9 +30,9 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     }
 
     updateRepositoryList = () => {
+        const { cursor } = this.state;
         getRepositories(cursor).then(({ repos, lastCursor }) => {
-            this.setState(updateListState(repos));
-            cursor = lastCursor;
+            this.setState(updateListState(repos, lastCursor));
         });
     };
 

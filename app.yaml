@@ -1,0 +1,11 @@
+runtime: python27
+api_version: 2
+threadsafe: true
+handlers:
+- url: /
+  static_files: docs/index.html
+  secure: always
+  upload: docs/index.html
+- url: /
+  static_dir: docs
+  secure: always

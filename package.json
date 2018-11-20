@@ -6,7 +6,7 @@
     "author": "OpenDevUFCG",
     "license": "MIT",
     "scripts": {
-        "build": "webpack --mode production",
+        "build": "webpack",
         "start": "webpack-dev-server --progress --colors --inline --hot --host 0.0.0.0",
         "lint": "eslint .",
         "flow": "flow"
