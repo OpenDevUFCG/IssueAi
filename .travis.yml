@@ -1,26 +1,22 @@
 language: node_js
-
 node_js:
-    - 'node'
-    - 'lts/*'
-
-before_install:
-    - openssl aes-256-cbc -K $encrypted_85c87c2dd1d6_key -iv $encrypted_85c87c2dd1d6_iv -in gae/client-secret.json.enc -out gae/client-secret.json -d
+    - node
+    - lts/*
 
 before_deploy:
+    - openssl aes-256-cbc -K $encrypted_85c87c2dd1d6_key -iv $encrypted_85c87c2dd1d6_iv -in gae/client-secret.json.enc -out gae/client-secret.json -d
     - yarn build
     - rm -rf node_modules/
-
 jobs:
     include:
-        - stage: 'Tests'
-          name: 'Lint'
+        - stage: Tests
+          name: Lint
           script: yarn lint
         - stage: deploy
           if: branch = master
-          name: 'Deploy to App Engine'
+          name: Deploy to App Engine
           script: skip
           deploy:
               provider: gae
               keyfile: gae/client-secret.json
-              project: $PROJECT_ID
+              project: '$PROJECT_ID'
