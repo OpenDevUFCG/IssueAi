@@ -2,7 +2,6 @@ language: node_js
 node_js:
     - node
     - lts/*
-
 before_deploy:
     - openssl aes-256-cbc -K $encrypted_85c87c2dd1d6_key -iv $encrypted_85c87c2dd1d6_iv -in gae/client-secret.json.enc -out gae/client-secret.json -d
     - yarn build
