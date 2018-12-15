@@ -8,7 +8,12 @@ type RepositoryListProps = {
 };
 
 const listRepos = (list: Repository[]) =>
-    list.map(repository => <RepositoryCard repository={repository} />);
+    list.map(repository => (
+        <RepositoryCard
+            key={repository.nameWithOwner}
+            repository={repository}
+        />
+    ));
 
 const RepositoryGrid = ({ repositories }: RepositoryListProps) => (
     <div bp="grid 6@md 4@lg">{listRepos(repositories)}</div>
