@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "O IssueAi cria um espaço de visibilidade para os projetos open source criado por alunos da Computação@UFCG.",
     "repository": "https://github.com/OpenDevUFCG/IssueAi",
+    "homepage": "https://opendevufcg.github.io/issueAi/",
     "author": "OpenDevUFCG",
     "license": "MIT",
     "scripts": {
