@@ -23,7 +23,7 @@ jobs:
           deploy:
               provider: pages
               skip_cleanup: true
-              github_token: $PROJECT_ID
+              github_token: $GITHUB_TOKEN
               local_dir: public
               on:
                   branch: 48-deploy-ghpages

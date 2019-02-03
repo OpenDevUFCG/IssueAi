@@ -3,7 +3,7 @@ import axios from 'axios';
 import projects from './data';
 
 const getAxiosInstance = () => {
-    const token = process.env.GITHUB_TOKEN || '';
+    const token = process.env.API_TOKEN || '';
     const config = {
         baseURL: 'https://api.github.com',
         headers: { Authorization: `Bearer ${token}` },
