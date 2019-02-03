@@ -25,3 +25,5 @@ jobs:
               skip_cleanup: true
               github_token: $PROJECT_ID
               local_dir: public
+              on:
+                  branch: 48-deploy-ghpages
