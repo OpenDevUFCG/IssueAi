@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DotenvPlugin = require('webpack-dotenv-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const config = {
     mode: 'development',
@@ -43,10 +43,9 @@ const config = {
             template: __dirname + '/src/index.html',
             hash: true,
         }),
-        new DotenvPlugin({
-            sample: './.env.sample',
+        new Dotenv({
             path: './.env',
-            allowEmptyValues: true,
+            systemvars: true,
         }),
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
