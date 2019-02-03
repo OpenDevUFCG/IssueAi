@@ -44,7 +44,7 @@ const config = {
             hash: true,
         }),
         new Dotenv({
-            path: './.env',
+            path: __dirname + '/.env',
             systemvars: true,
         }),
         new MiniCssExtractPlugin({
