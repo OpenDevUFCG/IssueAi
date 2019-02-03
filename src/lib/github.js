@@ -8,7 +8,6 @@ const getAxiosInstance = () => {
         baseURL: 'https://api.github.com',
         headers: { Authorization: `Bearer ${token}` },
     };
-
     return axios.create(config);
 };
 
