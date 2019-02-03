@@ -17,7 +17,7 @@ jobs:
           name: Lint
           script: yarn lint
         - stage: deploy
-          if: branch = master
+          if: branch = 48-deploy-ghpage
           name: Deploy to Github Pages
           script: skip
           deploy:
