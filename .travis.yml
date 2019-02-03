@@ -1,15 +1,12 @@
 language: node_js
 node_js:
-    - 'stable'
-
+    - stable
 cache:
     directories:
         - node_modules
-
 before_deploy:
     - yarn build
     - rm -rf node_modules/
-
 jobs:
     include:
         - stage: Tests
@@ -22,7 +19,10 @@ jobs:
           deploy:
               provider: pages
               skip_cleanup: true
-              github_token: $github_token
+              github_token: '$github_token'
               local_dir: docs
               on:
                   branch: 48-deploy-ghpages
+env:
+    matrix:
+        secure: SHuNDXHn7YpxLUxbQO4XPc2I3X03FR4tIyyxmaPOmSe0jnH0NQ67w25bFbn4OAC9/QKZWeg5UCxnGx/8CPEmX2PxMbBPxBT2RnTtJxxJ5+GbdoeFvQ3T3dwLBixJDJmakHwFU/tlhGzb1InVXDPmpmnRn224nKUnZlZM3+unpeo+I1aqrrY2E5gOenFlksM/I1lYkTfYOG2MzVpkL7Kzn9BTep0HDoUxpo6zjk5cFb1ewIhgDvNKY6BmNF8kA5wSC9+LXOIQWoUHFOssZ0U/y3nF/2UA0kQeP1/sqVMRwPqIqUvlpQru0KEuSZ8JApJippwwg5Z2Ah3YmOriCRZyh9OG0WmxMvNDqy1nwfHBQMs6MkJblaRU278QxLO+QJoQInD7rvju4nag2WwntxJahbDPac+QoyG5z1h6vQfgZlI/ySd9kWGv4qTtLpVsBOQsrnpFzYN8kmHUb46Hck5HSHNqTSnsnLqeKQYno4/6qiAiT60RtN3K0qOnmqsDR7xT9pVSziI04wN+Ed99nBcjc1Hqy8teDQN3n7apg+WKBWzBmD3oJqJ9bwURZW4fFBKXlHRTMVkK/xqRwQ75kRrdj2i9vhIZKjSlLpNi0WYNm4N+QlY+JuUmXexL1P7gNgitneWXXfH5ELU+T6cGn54pZYA2topqmGQmbMo1Slf2aro=
