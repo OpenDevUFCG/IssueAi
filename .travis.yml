@@ -17,7 +17,7 @@ jobs:
           name: Lint
           script: yarn lint
         - stage: deploy
-          if: branch = 48-deploy-ghpage
+          if: branch = 48-deploy-ghpages
           name: Deploy to Github Pages
           script: skip
           deploy:
@@ -25,5 +25,3 @@ jobs:
               skip_cleanup: true
               github_token: $PROJECT_ID
               local_dir: public
-              on:
-                  branch: 48-deploy-ghpage
