@@ -17,7 +17,6 @@ const App = () => (
     <div>
         <AppHeader />
         <div className="content">
-            alloo - {process.env.API_TOKEN}
             <Routes />
         </div>
     </div>
