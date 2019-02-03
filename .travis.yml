@@ -24,6 +24,4 @@ jobs:
               provider: pages
               skip_cleanup: true
               github_token: $PROJECT_ID
-              local_dir: build
-              on:
-                  branch: master
+              local_dir: public
