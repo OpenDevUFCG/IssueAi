@@ -1,4 +1,4 @@
-# IssueAi
+# IssueAi [![Join the chat at https://gitter.im/OpenDevUFCG/IssueAi](https://badges.gitter.im/OpenDevUFCG/IssueAi.svg)](https://gitter.im/OpenDevUFCG/IssueAi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 É uma dúvida? Issue ai. É um problema? Issue ai. Quer contribuir? Issue ai. Não sabe onde tá? Issue ai. Tá afim de discutir? Issue ai. Não sabe o que é IssueAi? Issue ai.
 
@@ -102,5 +102,3 @@ Deseja contribuir? Issue Ai! E PR AI!
 ## Nós
 
 [![](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/images/0)](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/links/0)[![](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/images/1)](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/links/1)[![](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/images/2)](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/links/2)[![](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/images/3)](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/links/3)[![](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/images/4)](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/links/4)[![](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/images/5)](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/links/5)[![](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/images/6)](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/links/6)[![](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/images/7)](https://sourcerer.io/fame/thayannevls/OpenDevUFCG/IssueAi/links/7)
-
-Feito com [hall-of-fame](https://github.com/sourcerer-io/hall-of-fame).
