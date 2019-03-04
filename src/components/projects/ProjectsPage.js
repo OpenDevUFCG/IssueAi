@@ -9,13 +9,13 @@ import './ProjectsPage.css';
 
 type AppState = {
     repositoryList: Repository[],
-    cursor: string | null
+    cursor: string | null,
 };
 
 function updateListState(data: Repository[], cursor) {
     return (state: AppState) => ({
         repositoryList: [...state.repositoryList, ...data],
-        cursor
+        cursor,
     });
 }
 
@@ -32,6 +32,7 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     updateRepositoryList = () => {
         const { cursor } = this.state;
         getRepositories(cursor).then(({ repos, lastCursor }) => {
+            console.log(repos, lastCursor);
             this.setState(updateListState(repos, lastCursor));
         });
     };
