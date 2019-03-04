@@ -84,7 +84,7 @@ yarn start
 
 ## Para Adicionar Dados
 
-Deseja adicionar o seu repositório Open Source? Confere a nossa API no [Laguinho](https://github.com/OpenDevUFCG/laguinho-api)!
+Deseja adicionar o seu repositório Open Source? Os dados dos repositórios que usamos são recuperados na API do [Laguinho](https://github.com/OpenDevUFCG/laguinho-api), caso queira ver seu repositório no IssueAi, confira [aqui](https://github.com/OpenDevUFCG/laguinho-api/blob/master/docs/REPOSITORIES.md#como-contribuir-adicionando-mais-reposit%C3%B3rios) como adicionar!
 
 ## Como Contribuir
 
