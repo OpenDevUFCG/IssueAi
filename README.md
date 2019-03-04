@@ -56,7 +56,7 @@ Incentivamos muito a comunicação por Issues, mas claro que não queremos abusa
 
 -   Cuidado pra não estar iniciando uma discussão repetida, dá uma pesquisada antes.
 
--   Siga o manual de conduta! Se você ver alguém desesrespeitando, denuncie!
+-   Siga o manual de conduta! Se você ver alguém desrespeitando, denuncie!
 
 -   Tente focar os assuntos em volta desse projeto, de projetos open source, ideias, computação e UFCG.
 
@@ -80,20 +80,9 @@ Após isso, para rodar o ambiente de desenvolvimento use:
 yarn start
 ```
 
-### Token do github
+## Para Adicionar Dados
 
-Para obter as informações dos repositórios, usamos a [API do Github](https://developer.github.com/v4/). Um dos requisitos necessários para usá-la é o uso do Token.
-
-Você precisará gerar seu [token do github](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) e adicionar os seguintes escopos de permissão:
-
-```
-user
-read:org
-```
-
-Após isso, crie um arquivo **.env** semelhante ao **.env.sample** e adicione seu github token.
-
-**Obs: Seu token deve ficar no arquivo .env, não no .env.sample**
+Deseja adicionar o seu repositório Open Source? Confere a nossa API no [Laguinho](https://github.com/OpenDevUFCG/laguinho-api)!
 
 ## Como Contribuir
 
