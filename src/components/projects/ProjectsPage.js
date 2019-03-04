@@ -9,13 +9,13 @@ import './ProjectsPage.css';
 
 type AppState = {
     repositoryList: Repository[],
-    cursor: string | null
+    cursor: string | null,
 };
 
 function updateListState(data: Repository[], cursor) {
     return (state: AppState) => ({
         repositoryList: [...state.repositoryList, ...data],
-        cursor
+        cursor,
     });
 }
 
