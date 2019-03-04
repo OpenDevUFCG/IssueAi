@@ -1,5 +1,7 @@
 # IssueAi [![Join the chat at https://gitter.im/OpenDevUFCG/IssueAi](https://badges.gitter.im/OpenDevUFCG/IssueAi.svg)](https://gitter.im/OpenDevUFCG/IssueAi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+![IssueAi Logo](https://imgur.com/iLumm5K.png)
+
 É uma dúvida? Issue ai. É um problema? Issue ai. Quer contribuir? Issue ai. Não sabe onde tá? Issue ai. Tá afim de discutir? Issue ai. Não sabe o que é IssueAi? Issue ai.
 
 Sinta-se a vontade para discutir por meio de issues, aqui é um espaço aberto para compartilhar ideias sobre projetos open source da UFCG. Abra uma Issue e respeite o código de conduta.
