@@ -9,13 +9,15 @@ const getAxiosInstance = () => {
     return axios.create(config);
 };
 
-const requestGithub = async () => {
-    const response = await getAxiosInstance().get('/repositories');
+const requestGithub = async (after: string | any) => {
+    const response = await getAxiosInstance().get('/repositories', {
+        params: { after },
+    });
     return response;
 };
 
 const getRepositories = async (after: string | any) => {
-    const response = await requestGithub();
+    const response = await requestGithub(after);
     const { repos, endCursor } = response.data;
 
     let lastCursor = endCursor;

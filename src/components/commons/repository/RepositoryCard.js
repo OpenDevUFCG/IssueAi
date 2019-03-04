@@ -11,11 +11,11 @@ type RepositoryProps = {
 const RepositoryStats = ({ repository }: RepositoryProps) => (
     <div bp="grid" className="repository-stats">
         <i className="fas fa-star" />
-        <span>{repository.stargazers.totalCount}</span>
+        <span>{repository.stargazersCount}</span>
         <i className="fas fa-exclamation-circle" />
-        {repository.issues.totalCount}
+        {repository.issuesCount}
         <i className="fas fa-code-branch" />
-        <span>{repository.pullRequests.totalCount}</span>
+        <span>{repository.pullRequestsCount}</span>
         <i className="fas fa-utensils" />
         <span>{repository.forkCount}</span>
     </div>

@@ -32,7 +32,6 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     updateRepositoryList = () => {
         const { cursor } = this.state;
         getRepositories(cursor).then(({ repos, lastCursor }) => {
-            console.log(repos, lastCursor);
             this.setState(updateListState(repos, lastCursor));
         });
     };
