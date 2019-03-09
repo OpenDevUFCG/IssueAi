@@ -61,7 +61,7 @@ Deseja adicionar o seu repositório Open Source? Os dados dos repositórios que 
 
 ## Como Contribuir
 
-Deseja contribuir? Issue Ai! E PR AI!
+Deseja contribuir? Leia nosso [CONTRIBUTING.md](CONTRIBUTING.md) e Issue Ai! E PR AI!
 
 ## Nós
 
