@@ -18,37 +18,7 @@ O Issue Ai tenta criar um espaço de visibilidade para os projetos open source c
 
 -   Guia de contribuição. Uma boa documentação dos passos a serem seguidores para o uso do projeto tem que ser prioridade. Tente ser claro e direto, use o auxílio de outras documentações como hyperlinks.
 
-Recomendo a leitura do opensource [guide](https://opensource.guide/starting-a-project/)
-
-## Promessas
-
-Atualmente não temos uma plataforma que possa mostrar todos os projetos que estamos apoiando, estamos encaminhando pra isso! Em breve teremos um site que facilitará a visibilidade, descobrimento e contribuições dos projetos OpenSource realizados por alunos da UFCG.
-
-## Projetos que apoiamos
-
-Enquanto não temos uma plataforma, vamos disponibilizar aqui projetos que estamos apoiando.
-
--   [Racharia](https://github.com/OpenDevUFCG/Racharia) - Aplicação Web para facilitar a administração de despesas conjuntas.
-
--   [racharia-server](https://github.com/OpenDevUFCG/racharia-server) - API Rest do [Racharia](https://github.com/OpenDevUFCG/Racharia)
-
--   [Pomodoro](https://github.com/marianabianca/pomodoro) - Pomodoro Timer feito em Python.
-
--   [musicritic](https://github.com/calluswhatyouwant/musicritic) - Seu metacritic para músicas do Spotify.
-
--   [spotify-web-sdk](https://github.com/calluswhatyouwant/spotify-web-sdk) - Biblioteca Javascript que visa facilitar a comunicação do seu aplicativo com a Web API do Spotify.
-
--   [pokedex](https://github.com/paulojbleitao/pokedex) - Pokédex simples feita com React.js e usando a PokeAPI.
-
--   [Tamburetei](https://github.com/OpenDevUFCG/Tamburetei) - Fazendo de tamburete as cadeiras de CC@UFCG.
-
--   [iskra-webkit-greeter](https://github.com/FelipeMarinho97/iskra-webkit-greeter) - Tela de login bonita e moderna para o LightDM feita usando React.
-
--   [P-Sync](https://github.com/P-Sync/P-Sync) - CLI em Python para sincronização automática de arquivos e diretórios.
-
--   [SubmiBot](https://github.com/SubmiBot/SubmiBot) - Plugin do Eclipse para automatização do processo de submissão de tarefas na disciplina de LP2.
-
-_Deseja adicionar seu projeto?_ Issue Ai! Vai lá, abre uma issue e uma PR adicionando seu projeto a esse README, fala um pouco sobre ele que a gente vai avaliar e te ajudar!
+Recomendamos a leitura do opensource [guide](https://opensource.guide/starting-a-project/)
 
 ## Manual do IssueAi
 
@@ -82,7 +52,7 @@ Após isso, para rodar o ambiente de desenvolvimento use:
 yarn start
 ```
 
-## Para Adicionar Dados
+## Para Adicionar um Projeto
 
 Deseja adicionar o seu repositório Open Source? Os dados dos repositórios que usamos são recuperados na API do [Laguinho](https://github.com/OpenDevUFCG/laguinho-api), caso queira ver seu repositório no IssueAi, confira [aqui](https://github.com/OpenDevUFCG/laguinho-api/blob/master/docs/REPOSITORIES.md#como-contribuir-adicionando-mais-reposit%C3%B3rios) como adicionar!
 
