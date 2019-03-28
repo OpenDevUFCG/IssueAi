@@ -1,4 +1,4 @@
-# IssueAi [![Join the chat at https://gitter.im/OpenDevUFCG/IssueAi](https://badges.gitter.im/OpenDevUFCG/IssueAi.svg)](https://gitter.im/OpenDevUFCG/IssueAi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# IssueAi [![chat on Discord](https://img.shields.io/discord/558293573494112257.svg?logo=discord)](https://discordapp.com/invite/YT7NvM)
 
 ![IssueAi Logo](https://imgur.com/iLumm5K.png)
 
