@@ -1,4 +1,4 @@
-# IssueAi [![chat on Discord](https://img.shields.io/discord/558293573494112257.svg?logo=discord)](https://discordapp.com/invite/YT7NvM)
+# IssueAi [![chat on Discord](https://img.shields.io/discord/558293573494112257.svg?logo=discord)](https://discordapp.com/invite/vFFGGEE)
 
 ![IssueAi Logo](https://imgur.com/iLumm5K.png)
 
