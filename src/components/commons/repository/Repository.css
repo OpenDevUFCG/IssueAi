@@ -1,19 +1,41 @@
-.repository-card {
-    border: 1px solid #bcbcbc;
-    border-radius: 4px;
-    padding-top: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 20px;
-    height: 200px;
-    position: relative;
+.repository-stats {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-.repository-card-title {
-    text-decoration: none;
+.stat {
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.stat-count {
+    margin-left: 5px;
+}
+
+.repository-card {
+    min-height: 200px;
+    display: grid;
+    grid-template-areas: 'name' 'description' 'stats';
+    grid-template-rows: auto 1fr auto;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.repository-name {
+    grid-area: name;
+    word-break: break-all;
+}
+
+.repository-description {
+    grid-area: description;
 }
 
 .repository-stats {
-    bottom: 30px;
-    position: absolute;
+    grid-area: stats;
+}
+
+.repository-grid {
+    width: 100%;
 }
