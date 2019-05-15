@@ -37,5 +37,31 @@
 }
 
 .repository-grid {
+    display: grid;
+    grid-gap: 10px;
     width: 100%;
+}
+
+@media (min-width: 1367px) {
+    .repository-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1366px) {
+    .repository-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 960px) {
+    .repository-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .repository-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
