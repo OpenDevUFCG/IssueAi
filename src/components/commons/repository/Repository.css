@@ -28,6 +28,21 @@
     grid-area: name;
     word-break: break-all;
 }
+.fa-star {
+    color: #ffeb3b;
+}
+
+.fa-exclamation-circle {
+    color: #f59211;
+}
+
+.fa-code-branch {
+    color: #1eb7c2;
+}
+
+.fa-utensils {
+    color: #750dec;
+}
 
 a:link {
     text-decoration: none;
