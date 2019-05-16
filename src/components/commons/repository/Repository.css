@@ -15,19 +15,20 @@
 
 .repository-card {
     min-height: 200px;
+    height: 100%;
     display: grid;
     grid-template-areas: 'name' 'description' 'stats';
     grid-template-rows: auto 1fr auto;
     border-radius: 4px;
     padding: 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    background: #fff;
+    background: #ffffff;
 }
 
-.repository-name {
-    grid-area: name;
-    word-break: break-all;
+.repository-card:hover {
+    background-color: #ececec;
 }
+
 .fa-star {
     color: #ffeb3b;
 }
@@ -53,8 +54,19 @@ a:visited {
     color: unset;
 }
 
+.repository-name {
+    grid-area: name;
+    word-break: break-all;
+}
+
+.repository-name,
+.stat-count {
+    color: #383838;
+}
+
 .repository-description {
     grid-area: description;
+    color: #575757;
 }
 
 .repository-stats {
@@ -63,7 +75,7 @@ a:visited {
 
 .repository-grid {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 15px;
     width: 100%;
 }
 
