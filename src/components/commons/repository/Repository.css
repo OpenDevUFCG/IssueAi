@@ -20,12 +20,18 @@
     grid-template-rows: auto 1fr auto;
     border: 1px solid #bcbcbc;
     border-radius: 4px;
-    padding: 30px;
+    padding: 20px;
 }
 
 .repository-name {
     grid-area: name;
     word-break: break-all;
+    text-decoration: none;
+    color: #000000;
+}
+
+.repository-name:visited {
+    color: #000000;
 }
 
 .repository-description {
