@@ -31,13 +31,16 @@ const RepositoryStats = ({ repository }: RepositoryProps) => (
 );
 
 const RepositoryCard = ({ repository }: RepositoryProps) => (
-    <div className="repository-card">
-        <a className="repository-name" href={repository.url}>
-            <h3>{repository.nameWithOwner}</h3>
-        </a>
-        <p className="repository-description">{repository.description}</p>
-        <RepositoryStats className="repository-stats" repository={repository} />
-    </div>
+    <a href={repository.url}>
+        <div className="repository-card">
+            <h3 className="repository-name">{repository.nameWithOwner}</h3>
+            <p className="repository-description">{repository.description}</p>
+            <RepositoryStats
+                className="repository-stats"
+                repository={repository}
+            />
+        </div>
+    </a>
 );
 
 export default RepositoryCard;
