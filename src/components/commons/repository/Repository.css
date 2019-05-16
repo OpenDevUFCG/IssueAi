@@ -18,20 +18,24 @@
     display: grid;
     grid-template-areas: 'name' 'description' 'stats';
     grid-template-rows: auto 1fr auto;
-    border: 1px solid #bcbcbc;
     border-radius: 4px;
     padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background: #fff;
 }
 
 .repository-name {
     grid-area: name;
     word-break: break-all;
-    text-decoration: none;
-    color: #000000;
 }
 
-.repository-name:visited {
-    color: #000000;
+a:link {
+    text-decoration: none;
+    color: unset;
+}
+
+a:visited {
+    color: unset;
 }
 
 .repository-description {
