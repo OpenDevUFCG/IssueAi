@@ -41,11 +41,10 @@ export default class ProjectsPage extends React.Component<void, AppState> {
         return (
             <div>
                 <RepositoryGrid repositories={repositoryList} />
-                <div bp="grid 4 vertical-center" className="footer">
+                <div className="footer">
                     <button
                         type="button"
-                        bp="1 offset-2"
-                        className="show-more"
+                        className="show-more-button"
                         onClick={this.updateRepositoryList}>
                         <h2>Ver mais</h2>
                     </button>

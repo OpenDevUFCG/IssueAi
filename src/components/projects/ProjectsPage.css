@@ -1,15 +1,23 @@
-.show-more {
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.show-more-button {
     font-family: 'Inconsolata', monospace;
     background-color: white;
     border: solid 1px #828282;
     border-radius: 5px;
+    width: 200px;
+    max-width: 100%;
+    margin-bottom: 40px;
 }
 
-.show-more:hover {
+.show-more-button:hover {
     cursor: pointer;
     color: gray;
 }
 
-.show-more:focus {
+.show-more-button:focus {
     outline: none;
 }
