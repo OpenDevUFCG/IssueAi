@@ -17,7 +17,9 @@ const AppHeader = () => (
 
 const App = () => (
     <div>
-        <AppHeader className="sticky" />
+        <div className="sticky">
+            <AppHeader />
+        </div>
         <div className="content">
             <Routes />
         </div>
