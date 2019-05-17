@@ -3,21 +3,26 @@
     justify-content: center;
 }
 
-.show-more-button {
+.show-more-btn {
     font-family: 'Inconsolata', monospace;
-    background-color: white;
-    border: solid 1px #828282;
+    background-color: #21d6a0;
+    border-width: 0;
     border-radius: 5px;
     width: 200px;
     max-width: 100%;
     margin-bottom: 40px;
+    box-shadow: 0 1px 4px #9e9e9e;
 }
 
-.show-more-button:hover {
+.show-more-btn:hover {
     cursor: pointer;
-    color: gray;
+    background-color: #1fb488;
 }
 
-.show-more-button:focus {
+.show-more-btn:focus {
     outline: none;
+}
+
+.show-more-btn-text {
+    color: #ffffff;
 }
