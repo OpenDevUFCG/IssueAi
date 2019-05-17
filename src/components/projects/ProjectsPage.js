@@ -44,9 +44,9 @@ export default class ProjectsPage extends React.Component<void, AppState> {
                 <div className="footer">
                     <button
                         type="button"
-                        className="show-more-button"
+                        className="show-more-btn"
                         onClick={this.updateRepositoryList}>
-                        <h2>Ver mais</h2>
+                        <h2 className="show-more-btn-text">Ver mais</h2>
                     </button>
                 </div>
             </div>
