@@ -6,3 +6,13 @@
 .footer {
     margin-top: 40px;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: calc(100px + 5vw);
+}
