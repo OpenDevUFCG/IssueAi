@@ -1,3 +1,12 @@
+/**
+ * Header.css
+ *
+ * These are the styles for the header component that was built as a navigation bar.
+ *
+ * Index
+ * - Header Content
+ */
+
 .header {
     width: 100%;
     background-color: #3ab7f1;
@@ -7,11 +16,20 @@
     justify-content: center;
 }
 
+/* Class used to keep the header at the top of the page even when it is rolled */
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
 }
+
+/**
+ * Header Content
+ *
+ * Defines the appearance of the header content with its multiple parts:
+ * - Nav Option
+ * - Nav Brand
+ */
 
 .header-content {
     display: flex;
@@ -20,6 +38,12 @@
     padding: 20px 0 20px 0;
     align-items: center;
 }
+
+/**
+ * Nav Option
+ *
+ * Defines the appearance and behaviour of the navigation option component.
+ */
 
 .nav-option {
     margin: 0;
@@ -36,7 +60,8 @@
     margin-left: 40px;
 }
 
-@media (max-width: 500px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
     .header-content {
         flex-direction: column;
         align-items: flex-start;
@@ -48,10 +73,16 @@
     }
 
     .nav-option + .nav-option {
-        margin-left: 0px !important;
+        margin-left: 0px;
         margin-top: 10px;
     }
 }
+
+/**
+ * Nav Brand
+ *
+ * Defines the appearance and behaviour of the navigation brand component.
+ */
 
 .nav-brand {
     margin: 0;
@@ -62,5 +93,5 @@
 .nav-brand img {
     width: 100px;
     height: auto;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Sets the color of the image to white */
 }

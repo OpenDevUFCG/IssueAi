@@ -1,6 +1,22 @@
+/**
+ * ProjectsPage.css
+ *
+ * These are the styles for the projects page component.
+ *
+ * Index
+ * - Footer
+ */
+
+/**
+ * Footer
+ *
+ * Defines the appearance of the footer and the show more button.
+ */
+
 .footer {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .show-more-btn {

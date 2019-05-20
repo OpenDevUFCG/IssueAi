@@ -1,32 +1,68 @@
+/**
+ * Repository.css
+ *
+ * These are the styles for the repository card and repository grid components.
+ *
+ * Index
+ * - Repository Grid
+ * - Repository Card
+ */
+
+/**
+ * Repository Grid
+ *
+ * Defines the appearance and behaviour of the repository grid component for different screen sizes.
+ */
+
 .repository-grid {
     display: grid;
     grid-gap: 15px;
     width: 100%;
 }
 
-@media (min-width: 1367px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
     .repository-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 1366px) {
-    .repository-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 960px) {
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
     .repository-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 720px) {
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
     .repository-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .repository-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .repository-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/**
+ * Repository Card
+ *
+ * Defines the appearance of the repository card with its multiple parts:
+ * - Repository Name
+ * - Repository Description
+ * - Repository Stats and its icons
+ */
 
 .repository-card {
     min-height: 200px;
@@ -50,6 +86,10 @@
     word-break: break-all;
 }
 
+h3.repository-name {
+    margin: 0;
+}
+
 .repository-name,
 .stat-count {
     color: #2b2b2b;
@@ -62,9 +102,6 @@
 
 .repository-stats {
     grid-area: stats;
-}
-
-.repository-stats {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
