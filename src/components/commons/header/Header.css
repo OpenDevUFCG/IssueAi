@@ -15,6 +15,7 @@
 
 .header-content {
     display: flex;
+    flex-wrap: wrap;
     width: 80vw;
     padding: 20px 0 20px 0;
     align-items: center;
@@ -22,12 +23,33 @@
 
 .nav-option {
     margin: 0;
-    margin-right: 0;
+    padding-bottom: 5px;
     width: fit-content;
+}
+
+.nav-option:hover {
+    color: #1c5975;
 }
 
 .nav-option + .nav-option {
     margin-left: 20px;
+}
+
+@media (max-width: 500px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: space-between;
+    }
+
+    .nav-option {
+        margin-top: 20px;
+    }
+
+    .nav-option + .nav-option {
+        margin-left: 0px !important;
+        margin-top: 10px;
+    }
 }
 
 .nav-brand {
