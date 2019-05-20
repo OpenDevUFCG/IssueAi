@@ -29,7 +29,7 @@ export const HeaderBrand = ({ to, children }: HeaderLinkProps) => (
 );
 
 export const Header = ({ children }: { children: React.Node }) => (
-    <div className="header">
+    <div className="header sticky">
         <div className="header-content">{children}</div>
     </div>
 );
