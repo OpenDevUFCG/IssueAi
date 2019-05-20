@@ -57,7 +57,7 @@
 
 .repository-description {
     grid-area: description;
-    color: #575757;
+    color: #444444;
 }
 
 .repository-stats {
