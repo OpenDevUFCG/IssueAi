@@ -17,7 +17,7 @@ const AppHeader = () => (
 
 const App = () => (
     <div>
-        <div className="sticky">
+        <div className="header">
             <AppHeader />
         </div>
         <div className="content">
