@@ -10,3 +10,9 @@
 .header + .content {
     padding-top: calc(100px + 5vw);
 }
+
+@media (max-width: 500px) {
+    .header + .content {
+        padding-top: calc(180px + 5vw);
+    }
+}
