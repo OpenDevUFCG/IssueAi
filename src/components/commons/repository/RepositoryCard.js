@@ -8,10 +8,15 @@ type RepositoryProps = {
     repository: Repository,
 };
 
-const Stat = props => (
+type StatProps = {
+    iconClass: string,
+    statCount: number,
+};
+
+const Stat = ({ iconClass, statCount }: StatProps) => (
     <div className="stat">
-        <i className={`fas ${props.iconClass}`} />
-        <span className="stat-count">{props.statCount}</span>
+        <i className={`fas ${iconClass}`} />
+        <span className="stat-count">{statCount}</span>
     </div>
 );
 
