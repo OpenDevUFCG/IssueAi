@@ -10,8 +10,8 @@ const getAxiosInstance = () => {
 };
 
 const requestGithub = async (after: string | any) => {
-    const response = await getAxiosInstance().get('/repositories', {
-        params: { after },
+    const response = await getAxiosInstance().get('/repositorios', {
+        params: { apos: after },
     });
     return response;
 };
