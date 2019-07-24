@@ -98,6 +98,7 @@ h3.repository-name {
 .repository-description {
     grid-area: description;
     color: #444444;
+    letter-spacing: 0.7px;
 }
 
 .repository-stats {
@@ -110,25 +111,26 @@ h3.repository-name {
 .stat {
     margin-right: 20px;
     margin-bottom: 5px;
+    color: #242424;
 }
 
 .stat-count {
     margin-left: 5px;
 }
 
-.fa-star {
+.fa-star:hover {
     color: #ffeb3b;
 }
 
-.fa-exclamation-circle {
+.fa-exclamation-circle:hover {
     color: #f59211;
 }
 
-.fa-code-branch {
+.fa-code-branch:hover {
     color: #1eb7c2;
 }
 
-.fa-utensils {
+.fa-utensils:hover {
     color: #750dec;
 }
 
