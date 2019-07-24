@@ -94,3 +94,9 @@
     height: auto;
     filter: brightness(0) invert(1); /* Sets the color of the image to white */
 }
+
+@media only screen and (max-width: 600px) {
+    .nav-brand img {
+        width: 70px;
+    }
+}
