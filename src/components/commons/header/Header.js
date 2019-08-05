@@ -17,19 +17,19 @@ const HeaderLink = ({ to, children }: HeaderLinkProps) => (
 );
 
 export const HeaderNavLink = ({ to, children }: HeaderLinkProps) => (
-    <h3 bp="fit" className="nav-link">
+    <h3 className="nav-option">
         <HeaderLink to={to}>{children}</HeaderLink>
     </h3>
 );
 
 export const HeaderBrand = ({ to, children }: HeaderLinkProps) => (
-    <h1 bp="fill">
+    <h1 className="nav-brand">
         <HeaderLink to={to}>{children}</HeaderLink>
     </h1>
 );
 
 export const Header = ({ children }: { children: React.Node }) => (
-    <div bp="flex vertical-center" className="header">
-        {children}
+    <div className="header sticky">
+        <div className="header-content">{children}</div>
     </div>
 );

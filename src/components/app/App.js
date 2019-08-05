@@ -7,7 +7,9 @@ import { Header, HeaderBrand, HeaderNavLink } from '../commons/header/Header';
 
 const AppHeader = () => (
     <Header>
-        <HeaderBrand to="/">IssueAi</HeaderBrand>
+        <HeaderBrand to="/">
+            <img src="https://i.imgur.com/DZaKNqP.png" alt="issueai-logo" />
+        </HeaderBrand>
         <HeaderNavLink to="/quem-somos">Quem Somos?</HeaderNavLink>
         <HeaderNavLink to="/contribuir">Contribuir</HeaderNavLink>
     </Header>
@@ -15,7 +17,9 @@ const AppHeader = () => (
 
 const App = () => (
     <div>
-        <AppHeader />
+        <div className="header">
+            <AppHeader />
+        </div>
         <div className="content">
             <Routes />
         </div>

@@ -1,19 +1,141 @@
-.repository-card {
-    border: 1px solid #bcbcbc;
-    border-radius: 4px;
-    padding-top: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 20px;
-    height: 200px;
-    position: relative;
+/**
+ * Repository.css
+ *
+ * These are the styles for the repository card and repository grid components.
+ *
+ * Index
+ * - Repository Grid
+ * - Repository Card
+ */
+
+/**
+ * Repository Grid
+ *
+ * Defines the appearance and behaviour of the repository grid component for different screen sizes.
+ */
+
+.repository-grid {
+    display: grid;
+    grid-gap: 15px;
+    width: 100%;
 }
 
-.repository-card-title {
-    text-decoration: none;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .repository-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .repository-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .repository-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .repository-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .repository-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/**
+ * Repository Card
+ *
+ * Defines the appearance of the repository card with its multiple parts:
+ * - Repository Name
+ * - Repository Description
+ * - Repository Stats and its icons
+ */
+
+.repository-card {
+    min-height: 200px;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 'name' 'description' 'stats';
+    grid-template-rows: auto 1fr auto;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: #ffffff;
+}
+
+.repository-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.repository-name {
+    grid-area: name;
+    word-break: break-all;
+}
+
+h3.repository-name {
+    margin: 0;
+}
+
+.repository-name,
+.stat-count {
+    color: #2b2b2b;
+}
+
+.repository-description {
+    grid-area: description;
+    color: #444444;
+    letter-spacing: 0.7px;
 }
 
 .repository-stats {
-    bottom: 30px;
-    position: absolute;
+    grid-area: stats;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.stat {
+    margin-right: 20px;
+    margin-bottom: 5px;
+    color: #242424;
+}
+
+.stat-count {
+    margin-left: 5px;
+}
+
+.fa-star:hover {
+    color: #ffeb3b;
+}
+
+.fa-exclamation-circle:hover {
+    color: #f59211;
+}
+
+.fa-code-branch:hover {
+    color: #1eb7c2;
+}
+
+.fa-utensils:hover {
+    color: #750dec;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: unset;
 }

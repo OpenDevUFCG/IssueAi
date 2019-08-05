@@ -8,27 +8,44 @@ type RepositoryProps = {
     repository: Repository,
 };
 
+type StatProps = {
+    iconClass: string,
+    statCount: number,
+};
+
+const Stat = ({ iconClass, statCount }: StatProps) => (
+    <div className="stat">
+        <i className={`fas ${iconClass}`} />
+        <span className="stat-count">{statCount}</span>
+    </div>
+);
+
 const RepositoryStats = ({ repository }: RepositoryProps) => (
-    <div bp="grid" className="repository-stats">
-        <i className="fas fa-star" />
-        <span>{repository.stargazersCount}</span>
-        <i className="fas fa-exclamation-circle" />
-        {repository.issuesCount}
-        <i className="fas fa-code-branch" />
-        <span>{repository.pullRequestsCount}</span>
-        <i className="fas fa-utensils" />
-        <span>{repository.forkCount}</span>
+    <div className="repository-stats">
+        <Stat iconClass="fa-star" statCount={repository.stargazersCount} />
+        <Stat
+            iconClass="fa-exclamation-circle"
+            statCount={repository.issuesCount}
+        />
+        <Stat
+            iconClass="fa-code-branch"
+            statCount={repository.pullRequestsCount}
+        />
+        <Stat iconClass="fa-utensils" statCount={repository.forkCount} />
     </div>
 );
 
 const RepositoryCard = ({ repository }: RepositoryProps) => (
-    <div className="repository-card">
-        <a className="repository-card-title" href={repository.url}>
-            <h3>{repository.nameWithOwner}</h3>
-        </a>
-        <p>{repository.description}</p>
-        <RepositoryStats repository={repository} />
-    </div>
+    <a href={repository.url}>
+        <div className="repository-card">
+            <h3 className="repository-name">{repository.nameWithOwner}</h3>
+            <p className="repository-description">{repository.description}</p>
+            <RepositoryStats
+                className="repository-stats"
+                repository={repository}
+            />
+        </div>
+    </a>
 );
 
 export default RepositoryCard;

@@ -16,7 +16,7 @@ const listRepos = (list: Repository[]) =>
     ));
 
 const RepositoryGrid = ({ repositories }: RepositoryListProps) => (
-    <div bp="grid 6@md 4@lg">{listRepos(repositories)}</div>
+    <div className="repository-grid">{listRepos(repositories)}</div>
 );
 
 export default RepositoryGrid;

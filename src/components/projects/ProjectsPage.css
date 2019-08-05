@@ -1,15 +1,46 @@
-.show-more {
-    font-family: 'Inconsolata', monospace;
-    background-color: white;
-    border: solid 1px #828282;
+/**
+ * ProjectsPage.css
+ *
+ * These are the styles for the projects page component.
+ *
+ * Index
+ * - Footer
+ */
+
+/**
+ * Footer
+ *
+ * Defines the appearance of the footer and the show more button.
+ */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.show-more-btn {
+    font-family: 'Lato', monospace;
+    background-color: #21d6a0;
+    border-width: 0;
     border-radius: 5px;
+    width: 200px;
+    max-width: 100%;
+    margin-bottom: 40px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+        0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+        0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
-.show-more:hover {
+.show-more-btn:hover {
     cursor: pointer;
-    color: gray;
+    background-color: #1fb488;
 }
 
-.show-more:focus {
+.show-more-btn:focus {
     outline: none;
+}
+
+.show-more-btn-text {
+    color: #ffffff;
 }
