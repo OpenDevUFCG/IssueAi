@@ -22,9 +22,11 @@ export const HeaderNavLink = ({ to, children }: HeaderLinkProps) => (
     </h3>
 );
 
-export const HeaderWrapperNavLinks = ({ children }: React.Node) => (
-    <div className="wrapper-nav-options">{children}</div>
-);
+export const HeaderWrapperNavLinks = ({
+    children,
+}: {
+    children: React.Node,
+}) => <div className="wrapper-nav-options">{children}</div>;
 
 export const HeaderBrand = ({ to, children }: HeaderLinkProps) => (
     <h1 className="nav-brand">
