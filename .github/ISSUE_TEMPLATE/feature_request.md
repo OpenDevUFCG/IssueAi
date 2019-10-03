@@ -1,23 +1,20 @@
 ---
-name: 🚀 Feature Request
-about: I have a suggestion (and may want to implement it 🙂)!
-title: ''
-labels: ''
-assignees: ''
+name: 🚀 Requisição de melhoria
+about: Peça uma melhoria para esse projeto
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Descrição da melhoria:**
+Descreva a melhoria e suas caracteristicas mais importantes
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Necessidade da melhoria:**
+Descreva o porquê da melhoria ser necessaria
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Como ela pode ser implementada:**
+Dê ideias de como a melhoria pode ser implementada no projeto
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Imagens:**
+Se aplicavel, adicione uma imagem que ajude no entendimento da melhoria
 
-**Related**
-An ids list of related issues
+**Contexto adicional:**
+Adicione qualquer informação adicional que achar necessaria
