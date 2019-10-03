@@ -27,7 +27,7 @@ const RepositoryStats = ({ repository }: RepositoryProps) => (
         <Stat
             iconClass="fa-star"
             statCount={repository.stargazersCount}
-            tooltipMessage="Estrelas"
+            tooltipMessage="Starts"
         />
         <Stat
             iconClass="fa-exclamation-circle"
