@@ -8,11 +8,12 @@
 
 #### O que foi feito?
 
-<!--- Descreve em detalhes como você implementou a solução -->
+<!--- Descreva em detalhes como você implementou a solução -->
 
 #### Como suas mudanças podem ser testadas?
 
 #### Screenshots ou exemplos de uso
+<!-- Se aplicável -->
 
 #### Tipo de mudanças
 
