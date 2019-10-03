@@ -12,7 +12,7 @@ type RepositoryProps = {
 type StatProps = {
     iconClass: string,
     statCount: number,
-    tooltipMessage: String,
+    tooltipMessage: string,
 };
 
 const Stat = ({ iconClass, statCount, tooltipMessage }: StatProps) => (
