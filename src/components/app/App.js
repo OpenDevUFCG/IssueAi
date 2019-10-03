@@ -3,15 +3,23 @@ import * as React from 'react';
 
 import Routes from './Routes';
 import './App.css';
-import { Header, HeaderBrand, HeaderNavLink } from '../commons/header/Header';
+import {
+    Header,
+    HeaderBrand,
+    HeaderNavLink,
+    HeaderWrapperNavLinks,
+} from '../commons/header/Header';
 
 const AppHeader = () => (
     <Header>
         <HeaderBrand to="/">
             <img src="https://i.imgur.com/DZaKNqP.png" alt="issueai-logo" />
         </HeaderBrand>
-        <HeaderNavLink to="/quem-somos">Quem Somos?</HeaderNavLink>
-        <HeaderNavLink to="/contribuir">Contribuir</HeaderNavLink>
+
+        <HeaderWrapperNavLinks>
+            <HeaderNavLink to="/quem-somos">Quem Somos?</HeaderNavLink>
+            <HeaderNavLink to="/contribuir">Contribuir</HeaderNavLink>
+        </HeaderWrapperNavLinks>
     </Header>
 );
 
