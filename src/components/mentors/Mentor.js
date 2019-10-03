@@ -9,7 +9,9 @@ type MentorProps = {
 };
 
 const renderRepositories = (repositoriesList: Repository[]) => {
-    return repositoriesList.map(repository => <li>{repository.name}</li>);
+    return repositoriesList.map(repository => (
+        <li key={repository.nameWithOwner}>{repository.nameWithOwner}</li>
+    ));
 };
 
 const Mentor: FunctionComponent<MentorProps> = ({
