@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import RepositoryCard from './RepositoryCard';
+import Mentor from '../../mentors/Mentor';
 import type { Repository } from './repository';
 
 type RepositoryListProps = {
@@ -16,7 +17,14 @@ const listRepos = (list: Repository[]) =>
     ));
 
 const RepositoryGrid = ({ repositories }: RepositoryListProps) => (
-    <div className="repository-grid">{listRepos(repositories)}</div>
+    <div className="repository-grid">
+        {listRepos(repositories)}
+        <Mentor
+            name="Fanny"
+            imgUrl="https://avatars3.githubusercontent.com/u/14113480?s=460&v=4"
+            repositoriesList={repositories.slice(0, 4)}
+        />
+    </div>
 );
 
 export default RepositoryGrid;
