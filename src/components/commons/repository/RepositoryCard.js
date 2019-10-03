@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import ReactTooltip from 'react-tooltip';
 import type { Repository } from './repository';
 
 import './Repository.css';
@@ -11,10 +12,11 @@ type RepositoryProps = {
 type StatProps = {
     iconClass: string,
     statCount: number,
+    tooltipMessage: string,
 };
 
-const Stat = ({ iconClass, statCount }: StatProps) => (
-    <div className="stat">
+const Stat = ({ iconClass, statCount, tooltipMessage }: StatProps) => (
+    <div className="stat" data-tip={tooltipMessage}>
         <i className={`fas ${iconClass}`} />
         <span className="stat-count">{statCount}</span>
     </div>
@@ -22,16 +24,27 @@ const Stat = ({ iconClass, statCount }: StatProps) => (
 
 const RepositoryStats = ({ repository }: RepositoryProps) => (
     <div className="repository-stats">
-        <Stat iconClass="fa-star" statCount={repository.stargazersCount} />
+        <Stat
+            iconClass="fa-star"
+            statCount={repository.stargazersCount}
+            tooltipMessage="Stars"
+        />
         <Stat
             iconClass="fa-exclamation-circle"
             statCount={repository.issuesCount}
+            tooltipMessage="Issues"
         />
         <Stat
             iconClass="fa-code-branch"
             statCount={repository.pullRequestsCount}
+            tooltipMessage="Pull Requests"
         />
-        <Stat iconClass="fa-utensils" statCount={repository.forkCount} />
+        <Stat
+            iconClass="fa-utensils"
+            statCount={repository.forkCount}
+            tooltipMessage="Forks"
+        />
+        <ReactTooltip />
     </div>
 );
 

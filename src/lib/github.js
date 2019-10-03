@@ -11,7 +11,10 @@ const getAxiosInstance = () => {
 
 const requestGithub = async (after: string | any) => {
     const response = await getAxiosInstance().get('/repositorios', {
-        params: { apos: after },
+        params: {
+            apos: after,
+            quantidade: 6,
+        },
     });
     return response;
 };
