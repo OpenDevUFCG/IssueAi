@@ -9,7 +9,7 @@ const renderRepositories = (repositoriesList: Repository[]) => {
     ));
 };
 
-const MentorCard: FunctionComponent<MentorProps> = ({
+const MentorCard: FunctionComponent<Mentor> = ({
     name,
     imgUrl,
     repositoriesList,
