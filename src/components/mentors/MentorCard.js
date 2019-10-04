@@ -1,6 +1,6 @@
 // @flow
 import type { Repository } from '../commons/repository/repository';
-import type { Mentor } from './mentor';
+import type { Mentor as MentorCardProps } from './mentor';
 import React, { FunctionComponent } from 'react';
 
 const renderRepositories = (repositoriesList: Repository[]) => {
@@ -9,11 +9,7 @@ const renderRepositories = (repositoriesList: Repository[]) => {
     ));
 };
 
-const MentorCard: FunctionComponent<Mentor> = ({
-    name,
-    imgUrl,
-    repositoriesList,
-}) => {
+const MentorCard = ({ name, imgUrl, repositoriesList }: MentorCardProps) => {
     return (
         <div>
             <img src={imgUrl} />

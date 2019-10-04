@@ -1,4 +1,5 @@
 // @flow
+import type { Repository } from './repository';
 
 export type Mentor = {
     name: string,

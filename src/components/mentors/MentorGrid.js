@@ -17,7 +17,7 @@ const renderMentors = (mentorsList: Repository[]) => {
     ));
 };
 
-const MentorGrid: FunctionComponent<MentorProps> = ({ mentorsList }) => {
+const MentorGrid = ({ mentorsList }: MentorGridProps) => {
     return <ul>{renderMentors(mentorsList)}</ul>;
 };
 
