@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = {
     mode: 'development',
     entry: ['react-dev-utils/webpackHotDevClient', './src/index.js'],
+    target: 'node',
     devServer: {
         port: 8000,
         contentBase: __dirname + '/public',

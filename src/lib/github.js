@@ -1,4 +1,5 @@
 // @flow
+import 'dotenv/config';
 import axios from 'axios';
 import projects from './repositories-data';
 
@@ -97,7 +98,8 @@ const getRepositories = async (quantity = 6, after: string | any) => {
     if (lastCursor) lastCursor = lastCursor.replace('=', '');
     if (!lastCursor) lastCursor = after;
 
-    return { repos: repos.map(transformRepository), endCursor };
+    return { repos: repos.map(transformRepository), lastCursor };
 };
+('ih');
 
 export default getRepositories;
