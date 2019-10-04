@@ -2,7 +2,7 @@
 import * as React from 'react';
 import RepositoryCard from './RepositoryCard';
 import MentorCard from '../../mentors/MentorCard';
-import { Repository } from './repository';
+import type { Repository } from './repository';
 
 type RepositoryListProps = {
     repositories: Repository[],
