@@ -1,7 +1,7 @@
 // @flow
 import type { Repository } from '../commons/repository/repository';
 import type { Mentor as MentorCardProps } from './mentor';
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
 const renderRepositories = (repositoriesList: Repository[]) => {
     return repositoriesList.map(repository => (

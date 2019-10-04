@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import type { Mentor } from './Mentor';
 
 import MentorCard from './MentorCard';
