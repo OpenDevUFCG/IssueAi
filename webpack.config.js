@@ -7,12 +7,12 @@ const config = {
     mode: 'development',
     entry: ['react-dev-utils/webpackHotDevClient', './src/index.js'],
     devServer: {
-        port: 8000,
-        contentBase: __dirname + '/docs',
+        port: 8080,
+        contentBase: __dirname + '/public',
         historyApiFallback: true,
     },
     output: {
-        path: path.resolve(__dirname, 'docs'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'bundle.[hash].js',
     },
     module: {
