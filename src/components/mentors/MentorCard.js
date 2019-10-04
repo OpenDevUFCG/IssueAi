@@ -3,18 +3,24 @@ import type { Repository } from '../commons/repository/repository';
 import type { Mentor as MentorCardProps } from './mentor';
 import React from 'react';
 
+import './MentorCard.css';
+
 const renderRepositories = (repositoriesList: Repository[]) => {
     return repositoriesList.map(repository => (
-        <li key={repository.nameWithOwner}>{repository.nameWithOwner}</li>
+        <li className="repository-mentor" key={repository.nameWithOwner}>
+            {repository.nameWithOwner}
+        </li>
     ));
 };
 
 const MentorCard = ({ name, imgUrl, repositoriesList }: MentorCardProps) => {
     return (
-        <div>
-            <img src={imgUrl} />
-            <figcaption>{name}</figcaption>
-            <ul>{renderRepositories(repositoriesList)}</ul>
+        <div className="card-mentor">
+            <img className="img-mentor" src={imgUrl} />
+            <figcaption className="name-mentor">{name}</figcaption>
+            <ul className="repository-list-mentor">
+                {renderRepositories(repositoriesList)}
+            </ul>
         </div>
     );
 };
