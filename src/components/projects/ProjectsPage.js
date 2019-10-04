@@ -23,7 +23,7 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     state = {
         repositoryList: [],
         cursor: null,
-        load: 'false',
+        loading: true,
     };
 
     componentDidMount() {
@@ -31,17 +31,17 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     }
 
     updateRepositoryList = () => {
-        const { cursor, load } = this.state;
-        this.setState({ load: 'true' });
+        const { cursor, loading } = this.state;
+        this.setState({ loading: true });
         getRepositories(cursor).then(({ repos, lastCursor }) => {
             this.setState(updateListState(repos, lastCursor));
-            this.setState({ load: 'false' });
-            console.log(load);
+            this.setState({ loading: false });
+            console.log(loading);
         });
     };
 
     render() {
-        const { repositoryList, load } = this.state;
+        const { repositoryList, loading } = this.state;
         return (
             <div>
                 <RepositoryGrid repositories={repositoryList} />
@@ -50,16 +50,15 @@ export default class ProjectsPage extends React.Component<void, AppState> {
                         type="button"
                         className="show-more-btn"
                         onClick={this.updateRepositoryList}>
-                        {load ? (
-                            <h2 className="show-more-btn-text">{load}</h2>
+                        {loading ? (
+                            <img
+                                src="http://grupoindi.mx/20/wp-content/themes/gindi20/images/loader-thin.gif"
+                                alt="loader"
+                                height="100%"
+                            />
                         ) : (
-                            <h1 className="show-more-btn-text">{load}</h1>
+                            <h2 className="show-more-btn-text">Ver mais</h2>
                         )}
-                        <h2
-                            className="show-more-btn-text"
-                            className={load ? vsdgf : fsdfsd}>
-                            {load}
-                        </h2>
                     </button>
                 </div>
             </div>
