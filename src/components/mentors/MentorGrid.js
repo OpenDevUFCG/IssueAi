@@ -1,8 +1,6 @@
-// @flow
-import type { Repository } from '../commons/repository/repository';
 import React, { FunctionComponent } from 'react';
 
-type MentorProps = {
+type MentorGridProps = {
     name: string,
     imgUrl: string,
     repositoriesList: Repository[],
