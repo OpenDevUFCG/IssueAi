@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Mentor } from './Mentor';
+import type { Mentor } from './mentor';
 
 import MentorCard from './MentorCard';
 
@@ -7,7 +7,7 @@ type MentorGridProps = {
     mentorsList: Mentor[],
 };
 
-const renderMentors = (mentorsList: Repository[]) => {
+const renderMentors = (mentorsList: Mentor[]) => {
     return mentorsList.map(mentor => (
         <MentorCard
             name={mentor.name}
