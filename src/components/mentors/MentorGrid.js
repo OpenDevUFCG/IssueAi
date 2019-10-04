@@ -1,29 +1,24 @@
 import React, { FunctionComponent } from 'react';
+import type { Mentor } from './Mentor';
+
+import MentorCard from './MentorCard';
 
 type MentorGridProps = {
-    name: string,
-    imgUrl: string,
-    repositoriesList: Repository[],
+    mentorsList: Mentor[],
 };
 
-const renderRepositories = (repositoriesList: Repository[]) => {
-    return repositoriesList.map(repository => (
-        <li key={repository.nameWithOwner}>{repository.nameWithOwner}</li>
+const renderMentors = (mentorsList: Repository[]) => {
+    return mentorsList.map(mentor => (
+        <MentorCard
+            name={mentor.name}
+            imgUrl={mentor.imgUrl}
+            repositoriesList={mentor.repositoriesList}
+        />
     ));
 };
 
-const Mentor: FunctionComponent<MentorProps> = ({
-    name,
-    imgUrl,
-    repositoriesList,
-}) => {
-    return (
-        <div>
-            <img src={imgUrl} />
-            <figcaption>{name}</figcaption>
-            <ul>{renderRepositories(repositoriesList)}</ul>
-        </div>
-    );
+const MentorGrid: FunctionComponent<MentorProps> = ({ mentorsList }) => {
+    return <ul>{renderMentors(mentorsList)}</ul>;
 };
 
-export default Mentor;
+export default MentorGrid;
