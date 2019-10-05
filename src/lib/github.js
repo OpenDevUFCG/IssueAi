@@ -4,7 +4,6 @@ import projects from '../../data/repositories';
 
 const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
-    console.log(token);
     const config = {
         baseURL: 'https://api.github.com',
         headers: { Authorization: `Bearer ${token}` },

@@ -17,14 +17,7 @@ const listRepos = (list: Repository[]) =>
     ));
 
 const RepositoryGrid = ({ repositories }: RepositoryListProps) => (
-    <div className="repository-grid">
-        {listRepos(repositories)}
-        <MentorCard
-            name="Fanny"
-            imgUrl="https://avatars3.githubusercontent.com/u/14113480?s=460&v=4"
-            repositoriesList={repositories.slice(0, 4)}
-        />
-    </div>
+    <div className="repository-grid">{listRepos(repositories)}</div>
 );
 
 export default RepositoryGrid;
