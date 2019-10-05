@@ -11,7 +11,7 @@ const getAxiosInstance = () => {
     return axios.create(config);
 };
 
-export const requestGithub = async (query, variables = {}) => {
+export const requestGithub = async (query: string, variables: any = {}) => {
     const params = { query, variables };
     const response = await getAxiosInstance().post('/graphql', params);
     return response.data;
@@ -45,7 +45,11 @@ fragment SearchResultFields on SearchResultItemConnection {
     }
 }`;
 
-const searchRepoQuery = (query, quantity, after = null) => {
+const searchRepoQuery = (
+    query: string,
+    quantity: number,
+    after: string | any = null
+) => {
     if (after) after = `"${after}"`;
     return `{
         search(
@@ -64,7 +68,7 @@ const searchRepoQuery = (query, quantity, after = null) => {
     } ${repoStatsQuery}`;
 };
 
-const transformRepository = githubJson => ({
+const transformRepository = (githubJson: any) => ({
     nameWithOwner: githubJson.nameWithOwner,
     description: githubJson.description,
     url: githubJson.url,
@@ -75,7 +79,7 @@ const transformRepository = githubJson => ({
     stargazersCount: githubJson.stargazers.totalCount,
 });
 
-const getRepositories = async (after: string | any, quantity = 6) => {
+const getRepositories = async (after: string | any, quantity: number = 6) => {
     const repositories = projects.repositories;
 
     let query = repositories.reduce(
