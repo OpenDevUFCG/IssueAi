@@ -1,6 +1,6 @@
 // @flow
 import axios from 'axios';
-import projects from './repositories-data';
+import projects from '../../data/repositories';
 
 const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
