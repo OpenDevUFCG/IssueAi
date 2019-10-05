@@ -1,5 +1,4 @@
 // @flow
-import 'dotenv/config';
 import axios from 'axios';
 import projects from './repositories-data';
 
@@ -77,7 +76,7 @@ const transformRepository = githubJson => ({
     stargazersCount: githubJson.stargazers.totalCount,
 });
 
-const getRepositories = async (quantity = 6, after: string | any) => {
+const getRepositories = async (after: string | any, quantity = 6) => {
     const repositories = projects.repositories;
 
     let query = repositories.reduce(
@@ -95,11 +94,11 @@ const getRepositories = async (quantity = 6, after: string | any) => {
         pageInfo: { endCursor },
     } = response.data.search;
 
+    let lastCursor = endCursor;
     if (lastCursor) lastCursor = lastCursor.replace('=', '');
     if (!lastCursor) lastCursor = after;
 
     return { repos: repos.map(transformRepository), lastCursor };
 };
-('ih');
 
 export default getRepositories;
