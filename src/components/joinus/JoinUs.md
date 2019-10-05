@@ -20,4 +20,4 @@ Para se aprofundar ainda mais no assunto, recomenda-se a leitura do [open source
 
 ### Para adicionar um projeto
 
-Os dados dos repositórios usados para mostrar são recuperados a partir da [API do Laguinho](https://github.com/OpenDevUFCG/laguinho-api). Para adicionar seu repositório aos nossos projetos apoiados, confira o passo-a-passo [aqui](https://github.com/OpenDevUFCG/laguinho-api/blob/master/docs/REPOSITORIES.md#como-contribuir-adicionando-mais-reposit%C3%B3rios).
+Os dados dos repositórios usados para mostrar são recuperados a partir dos arquivos contidos no diretório `data/`. Para adicionar seu repositório aos nossos projetos apoiados, abra uma Pull Request com os dados do seu repositório em `data/repositories.js`, você pode acessá-lo [clicando aqui](https://github.com/OpenDevUFCG/IssueAi/blob/master/data/repositories.js).
