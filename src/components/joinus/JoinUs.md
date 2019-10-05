@@ -10,7 +10,7 @@ Para ajudar ainda mais a atingir tal objetivo, orientamos que todo projeto tenha
 
 -   Um bom README. É importante tentar fazer as pessoas não terem medo da primeira contribuição que é a mais importante de todas, por isso seja claro, simples e amigável, é a chave para atrair contribuições.
 
--   Uma licença Open Source.
+-   Uma [licença](https://choosealicense.com/) Open Source.
 
 -   Código de conduta. É preciso garantir um ambiente acolhedor e respeitável para todos.
 
