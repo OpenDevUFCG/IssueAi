@@ -1,6 +1,7 @@
 // @flow
 import axios from 'axios';
-import projects from '../../data/repositories';
+import projects from '../../data/repositories.json';
+import searchRepoQuery from '../graphql/queries';
 
 const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
@@ -15,58 +16,6 @@ export const requestGithub = async (query: string, variables: any = {}) => {
     const params = { query, variables };
     const response = await getAxiosInstance().post('/graphql', params);
     return response.data;
-};
-
-const repoStatsQuery = `
-fragment SearchResultFields on SearchResultItemConnection {
-    nodes {
-        ... on Repository {
-            nameWithOwner
-            description
-            url
-            forkCount
-            object(expression: "master") {
-                ... on Commit {
-                    history {
-                        totalCount
-                    }
-                }
-            }
-            issues(states: OPEN) {
-                totalCount
-            }
-            pullRequests(states: OPEN) {
-                totalCount
-            }
-            stargazers {
-                totalCount
-            }
-        }
-    }
-}`;
-
-const searchRepoQuery = (
-    query: string,
-    quantity: number,
-    after: string | any = null
-) => {
-    let customAfter = after;
-    if (after) customAfter = `"${after}"`;
-    return `{
-        search(
-            first: ${quantity},
-            after: ${customAfter},
-            query: "${query}",
-            type: REPOSITORY
-        ) {
-            ...SearchResultFields
-            repositoryCount
-            pageInfo {
-                endCursor
-                hasNextPage
-            }
-        }
-    } ${repoStatsQuery}`;
 };
 
 const transformRepository = (githubJson: any) => ({
