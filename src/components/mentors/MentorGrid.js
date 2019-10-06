@@ -8,18 +8,17 @@ type MentorGridProps = {
     mentorsList: Mentor[],
 };
 
-const renderMentors = (mentorsList: Mentor[]) => {
-    return mentorsList.map(mentor => (
+const renderMentors = (mentorsList: Mentor[]) =>
+    mentorsList.map(mentor => (
         <MentorCard
             name={mentor.name}
             imgUrl={mentor.imgUrl}
             repositoriesList={mentor.repositoriesList}
         />
     ));
-};
 
-const MentorGrid = ({ mentorsList }: MentorGridProps) => {
-    return <ul>{renderMentors(mentorsList)}</ul>;
-};
+const MentorGrid = ({ mentorsList }: MentorGridProps) => (
+    <ul>{renderMentors(mentorsList)}</ul>
+);
 
 export default MentorGrid;

@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import RepositoryCard from './RepositoryCard';
-import MentorCard from '../../mentors/MentorCard';
 import type { Repository } from './repository';
 
 type RepositoryListProps = {

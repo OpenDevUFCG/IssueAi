@@ -50,11 +50,12 @@ const searchRepoQuery = (
     quantity: number,
     after: string | any = null
 ) => {
-    if (after) after = `"${after}"`;
+    let customAfter = after;
+    if (after) customAfter = `"${after}"`;
     return `{
         search(
             first: ${quantity},
-            after: ${after},
+            after: ${customAfter},
             query: "${query}",
             type: REPOSITORY
         ) {
@@ -80,7 +81,7 @@ const transformRepository = (githubJson: any) => ({
 });
 
 const getRepositories = async (after: string | any, quantity: number = 6) => {
-    const repositories = projects.repositories;
+    const { repositories } = projects;
 
     let query = repositories.reduce(
         (accum, current) => ` ${accum} repo:${current.name}`,
