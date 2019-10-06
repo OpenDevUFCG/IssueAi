@@ -1,0 +1,17 @@
+{
+    "name": "IssueAi",
+    "short_name": "IssueAi",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#000000",
+    "background_color": "#FFF",
+    "description": "Plataforma para projetos open source de Computação@UFCG.",
+    "icons": [
+        {
+            "src": "/icons/issueai_icon.png",
+            "type": "image/png",
+            "sizes": "192x192 512x512"
+        }
+    ]
+}
