@@ -49,7 +49,7 @@ const RepositoryStats = ({ repository }: RepositoryProps) => (
 );
 
 const RepositoryCard = ({ repository }: RepositoryProps) => (
-    <a href={repository.url}>
+    <a href={repository.url} target="_blank" rel="noopener noreferrer">
         <div className="repository-card">
             <h3 className="repository-name">{repository.nameWithOwner}</h3>
             <p className="repository-description">{repository.description}</p>
