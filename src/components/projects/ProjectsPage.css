@@ -19,6 +19,10 @@
     margin-top: 40px;
 }
 
+.loader {
+    content: url('../../../assets/loader.gif');
+}
+
 .show-more-btn {
     font-family: 'Lato', monospace;
     background-color: #21d6a0;
