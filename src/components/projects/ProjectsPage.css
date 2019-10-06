@@ -21,6 +21,7 @@
 
 .loader {
     content: url('../../../assets/loader.gif');
+    height: 100%;
 }
 
 .show-more-btn {
