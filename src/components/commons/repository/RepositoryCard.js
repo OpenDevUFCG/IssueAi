@@ -51,7 +51,14 @@ const RepositoryStats = ({ repository }: RepositoryProps) => (
 const RepositoryCard = ({ repository }: RepositoryProps) => (
     <a href={repository.url} target="_blank" rel="noopener noreferrer">
         <div className="repository-card">
-            <h3 className="repository-name">{repository.nameWithOwner}</h3>
+            <header className="repository-header">
+                <h2 className="repository-name">
+                    {repository.nameWithOwner.split('/')[1]}
+                </h2>
+                <h6 className="repository-owner">
+                    {repository.nameWithOwner.split('/')[0]}
+                </h6>
+            </header>
             <p className="repository-description">{repository.description}</p>
             <RepositoryStats
                 className="repository-stats"
