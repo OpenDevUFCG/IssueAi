@@ -48,24 +48,24 @@ const RepositoryStats = ({ repository }: RepositoryProps) => (
     </div>
 );
 
-const RepositoryCard = ({ repository }: RepositoryProps) => (
-    <a href={repository.url} target="_blank" rel="noopener noreferrer">
-        <div className="repository-card">
-            <header className="repository-header">
-                <h2 className="repository-name">
-                    {repository.nameWithOwner.split('/')[1]}
-                </h2>
-                <h6 className="repository-owner">
-                    {repository.nameWithOwner.split('/')[0]}
-                </h6>
-            </header>
-            <p className="repository-description">{repository.description}</p>
-            <RepositoryStats
-                className="repository-stats"
-                repository={repository}
-            />
-        </div>
-    </a>
-);
-
+const RepositoryCard = ({ repository }: RepositoryProps) => {
+    const [owner, repositoryName] = repository.nameWithOwner.split('/');
+    return (
+        <a href={repository.url} target="_blank" rel="noopener noreferrer">
+            <div className="repository-card">
+                <header className="repository-header">
+                    <h2 className="repository-name">{repositoryName}</h2>
+                    <h6 className="repository-owner">{owner}</h6>
+                </header>
+                <p className="repository-description">
+                    {repository.description}
+                </p>
+                <RepositoryStats
+                    className="repository-stats"
+                    repository={repository}
+                />
+            </div>
+        </a>
+    );
+};
 export default RepositoryCard;
