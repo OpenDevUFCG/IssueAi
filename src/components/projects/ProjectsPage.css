@@ -20,8 +20,10 @@
 }
 
 .loader {
-    content: url('../../../assets/loader.gif');
+    display: block;
+    margin: auto;
     height: 100%;
+    content: url('../../../assets/loader.gif');
 }
 
 .show-more-btn {
