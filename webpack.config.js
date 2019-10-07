@@ -24,7 +24,7 @@ const config = {
             },
             {
                 test: /\.(ttf|eot|svg|woff|woff2|png|gif)$/,
-                use: 'url-loader?limit=10000',
+                use: 'url-loader?limit=25000',
             },
             {
                 test: /\.(sa|sc|c)ss$/,

@@ -19,12 +19,20 @@
     margin-top: 40px;
 }
 
+.loader {
+    display: block;
+    margin: auto;
+    height: 100%;
+    content: url('../../../assets/loader.gif');
+}
+
 .show-more-btn {
     font-family: 'Lato', monospace;
     background-color: #21d6a0;
     border-width: 0;
     border-radius: 5px;
     width: 200px;
+    height: 50px;
     max-width: 100%;
     margin-bottom: 40px;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
@@ -43,4 +51,7 @@
 
 .show-more-btn-text {
     color: #ffffff;
+}
+.show-more-btn-text {
+    margin: 0 auto;
 }

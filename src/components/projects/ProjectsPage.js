@@ -10,6 +10,7 @@ import './ProjectsPage.css';
 type AppState = {
     repositoryList: Repository[],
     cursor: string | null,
+    loading: boolean,
 };
 
 function updateListState(data: Repository[], cursor) {
@@ -23,6 +24,7 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     state = {
         repositoryList: [],
         cursor: null,
+        loading: true,
     };
 
     componentDidMount() {
@@ -31,13 +33,15 @@ export default class ProjectsPage extends React.Component<void, AppState> {
 
     updateRepositoryList = () => {
         const { cursor } = this.state;
+        this.setState({ loading: true });
         getRepositories(cursor).then(({ repos, lastCursor }) => {
             this.setState(updateListState(repos, lastCursor));
+            this.setState({ loading: false });
         });
     };
 
     render() {
-        const { repositoryList } = this.state;
+        const { repositoryList, loading } = this.state;
         return (
             <div>
                 <RepositoryGrid repositories={repositoryList} />
@@ -46,7 +50,11 @@ export default class ProjectsPage extends React.Component<void, AppState> {
                         type="button"
                         className="show-more-btn"
                         onClick={this.updateRepositoryList}>
-                        <h2 className="show-more-btn-text">Ver mais</h2>
+                        {loading ? (
+                            <img className="loader" alt="loader" />
+                        ) : (
+                            <h2 className="show-more-btn-text">Ver mais</h2>
+                        )}
                     </button>
                 </div>
             </div>
