@@ -10,6 +10,7 @@ import './ProjectsPage.css';
 type AppState = {
     repositoryList: Repository[],
     cursor: string | null,
+    loading: boolean,
 };
 
 function updateListState(data: Repository[], cursor) {
