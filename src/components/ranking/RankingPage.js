@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import Contributor from './Contributor';
 import type { ContributorProps } from './contributor';
