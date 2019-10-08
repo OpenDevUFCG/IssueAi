@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import type { Contributor } from './contributor';
+import type { ContributorProps } from './contributor';
 
-const Contributor = ({ username, imgUrl, mergedPrs }: Contributor) => {
+const Contributor = ({ username, imgUrl, mergedPrs }: ContributorProps) => {
     return (
         <tr>
             <img src={imgUrl} alt={username} />

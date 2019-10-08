@@ -3,10 +3,14 @@ import React from 'react';
 import Contributor from './Contributor';
 import type { ContributorProps } from './contributor';
 
+type RankingProps = {
+    contributors: ContributorProps[],
+};
+
 const renderBody = (contributors: ContributorProps[]) =>
     contributors.map(contributor => <Contributor {...contributor} />);
 
-const RankingPage = ({ contributors }: ContributorProps[]) => {
+const RankingPage = ({ contributors }: RankingProps[]) => {
     return (
         <table>
             <thead>
