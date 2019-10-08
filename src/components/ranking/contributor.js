@@ -1,7 +1,7 @@
 // @flow
 
-export type Contributor = {
+export type ContributorProps = {
     username: string,
     imgUrl: string,
-    mergedPRs: number,
+    mergedPrs: number,
 };
