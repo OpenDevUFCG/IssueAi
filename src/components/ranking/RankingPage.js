@@ -7,7 +7,7 @@ type RankingProps = {
     contributors: ContributorProps[],
 };
 
-const renderBody = (contributors: RankingProps) =>
+const renderBody = (contributors: ContributorProps[]) =>
     contributors.map(contributor => <Contributor {...contributor} />);
 
 const RankingPage = ({ contributors }: RankingProps) => {
