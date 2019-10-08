@@ -1,0 +1,28 @@
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+ul {
+    list-style: none;
+}
+
+.membro {
+    display: flex;
+    margin: 8px;
+    transition: transform 0.2s ease;
+}
+
+.membro:hover {
+    transform: scale(1.2);
+}
+
+.membro-imagem {
+    align-self: center;
+    object-fit: cover;
+    max-width: 130px;
+    border-radius: 50%;
+}
+.membro-name {
+    align-self: bottom;
+}

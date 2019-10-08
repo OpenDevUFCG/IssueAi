@@ -2,11 +2,16 @@
 
 import React from 'react';
 import type { MemberProps } from './member';
+import './teamPage.css';
 
 const Member = ({ nome, urlGithub }: MemberProps) => (
-    <div>
+    <div className="membro">
         <a href={urlGithub}>
-            <img src={`${urlGithub}.png`} alt={urlGithub} />
+            <img
+                className="membro-imagem"
+                src={`${urlGithub}.png`}
+                alt={urlGithub}
+            />
         </a>
         <figcaption>{nome}</figcaption>
     </div>
