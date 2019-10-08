@@ -7,22 +7,23 @@ ul {
     list-style: none;
 }
 
-.membro {
+.member {
     display: flex;
+    flex-direction: column;
     margin: 8px;
     transition: transform 0.2s ease;
 }
 
-.membro:hover {
+.member:hover {
     transform: scale(1.2);
 }
 
-.membro-imagem {
+.member-image {
     align-self: center;
     object-fit: cover;
     max-width: 130px;
     border-radius: 50%;
 }
-.membro-name {
-    align-self: bottom;
+.member-name {
+    align-self: center;
 }

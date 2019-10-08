@@ -5,15 +5,15 @@ import type { MemberProps } from './member';
 import './teamPage.css';
 
 const Member = ({ nome, urlGithub }: MemberProps) => (
-    <div className="membro">
+    <div className="member">
         <a href={urlGithub}>
             <img
-                className="membro-imagem"
+                className="member-image"
                 src={`${urlGithub}.png`}
                 alt={urlGithub}
             />
         </a>
-        <figcaption>{nome}</figcaption>
+        <figcaption className="member-name">{nome}</figcaption>
     </div>
 );
 
