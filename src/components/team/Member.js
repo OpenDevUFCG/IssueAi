@@ -4,7 +4,7 @@ import React from 'react';
 import type { MemberProps } from './member';
 import './teamPage.css';
 
-const Member = ({ nome, urlGithub }: MemberProps) => (
+const Member = ({ name, urlGithub }: MemberProps) => (
     <div className="member">
         <a href={urlGithub}>
             <img
@@ -13,7 +13,7 @@ const Member = ({ nome, urlGithub }: MemberProps) => (
                 alt={urlGithub}
             />
         </a>
-        <figcaption className="member-name">{nome}</figcaption>
+        <figcaption className="member-name">{name}</figcaption>
     </div>
 );
 
