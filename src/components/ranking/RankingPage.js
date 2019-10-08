@@ -7,10 +7,10 @@ type RankingProps = {
     contributors: ContributorProps[],
 };
 
-const renderBody = (contributors: ContributorProps[]) =>
+const renderBody = (contributors: RankingProps) =>
     contributors.map(contributor => <Contributor {...contributor} />);
 
-const RankingPage = ({ contributors }: RankingProps[]) => {
+const RankingPage = ({ contributors }: RankingProps) => {
     return (
         <table>
             <thead>
