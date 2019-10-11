@@ -7,7 +7,7 @@ import './index.css';
 import 'blueprint-css/dist/blueprint.min.css';
 
 const mountNode = document.getElementById('app');
-console.log(process.env.GITHUB_TOKEN);
+
 ReactDOM.render(
     <BrowserRouter>
         <App />
