@@ -1,4 +1,4 @@
-# IssueAi [![chat on Discord](https://img.shields.io/discord/558293573494112257.svg?logo=discord)](https://discordapp.com/invite/vFFGGEE)
+# IssueAi [![Netlify Status](https://api.netlify.com/api/v1/badges/8042d734-c1a7-42a9-91a9-67e4222dddfd/deploy-status)](https://app.netlify.com/sites/issueai/deploys) [![chat on Discord](https://img.shields.io/discord/558293573494112257.svg?logo=discord)](https://discordapp.com/invite/vFFGGEE)
 
 ![IssueAi Logo](https://imgur.com/iLumm5K.png)
 
