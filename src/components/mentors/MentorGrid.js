@@ -17,7 +17,7 @@ const renderMentors = (mentorsList: Mentor[]) => {
 };
 
 const MentorGrid = () => (
-    <ul className="mentors">{renderMentors(getMentors())}</ul>
+    <div className="mentor-grid">{renderMentors(getMentors())}</div>
 );
 
 export default MentorGrid;
