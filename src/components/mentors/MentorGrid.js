@@ -3,7 +3,7 @@ import React from 'react';
 import type { Mentor } from './mentor';
 
 import MentorCard from './MentorCard';
-import getMentors from '../../../data/data';
+import getMentors from '../../../data';
 import './Mentor.css';
 
 const renderMentors = (mentorsList: Mentor[]) => {
