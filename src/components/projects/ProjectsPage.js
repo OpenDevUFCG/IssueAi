@@ -11,12 +11,14 @@ type AppState = {
     repositoryList: Repository[],
     cursor: string | null,
     loading: boolean,
+    emptyRequest: boolean,
 };
 
 function updateListState(data: Repository[], cursor) {
     return (state: AppState) => ({
         repositoryList: [...state.repositoryList, ...data],
         cursor,
+        emptyRequest: !data.length,
     });
 }
 
@@ -25,6 +27,7 @@ export default class ProjectsPage extends React.Component<void, AppState> {
         repositoryList: [],
         cursor: null,
         loading: true,
+        emptyRequest: false,
     };
 
     componentDidMount() {
@@ -41,21 +44,23 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     };
 
     render() {
-        const { repositoryList, loading } = this.state;
+        const { emptyRequest, repositoryList, loading } = this.state;
         return (
             <div>
                 <RepositoryGrid repositories={repositoryList} />
                 <div className="footer">
-                    <button
-                        type="button"
-                        className="show-more-btn"
-                        onClick={this.updateRepositoryList}>
-                        {loading ? (
-                            <img className="loader" alt="loader" />
-                        ) : (
-                            <h2 className="show-more-btn-text">Ver mais</h2>
-                        )}
-                    </button>
+                    {!emptyRequest && (
+                        <button
+                            type="button"
+                            className="show-more-btn"
+                            onClick={this.updateRepositoryList}>
+                            {loading ? (
+                                <img className="loader" alt="loader" />
+                            ) : (
+                                <h2 className="show-more-btn-text">Ver mais</h2>
+                            )}
+                        </button>
+                    )}
                 </div>
             </div>
         );
