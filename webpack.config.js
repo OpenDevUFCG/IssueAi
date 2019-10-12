@@ -1,5 +1,5 @@
-const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -54,7 +54,7 @@ const config = {
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
         }),
-        new webpack.EnvironmentPlugin({ ...process.env }),
+        new Dotenv(),
     ],
 };
 
