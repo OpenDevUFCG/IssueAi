@@ -3,39 +3,101 @@
     "repositories": [
         {
             "name": "calluswhatyouwant/spotify-web-sdk",
-            "difficulty": "avancado"
+            "difficulty": "avancado",
+            "mentors": [
+                {
+                    "name": "Jose Robson",
+                    "imgUrl": "https://avatars1.githubusercontent.com/u/20714148?s=460&v=4"
+                },
+                {
+                    "name": "Jose Renan",
+                    "imgUrl": "https://avatars3.githubusercontent.com/u/11728746?s=460&v=4"
+                }
+            ]
         },
         {
             "name": "calluswhatyouwant/musicritic",
-            "difficulty": "avancado"
+            "difficulty": "avancado",
+            "mentors": [
+                {
+                    "name": "Jose Robson",
+                    "imgUrl": "https://avatars1.githubusercontent.com/u/20714148?s=460&v=4"
+                }
+            ]
         },
         {
             "name": "paulojbleitao/pokedex",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Paulo Leitao",
+                    "imgUrl": "https://avatars3.githubusercontent.com/u/25506387?s=460&v=4"
+                },
+                {
+                    "name": "Jose Robson",
+                    "imgUrl": "https://avatars1.githubusercontent.com/u/20714148?s=460&v=4"
+                }
+            ]
         },
         {
             "name": "SubmiBot/SubmiBot",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Hericles Emanuel",
+                    "imgUrl": "https://avatars1.githubusercontent.com/u/30700596?s=460&v=4"
+                }
+            ]
         },
         {
             "name": "marianabianca/pomodoro",
-            "difficulty": "iniciante"
+            "difficulty": "iniciante",
+            "mentors": [
+                {
+                    "name": "Mariana Bianca",
+                    "imgUrl": "https://avatars0.githubusercontent.com/u/23522997?s=460&v=4"
+                }
+            ]
         },
         {
             "name": "P-Sync/P-Sync",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Hericles Emanuel",
+                    "imgUrl": "https://avatars1.githubusercontent.com/u/30700596?s=460&v=4"
+                }
+            ]
         },
         {
             "name": "FelipeMarinho97/iskra-webkit-greeter",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Felipe Marinho",
+                    "imgUrl": "https://avatars2.githubusercontent.com/u/20695061?s=460&v=4"
+                }
+            ]
         },
         {
             "name": "Rickecr/PyGraph",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Ricke",
+                    "imgUrl": "https://avatars1.githubusercontent.com/u/25726888?s=400&v=4"
+                }
+            ]
         },
         {
             "name": "Rickecr/CamaraDosDeputados",
-            "difficulty": "iniciante"
+            "difficulty": "iniciante",
+            "mentors": [
+                {
+                    "name": "Ricke",
+                    "imgUrl": "https://avatars1.githubusercontent.com/u/25726888?s=400&v=4"
+                }
+            ]
         }
     ]
 }

@@ -4,12 +4,14 @@ import { Switch, Route } from 'react-router-dom';
 import ProjectsPage from '../projects/ProjectsPage';
 import JoinUsPage from '../joinus/JoinUsPage';
 import TeamPage from '../team/TeamPage';
+import MentorGrid from '../mentors/MentorGrid';
 
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={ProjectsPage} />
         <Route path="/quem-somos" render={TeamPage} />
         <Route path="/junte-se" component={JoinUsPage} />
+        <Route path="/mentores" component={MentorGrid} />
     </Switch>
 );
 
