@@ -36,6 +36,10 @@
         {
             "name": "Rickecr/CamaraDosDeputados",
             "difficulty": "iniciante"
+        },
+        {
+            "name": "matheusps/clssx",
+            "difficulty": "iniciante"
         }
     ]
 }
