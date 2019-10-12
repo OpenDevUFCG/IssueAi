@@ -54,3 +54,8 @@
     visibility: visible;
     opacity: 1;
 }
+
+.mentors {
+    display: flex;
+    flex-wrap: wrap;
+}
