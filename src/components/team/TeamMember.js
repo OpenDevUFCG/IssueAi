@@ -4,7 +4,7 @@ import React from 'react';
 import type { MemberProps } from './member';
 import './teamPage.css';
 
-const Member = ({ name, urlGithub }: MemberProps) => (
+const TeamMember = ({ name, urlGithub }: MemberProps) => (
     <div className="member">
         <a href={urlGithub}>
             <img
@@ -17,4 +17,4 @@ const Member = ({ name, urlGithub }: MemberProps) => (
     </div>
 );
 
-export default Member;
+export default TeamMember;
