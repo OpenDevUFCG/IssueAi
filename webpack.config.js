@@ -54,7 +54,9 @@ const config = {
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
         }),
-        new Dotenv(),
+        new Dotenv({
+            systemvars: true,
+        }),
     ],
 };
 
