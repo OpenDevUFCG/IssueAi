@@ -1,14 +1,14 @@
 // @flow
 
 import React from 'react';
-import Member from './Member';
+import TeamMember from './TeamMember';
 import members from '../../../data/equipe.json';
 import './teamPage.css';
 
 const renderMembers = () =>
     members.map(member => (
         <li>
-            <Member {...member} />
+            <TeamMember {...member} />
         </li>
     ));
 
