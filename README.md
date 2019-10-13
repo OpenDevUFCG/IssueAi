@@ -8,7 +8,6 @@
 
 Sinta-se a vontade para discutir por meio de issues, aqui é um espaço aberto para compartilhar ideias sobre projetos open source da UFCG. Abra uma Issue e respeite o código de conduta.
 
-
 ## Objetivo
 
 O Issue Ai tenta criar um espaço de visibilidade para os projetos open source criado por alunos da UFCG@Campus Campina Grande. Nossa promessa é de um espaço que promove a ajuda e colaboração de alunos para alunos. Procuramos também promover a cultura open source por meio desses projetos, valorizamos projetos que facilitem a contribuição e a chegada de iniciantes que procuram aprender, para isso orientamos que todo projeto tenha:
@@ -43,13 +42,25 @@ Incentivamos muito a comunicação por Issues, mas claro que não queremos abusa
 
 Para rodar o projeto você precisa ter o [node](https://nodejs.org/en/) e o [yarn](https://yarnpkg.com/en/docs/install) instalado.
 
-Para instalar todas as dependências, use:
+### Adicione uma chave pessoal do github
+
+Crie uma cópia do arquivo `.env.example` e a nomeie `.env`
+
+Crie uma chave pessoal no github [seguindo esses passos até o 9](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line). Só é necessária a permissão de leitura de repositórios - `public_repo`.
+
+Copie e cole a chave gerada no seu novo arquivo `.env`:
+
+```bash
+GITHUB_TOKEN=suaTokenAqui
+```
+
+### Instalar dependêndencias
 
 ```bash
 yarn
 ```
 
-Após isso, para rodar o ambiente de desenvolvimento use:
+### Rodar o site em desenvolvimento
 
 ```bash
 yarn start
