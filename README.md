@@ -8,7 +8,6 @@
 
 Sinta-se a vontade para discutir por meio de issues, aqui é um espaço aberto para compartilhar ideias sobre projetos open source da UFCG. Abra uma Issue e respeite o código de conduta.
 
-
 ## Objetivo
 
 O Issue Ai tenta criar um espaço de visibilidade para os projetos open source criado por alunos da UFCG@Campus Campina Grande. Nossa promessa é de um espaço que promove a ajuda e colaboração de alunos para alunos. Procuramos também promover a cultura open source por meio desses projetos, valorizamos projetos que facilitem a contribuição e a chegada de iniciantes que procuram aprender, para isso orientamos que todo projeto tenha:
@@ -38,22 +37,6 @@ Incentivamos muito a comunicação por Issues, mas claro que não queremos abusa
 -   Não compartilhe informações pessoais de maneira irresponsável.
 
 -   Seja legal :)
-
-## Uso
-
-Para rodar o projeto você precisa ter o [node](https://nodejs.org/en/) e o [yarn](https://yarnpkg.com/en/docs/install) instalado.
-
-Para instalar todas as dependências, use:
-
-```bash
-yarn
-```
-
-Após isso, para rodar o ambiente de desenvolvimento use:
-
-```bash
-yarn start
-```
 
 ## Para Adicionar um Projeto
 
