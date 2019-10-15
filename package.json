@@ -7,8 +7,8 @@
     "license": "MIT",
     "scripts": {
         "test": "yarn flow",
-        "build": "webpack",
-        "start": "webpack-dev-server --progress --colors --inline --hot --host 0.0.0.0",
+        "build": "webpack --config ./webpack/webpack.prod.js",
+        "start": "webpack-dev-server --config ./webpack/webpack.dev.js --progress --colors --inline --hot --host 0.0.0.0",
         "lint": "eslint .",
         "flow": "flow"
     },
@@ -46,7 +46,8 @@
         "url-loader": "^2.2.0",
         "webpack": "^4.24.0",
         "webpack-cli": "^3.1.2",
-        "webpack-dev-server": "^3.1.11"
+        "webpack-dev-server": "^3.1.11",
+        "webpack-merge": "^4.2.2"
     },
     "dependencies": {
         "axios": "^0.18.0",
