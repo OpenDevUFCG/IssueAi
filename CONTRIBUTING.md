@@ -12,6 +12,18 @@ Para ajudar no desenvolvimento da nossa plataforma, você precisa ter `yarn` e `
 
 Clone esse repositório, entre na pasta do `IssueAi` na sua linha de comando, e siga os passos:
 
+### Adicione uma chave pessoal do github
+
+Crie uma cópia do arquivo `.env.example` e a nomeie `.env`
+
+Crie uma chave pessoal no github [seguindo esses passos até o 9](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line). Só é necessária a permissão de leitura de repositórios - `public_repo`.
+
+Copie e cole a chave gerada no seu novo arquivo `.env`:
+
+```bash
+GITHUB_TOKEN=suaTokenAqui
+```
+
 ### Instalar dependêndencias
 
 ```sh
