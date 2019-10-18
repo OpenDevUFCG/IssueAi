@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 
-import { ApolloClient, ApolloLink } from 'apollo-boost';
+import { ApolloClient, ApolloLink, InMemoryCache } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { createHttpLink } from 'apollo-link-http';
 import Routes from './Routes';
@@ -34,6 +34,7 @@ const authLink = new ApolloLink((operation, forward) => {
 
 const client = new ApolloClient({
     link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
 });
 
 const AppHeader = () => (
