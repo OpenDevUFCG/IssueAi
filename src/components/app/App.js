@@ -1,6 +1,8 @@
 // @flow
 import * as React from 'react';
 
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 import Routes from './Routes';
 import './App.css';
 import {
@@ -9,6 +11,10 @@ import {
     HeaderNavLink,
     HeaderWrapperNavLinks,
 } from '../commons/header/Header';
+
+const client = new ApolloClient({
+    uri: 'https://api.github.com',
+});
 
 const AppHeader = () => (
     <Header>
@@ -24,14 +30,14 @@ const AppHeader = () => (
 );
 
 const App = () => (
-    <div>
+    <ApolloProvider client={client}>
         <div className="header">
             <AppHeader />
         </div>
         <div className="content">
             <Routes />
         </div>
-    </div>
+    </ApolloProvider>
 );
 
 export default App;
