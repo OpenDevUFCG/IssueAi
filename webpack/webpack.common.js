@@ -1,18 +1,16 @@
 const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const parentDir = path.join(__dirname, '../');
+
 const config = {
     mode: 'development',
-    entry: ['react-dev-utils/webpackHotDevClient', './src/index.js'],
-    devServer: {
-        port: 8000,
-        contentBase: __dirname + '/public',
-        historyApiFallback: true,
-    },
+    entry: [`${parentDir}src/index.js`],
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: `${parentDir}public/`,
         filename: 'bundle.[hash].js',
     },
     module: {
@@ -48,13 +46,14 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: __dirname + '/src/index.html',
-            hash: true,
+            template: `${parentDir}src/index.html`,
         }),
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
         }),
-        new webpack.EnvironmentPlugin({ ...process.env }),
+        new Dotenv({
+            systemvars: true,
+        }),
     ],
 };
 

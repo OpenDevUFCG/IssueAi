@@ -98,6 +98,16 @@
                     "imgUrl": "https://github.com/Rickecr.png"
                 }
             ]
+        },
+        {
+            "name": "matheusps/clssx",
+            "difficulty": "iniciante",
+            "mentors": [
+                {
+                    "name": "Matheusps",
+                    "imgUrl": "https://github.com/matheusps.png"
+                }
+            ]
         }
     ]
 }
