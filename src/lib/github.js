@@ -1,6 +1,7 @@
 // @flow
 import axios from 'axios';
 import projects from '../../data/repositories.json';
+import contributors from '../../data/contributors.json';
 import searchRepoQuery from '../graphql/queries';
 
 const getAxiosInstance = () => {
@@ -53,5 +54,7 @@ const getRepositories = async (after: string | any, quantity: number = 6) => {
 
     return { repos: repos.map(transformRepository), lastCursor };
 };
+
+const getContributors = async () => {};
 
 export default getRepositories;
