@@ -8,6 +8,7 @@ query searchRepo($quantity: Number, $after: String, $query: string) {
         }
     }
 }
+
 fragment SearchResultFields on SearchResultItemConnection {
     nodes {
         ... on Repository {

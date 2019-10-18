@@ -1,8 +1,9 @@
 // @flow
 import * as React from 'react';
 
-import ApolloClient from 'apollo-boost';
+import { ApolloClient, ApolloLink } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import { createHttpLink } from 'apollo-link-http';
 import Routes from './Routes';
 import './App.css';
 import {
@@ -12,8 +13,27 @@ import {
     HeaderWrapperNavLinks,
 } from '../commons/header/Header';
 
+const httpLink = createHttpLink({
+    uri: 'https://api.github.com/graphql',
+});
+
+const authLink = new ApolloLink((operation, forward) => {
+    // Retrieve the authorization token from env variable
+    const token = process.env.GITHUB_TOKEN || '';
+
+    // Use the setContext method to set the HTTP headers.
+    operation.setContext({
+        headers: {
+            authorization: token ? `Bearer ${token}` : '',
+        },
+    });
+
+    // Call the next link in the middleware chain.
+    return forward(operation);
+});
+
 const client = new ApolloClient({
-    uri: 'https://api.github.com',
+    link: authLink.concat(httpLink),
 });
 
 const AppHeader = () => (
