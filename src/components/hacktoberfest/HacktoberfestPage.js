@@ -5,7 +5,7 @@ const HacktoberfestPage = () => {
     const aa = '';
     return (
         <>
-            <h1 style="text-align: center">Hacktoberfest 2019</h1>
+            <h1 style={{ textAlign: 'center' }}>Hacktoberfest 2019</h1>
             <Ranking />
         </>
     );
