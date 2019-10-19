@@ -7,17 +7,34 @@
         "name": "Vinicius Barbosa",
         "github_user": "viniciusbds"
     },
+    { "name": "Helen Cavalcanti",
+      "github_user": "helenbc"
+    },
+    {
+         "name": "Pedro Lima",
+        "github_user": "pedrosqra"
+    },{
+        "name": "Maely Brandão",
+        "github_user": "mxlysb"
+    },
     {
         "name": "Antonio Bertino",
         "github_user": "AntonioNtV"
     },
     {
         "name": "Rodrigo Eloy",
-        "github_user": "rodrigoEC"
+        "github_user": "rodrigoEC"},
+  {
+        "name": "Matheus Santana",
+        "github_user": "mathsantana"
+    },
+    {
+      "name": "Rodrigo Eloy",
+      "github_user": "rodrigoEC"
     },
     {
         "name": "Arthur Cavalcante",
-        "github_user: "arthurcavalcant_"
+        "github_user": "arthurcavalcant_"
     },
     {
         "name": "Bernard Odon",
@@ -30,5 +47,12 @@
     {
         "name": "Andrielly Lucena",
         "github_user": "andriellyll"
+    },{
+        "name": "Dayvid Daniel",
+        "github_user": "dayvidds"
+    },
+    {
+        "name": "Ana Beatriz Truta",
+        "github_user": "beatriztruta"
     }
 ]
