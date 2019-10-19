@@ -112,6 +112,10 @@
         {
             "name": "Guardians-DSC/horarios-ufcg",
             "difficulty": "intermediario"
+        },
+        {
+            "name": "Guardians-DSC/horarios-ufcg-api",
+            "difficulty": "intermediario"
         }
     ]
 }
