@@ -1,12 +1,16 @@
 
 [{
-		"name": "Douglas lima",
-		"github_user": "douglaslimaxx"
-	},
- 
-    {
+    "name": "Douglas lima",
+    "github_user": "douglaslimaxx"
+  },
+  {
+     "name": "Leonardo Veiga",
+     "github_user": "leleoveiga"
+  },
+  {  
 		"name": "Pedro Donato",
-		"github_user": "PedroDCN"},
+		"github_user": "PedroDCN"
+  },
 	{
 		"name": "Vinicius Barbosa",
 		"github_user": "viniciusbds"
