@@ -116,6 +116,16 @@
         {
             "name": "Guardians-DSC/horarios-ufcg-api",
             "difficulty": "intermediario"
+        },
+        {
+            "name": "juliafealves/deciframe-pwa",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "juliafealves",
+                    "imgUrl": "https://github.com/juliafealves.png"
+                }
+            ]
         }
     ]
 }
