@@ -3,6 +3,7 @@ import { pluck } from 'ramda';
 import { useQuery } from '@apollo/react-hooks';
 import RankingQuery from '../../graphql/ranking.graphql';
 import projects from '../../../data/repositories.json';
+import participants from '../../../data/contributors.json';
 
 const repositories = pluck('name', projects.repositories);
 const filterByOurProjects = node =>
@@ -21,7 +22,11 @@ const prStatistics = contributions =>
     });
 
 const Ranking = () => {
-    const contributors = 'user:thayannevls user:ArthurFerrao user:fanny';
+    const contributors = participants.reduce(
+        (accum, current) => `${accum} user:${current.github_user}`,
+        ''
+    );
+    console.log(contributors);
     const { loading, error, data } = useQuery(RankingQuery, {
         variables: { contributors },
         pollInterval: 1000,
