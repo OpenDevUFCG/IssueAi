@@ -8,11 +8,17 @@ const repositories = pluck('name', projects.repositories);
 const filterByOurProjects = node =>
     repositories.includes(node.repository.nameWithOwner) ||
     node.repository.nameWithOwner.includes('OpenDevUFCG');
+const filterPrsByState = (pullRequests, state) =>
+    pullRequests.filter(pr => pr.state == state);
 
-const getPRs = contributions =>
-    contributions.map(contribution =>
-        contribution.pullRequests.nodes.filter(filterByOurProjects)
-    );
+const prStatistics = contributions =>
+    contributions.map(contribution => {
+        const prs = contribution.pullRequests.nodes.filter(filterByOurProjects);
+        return {
+            openPrs: filterPrsByState(prs, 'OPEN').length,
+            mergedPrs: filterPrsByState(prs, 'MERGED').length,
+        };
+    });
 
 const Ranking = () => {
     const contributors = 'user:thayannevls user:ArthurFerrao user:fanny';
@@ -21,8 +27,20 @@ const Ranking = () => {
         pollInterval: 1000,
         fetchPolicy: 'network-only',
     });
-    const prStats = !loading && getPRs(data.search.nodes);
-    return <ul>{!loading && data.search.nodes.map(el => el.login)}</ul>;
+    const contributions = !loading && prStatistics(data.search.nodes);
+
+    return (
+        <ul>
+            {!loading &&
+                data.search.nodes.map((el, i) => (
+                    <div>
+                        <li>{el.login}</li>
+                        <span>{contributions[i].openPrs}</span>{' '}
+                        <span>{contributions[i].mergedPrs}</span>
+                    </div>
+                ))}
+        </ul>
+    );
 };
 
 export default Ranking;
