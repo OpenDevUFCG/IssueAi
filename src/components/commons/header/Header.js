@@ -2,8 +2,6 @@
 
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { useQuery } from '@apollo/react-hooks';
-import ranking from '../../../graphql/ranking.graphql';
 
 import './Header.css';
 
@@ -37,8 +35,6 @@ export const HeaderBrand = ({ to, children }: HeaderLinkProps) => (
 );
 
 export const Header = ({ children }: { children: React.Node }) => {
-    const { loading, error, data } = useQuery(ranking);
-    console.log(data);
     return (
         <div className="header sticky">
             <div className="header-content">{children}</div>

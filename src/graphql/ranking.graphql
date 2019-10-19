@@ -1,9 +1,5 @@
-query ranking {
-    search(
-        first: 100
-        query: "user:thayannevls user:ArthurFerrao"
-        type: USER
-    ) {
+query ranking($first: Int = 50, $contributors: String!) {
+    search(first: $first, query: $contributors, type: USER) {
         ...SearchResultFields
     }
 }
@@ -11,9 +7,10 @@ query ranking {
 fragment SearchResultFields on SearchResultItemConnection {
     nodes {
         ... on User {
+            login
             avatarUrl
             pullRequests(
-                first: 100
+                first: 10
                 states: [OPEN, MERGED]
                 orderBy: { field: CREATED_AT, direction: DESC }
             ) {
@@ -25,6 +22,7 @@ fragment SearchResultFields on SearchResultItemConnection {
                     mergedAt
                     state
                     repository {
+                        nameWithOwner
                         name
                         owner {
                             login

@@ -46,6 +46,7 @@ const AppHeader = () => (
         <HeaderWrapperNavLinks>
             <HeaderNavLink to="/quem-somos">Quem Somos?</HeaderNavLink>
             <HeaderNavLink to="/junte-se">Junte-se!</HeaderNavLink>
+            <HeaderNavLink to="/ranking">Ranking</HeaderNavLink>
         </HeaderWrapperNavLinks>
     </Header>
 );
