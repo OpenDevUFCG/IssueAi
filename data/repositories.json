@@ -102,7 +102,7 @@
         {
             "name": "matheusps/clssx",
             "difficulty": "iniciante",
-             "mentors": [
+            "mentors": [
                 {
                     "name": "Matheusps",
                     "imgUrl": "https://github.com/matheusps.png"
@@ -111,11 +111,23 @@
         },
         {
             "name": "Guardians-DSC/horarios-ufcg",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Douglas Lima",
+                    "imgUrl": "https://github.com/douglaslimaxx.png"
+                }
+            ]
         },
         {
             "name": "Guardians-DSC/horarios-ufcg-api",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Douglas Lima",
+                    "imgUrl": "https://github.com/douglaslimaxx.png"
+                }
+            ]
         },
         {
             "name": "ThiagoWhispher/Kenney-Checkers",
