@@ -7,7 +7,16 @@
         "name": "Vinicius Barbosa",
         "github_user": "viniciusbds"
     },
-    { "name": "Helen Cavalcanti",
+    {
+        "name": "Eduardo Pereira",
+        "github_user": "Eduardoccufcg"
+    },
+    {
+        "name": "Luana Melo",
+        "github_user": "luanabm"
+    },
+    { 
+      "name": "Helen Cavalcanti",
       "github_user": "helenbc"
     },
     {
@@ -25,6 +34,10 @@
         "name": "Rodrigo Eloy",
         "github_user": "rodrigoEC"},
   {
+        "name": "Arthur Guedes",
+        "github_user": "aarthurguedes"
+    },
+    {
         "name": "Matheus Santana",
         "github_user": "mathsantana"
     },
