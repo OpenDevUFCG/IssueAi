@@ -12,7 +12,7 @@
         "github_user": "aarthurguedes"
     },
     {
-        "name": "Rodrigo Eloy"
+        "name": "Rodrigo Eloy",
         "github_user": "rodrigoEC"
     },
     {
@@ -26,6 +26,9 @@
     {
         "name": "Caio Davi",
         "github_user": "caiodavic"
+    },
+    {
+        "name": "Andrielly Lucena",
+        "github_user": "andriellyll"
     }
-    
 ]
