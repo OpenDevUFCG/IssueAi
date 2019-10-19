@@ -116,6 +116,16 @@
         {
             "name": "Guardians-DSC/horarios-ufcg-api",
             "difficulty": "intermediario"
+        },
+        {
+            "name": "ThiagoWhispher/Kenney-Checkers",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "ThiagoWhispher",
+                    "imgUrl": "https://github.com/ThiagoWhispher.png"
+                }
+            ]
         }
     ]
 }
