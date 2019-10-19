@@ -2,6 +2,11 @@
     "name": "Douglas lima",
     "github_user": "douglaslimaxx"
   },
+ 
+    {
+    	"name":"Anderson Clemente",
+	"github_user":"andersonclemente"
+    },
    {
         "name": "Ruan Gomes",
         "github_user": "ruangoa"
@@ -10,7 +15,7 @@
         "name": "Felipe de S. Siqueira",
         "github_user": "felipesqra"
    },
-    {
+  {
         "name": "Jerônimo Jairo",
         "github_user": "jeron7"
     },
@@ -30,7 +35,7 @@
         "name": "Sheila paiva",
         "github_user": "sheilapaiva"
    },
- {
+  {
         "name": "Marcos Silva",
         "github_user": "marcossilvaxx"
   },
@@ -73,7 +78,8 @@
 	{
 		"name": "Anderson dos Santos",
 		"github_user": "andersonstv"
-	}, {
+	}, 
+  {
 		"name": "Leandra Oliveira",
 		"github_user": "leandraOliveiraS"
 	},
