@@ -1,4 +1,3 @@
-
 [{
     "name": "Douglas lima",
     "github_user": "douglaslimaxx"
@@ -10,7 +9,10 @@
   {
         "name": "Sheila paiva",
         "github_user": "sheilapaiva"
-    },
+    },{
+        "name": "Marcos Silva",
+        "github_user": "marcossilvaxx"
+  },
   {
       "name": "Arthur Ferrão",
       "github_user": "ArthurFerrao"
