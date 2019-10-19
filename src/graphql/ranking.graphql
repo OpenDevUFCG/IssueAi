@@ -10,7 +10,7 @@ fragment SearchResultFields on SearchResultItemConnection {
             login
             avatarUrl
             pullRequests(
-                first: 10
+                first: 100
                 states: [OPEN, MERGED]
                 orderBy: { field: CREATED_AT, direction: DESC }
             ) {

@@ -19,6 +19,13 @@
     width: 100%;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
 th,
 td {
     border-bottom: 1px solid #ddd;

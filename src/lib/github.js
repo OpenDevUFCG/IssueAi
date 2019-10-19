@@ -55,6 +55,4 @@ const getRepositories = async (after: string | any, quantity: number = 6) => {
     return { repos: repos.map(transformRepository), lastCursor };
 };
 
-const getContributors = async () => {};
-
 export default getRepositories;

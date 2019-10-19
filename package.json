@@ -57,6 +57,7 @@
         "blueprint-css": "^3.0.0-beta.0",
         "graphql": "^14.5.8",
         "prop-types": "^15.7.2",
+        "ramda": "^0.26.1",
         "react": "^16.10.2",
         "react-dom": "^16.10.2",
         "react-markdown": "^4.2.2",
