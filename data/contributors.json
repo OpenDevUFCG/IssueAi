@@ -2,11 +2,14 @@
     "name": "Douglas lima",
     "github_user": "douglaslimaxx"
   },
- 
-    {
-    	"name":"Anderson Clemente",
-	"github_user":"andersonclemente"
-    },
+  {
+      "name": "José Davi",
+      "github_user": "JoseDavi"
+  },
+  {
+    "name":"Anderson Clemente",
+    "github_user":"andersonclemente"
+  },
    {
         "name": "Ruan Gomes",
         "github_user": "ruangoa"
@@ -16,9 +19,9 @@
         "github_user": "felipesqra"
    },
   {
-        "name": "Jerônimo Jairo",
-        "github_user": "jeron7"
-    },
+      "name": "Jerônimo Jairo",
+      "github_user": "jeron7"
+  },
   {
       "name": "Caetano Albuquerque",
       "github_user": "caetanobca"
