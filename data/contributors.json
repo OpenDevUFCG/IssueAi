@@ -1,43 +1,44 @@
 [{
-		"name": "Douglas lima",
-		"github_user": "douglaslimaxx"
-	},
-	{
-		"name": "Lucas Barreto",
-		"github_user": "lucasmfb"
-	},
-	{
-		"name": "Sheila paiva",
-		"github_user": "sheilapaiva"
-	}, {
-		"name": "Marcos Silva",
-		"github_user": "marcossilvaxx"
-	},
-	{
-		"name": "Arthur Ferrão",
-		"github_user": "ArthurFerrao"
-	},
-	{
-		"name": "Tulio Araujo Cunha",
-		"github_user": "tulioac"
-	},
-	{
-		"name": "Bernard Odon",
-		"github_user": "bernardodon"
-	},
-	{
-		"name": "Fanny Vieira",
-		"github_user": "fanny"
-	},
-	{
-		"name": "Mateus Matias",
-		"github_user": "ummatias"
-	},
-	{
-		"name": "Leonardo Veiga",
-		"github_user": "leleoveiga"
-	},
-	{
+    "name": "Douglas lima",
+    "github_user": "douglaslimaxx"
+  },
+   {
+      "name": "Lucas Barreto",
+      "github_user": "lucasmfb"
+  },
+  {
+        "name": "Sheila paiva",
+        "github_user": "sheilapaiva"
+   },
+ {
+        "name": "Marcos Silva",
+        "github_user": "marcossilvaxx"
+  },
+  {
+      "name": "Arthur Ferrão",
+      "github_user": "ArthurFerrao"
+  },
+  {
+      "name": "Tulio Araujo Cunha",
+      "github_user": "tulioac"
+  },
+  {
+      "name": "Bernard Odon",
+      "github_user": "bernardodon"
+  },
+  {
+      "name": "Fanny Vieira",
+      "github_user": "fanny"
+  },
+  {
+      "name": "Mateus Matias",
+      "github_user": "ummatias"
+  },
+  {
+     "name": "Leonardo Veiga",
+     "github_user": "leleoveiga"
+  },
+  {  
 		"name": "Pedro Donato",
 		"github_user": "PedroDCN"
 	},
@@ -123,6 +124,10 @@
 		"name": "Ana Beatriz Truta",
 		"github_user": "beatriztruta"
 	},
+  {
+      "name": "Gabriel Mareco",
+      "github_user": "gabrielmbs"
+  },
 	{
 		"name": "Rich Elton",
 		"github_user": "rickecr"
@@ -132,3 +137,4 @@
 		"github_user": "luismafra"
 	}
 ]
+
