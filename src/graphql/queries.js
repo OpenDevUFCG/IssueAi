@@ -28,6 +28,12 @@ fragment SearchResultFields on SearchResultItemConnection {
     }
 }`;
 
+const contributorStatsQuery = `
+fragment SearchResultFields on SearchResultItemConnection {
+}
+
+`;
+
 const searchRepoQuery = (
     query: string,
     quantity: number,

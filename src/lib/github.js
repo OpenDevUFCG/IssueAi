@@ -1,6 +1,7 @@
 // @flow
 import axios from 'axios';
 import projects from '../../data/repositories.json';
+import contributors from '../../data/contributors.json';
 import searchRepoQuery from '../graphql/queries';
 
 const getAxiosInstance = () => {

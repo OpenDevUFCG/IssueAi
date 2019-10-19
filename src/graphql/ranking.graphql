@@ -1,0 +1,35 @@
+query ranking($first: Int = 50, $contributors: String!) {
+    search(first: $first, query: $contributors, type: USER) {
+        ...SearchResultFields
+    }
+}
+
+fragment SearchResultFields on SearchResultItemConnection {
+    nodes {
+        ... on User {
+            login
+            avatarUrl
+            pullRequests(
+                first: 100
+                states: [OPEN, MERGED]
+                orderBy: { field: CREATED_AT, direction: DESC }
+            ) {
+                nodes {
+                    title
+                    createdAt
+                    closed
+                    merged
+                    mergedAt
+                    state
+                    repository {
+                        nameWithOwner
+                        name
+                        owner {
+                            login
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
