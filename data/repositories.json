@@ -44,7 +44,7 @@
             "difficulty": "intermediario",
             "mentors": [
                 {
-                    "name": "HericlesMe",
+                    "name": "hericlesme",
                     "imgUrl": "https://github.com/hericlesme.png"
                 }
             ]
@@ -60,11 +60,11 @@
             ]
         },
         {
-            "name": "P-Sync/P-Sync",
+            "name": "hericlesme/cast-sh",
             "difficulty": "intermediario",
             "mentors": [
                 {
-                    "name": "HericlesMe",
+                    "name": "hericlesme",
                     "imgUrl": "https://github.com/hericlesme.png"
                 }
             ]
