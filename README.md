@@ -48,6 +48,7 @@ Os dados dos repositórios usados para mostrar são recuperados a partir dos arq
 
 Deseja contribuir? Leia nosso [CONTRIBUTING.md](CONTRIBUTING.md) e Issue Ai! E PR AI!
 
+
 ## Você na Hacktoberfest
 
 Para que a sua contribuição conte no HacktoberFest da OpenDevUFCG, siga os seguintes passos:
