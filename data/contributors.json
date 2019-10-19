@@ -7,6 +7,16 @@
         "name": "Vinicius Barbosa",
         "github_user": "viniciusbds"
     },
+    { "name": "Helen Cavalcanti",
+      "github_user": "helenbc"
+    },
+    {
+         "name": "Pedro Lima",
+        "github_user": "pedrosqra"
+    },{
+        "name": "Maely Brandão",
+        "github_user": "mxlysb"
+    },
     {
         "name": "Arthur Guedes",
         "github_user": "aarthurguedes"
@@ -34,5 +44,12 @@
     {
         "name": "Andrielly Lucena",
         "github_user": "andriellyll"
+    },{
+        "name": "Dayvid Daniel",
+        "github_user": "dayvidds"
+    }
+    {
+        "name": "Ana Beatriz Truta",
+        "github_user": "beatriztruta"
     }
 ]
