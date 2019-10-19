@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import RankingQuery from '../../graphql/ranking.graphql';
 import projects from '../../../data/repositories.json';
 import participants from '../../../data/contributors.json';
+import './Ranking.css';
 
 const repositories = pluck('name', projects.repositories);
 const filterByOurProjects = node =>
@@ -34,16 +35,29 @@ const Ranking = () => {
     const contributions = !loading && prStatistics(data.search.nodes);
     console.log(data);
     return (
-        <ul>
+        <table className="table">
+            <tr>
+                <th></th>
+                <th>Usuário</th>
+                <th>PRs Abertos</th>
+                <th>PRs mergeados</th>
+            </tr>
             {!loading &&
                 data.search.nodes.map((el, i) => (
-                    <div>
-                        <li>{el.login}</li>
-                        <span>{contributions[i].openPrs}</span>{' '}
-                        <span>{contributions[i].mergedPrs}</span>
-                    </div>
+                    <tr>
+                        <td>
+                            <img
+                                className="avatar"
+                                alt={el.login}
+                                src={el.avatarUrl}
+                            />
+                        </td>
+                        <td>{el.login}</td>
+                        <td>{contributions[i].openPrs}</td>
+                        <td>{contributions[i].mergedPrs}</td>
+                    </tr>
                 ))}
-        </ul>
+        </table>
     );
 };
 
