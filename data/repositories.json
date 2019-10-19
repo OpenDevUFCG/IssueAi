@@ -40,6 +40,10 @@
         {
             "name": "matheusps/clssx",
             "difficulty": "iniciante"
+        },
+        {
+            "name": "Guardians-DSC/horarios-ufcg",
+            "difficulty": "intermediario"
         }
     ]
 }

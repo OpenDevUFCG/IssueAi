@@ -26,14 +26,13 @@ const Ranking = () => {
         (accum, current) => `${accum} user:${current.github_user}`,
         ''
     );
-    console.log(contributors);
     const { loading, error, data } = useQuery(RankingQuery, {
         variables: { contributors },
         pollInterval: 1000,
         fetchPolicy: 'network-only',
     });
     const contributions = !loading && prStatistics(data.search.nodes);
-
+    console.log(data);
     return (
         <ul>
             {!loading &&
