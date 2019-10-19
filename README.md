@@ -6,7 +6,7 @@
 
 É uma dúvida? Issue ai. É um problema? Issue ai. Quer contribuir? Issue ai. Não sabe onde tá? Issue ai. Tá afim de discutir? Issue ai. Não sabe o que é IssueAi? Issue ai.
 
-Sinta-se a vontade para discutir por meio de issues, aqui é um espaço aberto para compartilhar ideias sobre projetos open source da UFCG. Abra uma Issue e respeite o código de conduta.
+Sinta-se a vontade pardasdsadsadasda discutir por meio de issues, aqui é um espaço aberto para compartilhar ideias sobre projetos open source da UFCG. Abra uma Issue e respeite o código de conduta.
 
 ## Objetivo
 
