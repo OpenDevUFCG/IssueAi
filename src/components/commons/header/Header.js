@@ -34,8 +34,10 @@ export const HeaderBrand = ({ to, children }: HeaderLinkProps) => (
     </h1>
 );
 
-export const Header = ({ children }: { children: React.Node }) => (
-    <div className="header sticky">
-        <div className="header-content">{children}</div>
-    </div>
-);
+export const Header = ({ children }: { children: React.Node }) => {
+    return (
+        <div className="header sticky">
+            <div className="header-content">{children}</div>
+        </div>
+    );
+};
