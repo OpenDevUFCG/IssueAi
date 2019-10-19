@@ -3,22 +3,21 @@ import React from 'react';
 import type { Mentor } from './mentor';
 
 import MentorCard from './MentorCard';
+import getMentors from '../../../data';
+import './Mentor.css';
 
-type MentorGridProps = {
-    mentorsList: Mentor[],
-};
-
-const renderMentors = (mentorsList: Mentor[]) =>
-    mentorsList.map(mentor => (
+const renderMentors = (mentorsList: Mentor[]) => {
+    return mentorsList.map((mentor, i) => (
         <MentorCard
             name={mentor.name}
             imgUrl={mentor.imgUrl}
-            repositoriesList={mentor.repositoriesList}
+            key={`${mentor.name}--${i}`}
         />
     ));
+};
 
-const MentorGrid = ({ mentorsList }: MentorGridProps) => (
-    <ul>{renderMentors(mentorsList)}</ul>
+const MentorGrid = () => (
+    <div className="mentor-grid">{renderMentors(getMentors())}</div>
 );
 
 export default MentorGrid;
