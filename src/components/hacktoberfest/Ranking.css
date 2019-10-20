@@ -35,3 +35,7 @@ td {
 th {
     padding: 10px;
 }
+
+.contributor-name:hover {
+    color: #3ab7f1;
+}
