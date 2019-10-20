@@ -58,20 +58,31 @@ const Ranking = () => {
                     <th>PRs mergeados</th>
                 </tr>
                 {!loading &&
-                    data.search.nodes.map((el, i) => (
-                        <tr>
-                            <td>
-                                <img
-                                    className="avatar"
-                                    alt={el.login}
-                                    src={el.avatarUrl}
-                                />
-                            </td>
-                            <td>{el.login}</td>
-                            <td>{contributions[i].openPrs}</td>
-                            <td>{contributions[i].mergedPrs}</td>
-                        </tr>
-                    ))}
+                    data.search.nodes.map((el, i) => {
+                        const profileUrl = `https://github.com/${el.login}`;
+                        return (
+                            <tr>
+                                <td>
+                                    <a href={profileUrl}>
+                                        <img
+                                            className="avatar"
+                                            alt={el.login}
+                                            src={el.avatarUrl}
+                                        />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a
+                                        className="contributor-name"
+                                        href={profileUrl}>
+                                        {el.login}
+                                    </a>
+                                </td>
+                                <td>{contributions[i].openPrs}</td>
+                                <td>{contributions[i].mergedPrs}</td>
+                            </tr>
+                        );
+                    })}
             </table>
             {loading && (
                 <div className="loading">
