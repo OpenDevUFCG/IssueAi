@@ -112,7 +112,7 @@
         {
             "name": "matheusps/adapt-ui",
             "difficulty": "avancado",
-             "mentors": [
+            "mentors": [
                 {
                     "name": "Matheusps",
                     "imgUrl": "https://github.com/matheusps.png"
@@ -131,7 +131,13 @@
         },
         {
             "name": "Guardians-DSC/horarios-ufcg-api",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Douglas Lima",
+                    "imgUrl": "https://github.com/douglaslimaxx.png"
+                }
+            ]
         },
         {
             "name": "juliafealves/deciframe-pwa",
@@ -140,11 +146,6 @@
                 {
                     "name": "juliafealves",
                     "imgUrl": "https://github.com/juliafealves.png"
-            "difficulty": "intermediario",
-            "mentors": [
-                {
-                    "name": "Douglas Lima",
-                    "imgUrl": "https://github.com/douglaslimaxx.png"
                 }
             ]
         },
