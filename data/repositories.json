@@ -158,6 +158,16 @@
                     "imgUrl": "https://github.com/ThiagoWhispher.png"
                 }
             ]
+        },
+        {
+            "name": "jessescn/ControleAcademico",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "jessescn",
+                    "imgUrl": "https://github.com/jessescn.png"
+                }
+            ]
         }
     ]
 }
