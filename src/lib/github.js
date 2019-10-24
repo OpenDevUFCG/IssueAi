@@ -37,7 +37,7 @@ const getSortQuery = (sort: SortField) => `sort:${sort}`;
 const getRepositories = async (
     after: string | any,
     options: GetRepositoryOptions,
-    quantity: number = 6
+    quantity: number = 12
 ) => {
     const { repositories } = projects;
 
