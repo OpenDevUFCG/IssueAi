@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import ReactTooltip from 'react-tooltip';
+import Emoji from 'react-emoji-render';
 import type { Repository } from './repository';
 
 import './Repository.css';
@@ -58,7 +59,7 @@ const RepositoryCard = ({ repository }: RepositoryProps) => {
                     <h6 className="repository-owner">{owner}</h6>
                 </header>
                 <p className="repository-description">
-                    {repository.description}
+                    <Emoji text={repository.description} />
                 </p>
                 <RepositoryStats
                     className="repository-stats"
