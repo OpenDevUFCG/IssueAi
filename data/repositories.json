@@ -44,7 +44,7 @@
             "difficulty": "intermediario",
             "mentors": [
                 {
-                    "name": "HericlesMe",
+                    "name": "hericlesme",
                     "imgUrl": "https://github.com/hericlesme.png"
                 }
             ]
@@ -60,11 +60,11 @@
             ]
         },
         {
-            "name": "P-Sync/P-Sync",
+            "name": "hericlesme/cast-sh",
             "difficulty": "intermediario",
             "mentors": [
                 {
-                    "name": "HericlesMe",
+                    "name": "hericlesme",
                     "imgUrl": "https://github.com/hericlesme.png"
                 }
             ]
@@ -102,7 +102,17 @@
         {
             "name": "matheusps/clssx",
             "difficulty": "iniciante",
-             "mentors": [
+            "mentors": [
+                {
+                    "name": "Matheusps",
+                    "imgUrl": "https://github.com/matheusps.png"
+                }
+            ]
+        },
+        {
+            "name": "matheusps/adapt-ui",
+            "difficulty": "avancado",
+            "mentors": [
                 {
                     "name": "Matheusps",
                     "imgUrl": "https://github.com/matheusps.png"
@@ -111,11 +121,53 @@
         },
         {
             "name": "Guardians-DSC/horarios-ufcg",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Douglas Lima",
+                    "imgUrl": "https://github.com/douglaslimaxx.png"
+                }
+            ]
         },
         {
             "name": "Guardians-DSC/horarios-ufcg-api",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Douglas Lima",
+                    "imgUrl": "https://github.com/douglaslimaxx.png"
+                }
+            ]
+        },
+        {
+            "name": "juliafealves/deciframe-pwa",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "juliafealves",
+                    "imgUrl": "https://github.com/juliafealves.png"
+                }
+            ]
+        },
+        {
+            "name": "ThiagoWhispher/Kenney-Checkers",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "ThiagoWhispher",
+                    "imgUrl": "https://github.com/ThiagoWhispher.png"
+                }
+            ]
+        },
+        {
+            "name": "jessescn/ControleAcademico",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "jessescn",
+                    "imgUrl": "https://github.com/jessescn.png"
+                }
+            ]
         }
     ]
 }
