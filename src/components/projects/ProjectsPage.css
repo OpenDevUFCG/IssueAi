@@ -13,6 +13,10 @@
  * Defines the appearance of the footer and the show more button.
  */
 
+.projects-container {
+    margin-top: 5vw;
+}
+
 .footer {
     display: flex;
     justify-content: center;

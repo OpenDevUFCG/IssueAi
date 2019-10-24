@@ -44,6 +44,7 @@
         "indent": ["error", 4, {
             "ignoredNodes": ["JSXElement *", "JSXElement"]
         }],
-        "react/jsx-indent": ["error", 4]
+        "react/jsx-indent": ["error", 4],
+        "flowtype/define-flow-type": 1
     }
 }
