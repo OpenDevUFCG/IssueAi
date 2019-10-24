@@ -2,6 +2,8 @@
 
 ![IssueAi Logo](https://imgur.com/iLumm5K.png)
 
+# [HACKTOBERFEST](#você-na-hacktoberfest)
+
 **Visite nossa [plataforma](https://issueai.opendevufcg.org).**
 
 É uma dúvida? Issue ai. É um problema? Issue ai. Quer contribuir? Issue ai. Não sabe onde tá? Issue ai. Tá afim de discutir? Issue ai. Não sabe o que é IssueAi? Issue ai.
@@ -40,11 +42,22 @@ Incentivamos muito a comunicação por Issues, mas claro que não queremos abusa
 
 ## Para Adicionar um Projeto
 
-Deseja adicionar o seu repositório Open Source? Os dados dos repositórios que usamos são recuperados na API do [Laguinho](https://github.com/OpenDevUFCG/laguinho-api), caso queira ver seu repositório no IssueAi, confira [aqui](https://github.com/OpenDevUFCG/laguinho-api/blob/master/docs/REPOSITORIES.md#como-contribuir-adicionando-mais-reposit%C3%B3rios) como adicionar!
+Os dados dos repositórios usados para mostrar são recuperados a partir dos arquivos contidos no diretório `data/`. Para adicionar seu repositório aos nossos projetos apoiados, abra uma [Pull Request](https://github.com/OpenDevUFCG/IssueAi/pulls) com os dados do seu repositório em `data/repositories.json`, você pode acessá-lo clicando [aqui](/data/repositories.json).
 
 ## Como Contribuir
 
 Deseja contribuir? Leia nosso [CONTRIBUTING.md](CONTRIBUTING.md) e Issue Ai! E PR AI!
+
+
+## Você na Hacktoberfest
+
+Para que a sua contribuição conte no HacktoberFest da OpenDevUFCG, siga os seguintes passos:
+
+1. Crie um fork do issueai
+2. Adicione seu nome e usuário do github [nesse arquivo](/data/contributors.json)
+3. Crie uma pr
+
+Quando nossos maintainers aprovarem, se encontre na seção do [hacktoberfest](https://issueai.opendevufcg.org)
 
 ## Nós
 

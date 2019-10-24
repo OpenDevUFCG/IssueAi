@@ -3,43 +3,171 @@
     "repositories": [
         {
             "name": "calluswhatyouwant/spotify-web-sdk",
-            "difficulty": "avancado"
+            "difficulty": "avancado",
+            "mentors": [
+                {
+                    "name": "JRobsonJr",
+                    "imgUrl": "https://github.com/jrobsonjr.png"
+                },
+                {
+                    "name": "JoseRenan",
+                    "imgUrl": "https://github.com/joserenan.png"
+                }
+            ]
         },
         {
             "name": "calluswhatyouwant/musicritic",
-            "difficulty": "avancado"
+            "difficulty": "avancado",
+            "mentors": [
+                {
+                    "name": "JRobsonJr",
+                    "imgUrl": "https://github.com/jrobsonjr.png"
+                },
+                {
+                    "name": "JoseRenan",
+                    "imgUrl": "https://github.com/joserenan.png"
+                }
+            ]
         },
         {
             "name": "paulojbleitao/pokedex",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "PauloJBLeitao",
+                    "imgUrl": "https://github.com/paulojbleitao.png"
+                }
+            ]
         },
         {
             "name": "SubmiBot/SubmiBot",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "hericlesme",
+                    "imgUrl": "https://github.com/hericlesme.png"
+                }
+            ]
         },
         {
             "name": "marianabianca/pomodoro",
-            "difficulty": "iniciante"
+            "difficulty": "iniciante",
+            "mentors": [
+                {
+                    "name": "MarianaBianca",
+                    "imgUrl": "https://github.com/marianabianca.png"
+                }
+            ]
         },
         {
-            "name": "P-Sync/P-Sync",
-            "difficulty": "intermediario"
+            "name": "hericlesme/cast-sh",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "hericlesme",
+                    "imgUrl": "https://github.com/hericlesme.png"
+                }
+            ]
         },
         {
             "name": "FelipeMarinho97/iskra-webkit-greeter",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "FelipeMarinho97",
+                    "imgUrl": "https://github.com/FelipeMarinho97.png"
+                }
+            ]
         },
         {
             "name": "Rickecr/PyGraph",
-            "difficulty": "intermediario"
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Rickecr",
+                    "imgUrl": "https://github.com/Rickecr.png"
+                }
+            ]
         },
         {
             "name": "Rickecr/CamaraDosDeputados",
-            "difficulty": "iniciante"
+            "difficulty": "iniciante",
+            "mentors": [
+                {
+                    "name": "Rickecr",
+                    "imgUrl": "https://github.com/Rickecr.png"
+                }
+            ]
         },
         {
             "name": "matheusps/clssx",
-            "difficulty": "iniciante"
+            "difficulty": "iniciante",
+            "mentors": [
+                {
+                    "name": "Matheusps",
+                    "imgUrl": "https://github.com/matheusps.png"
+                }
+            ]
+        },
+        {
+            "name": "matheusps/adapt-ui",
+            "difficulty": "avancado",
+            "mentors": [
+                {
+                    "name": "Matheusps",
+                    "imgUrl": "https://github.com/matheusps.png"
+                }
+            ]
+        },
+        {
+            "name": "Guardians-DSC/horarios-ufcg",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Douglas Lima",
+                    "imgUrl": "https://github.com/douglaslimaxx.png"
+                }
+            ]
+        },
+        {
+            "name": "Guardians-DSC/horarios-ufcg-api",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "Douglas Lima",
+                    "imgUrl": "https://github.com/douglaslimaxx.png"
+                }
+            ]
+        },
+        {
+            "name": "juliafealves/deciframe-pwa",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "juliafealves",
+                    "imgUrl": "https://github.com/juliafealves.png"
+                }
+            ]
+        },
+        {
+            "name": "ThiagoWhispher/Kenney-Checkers",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "ThiagoWhispher",
+                    "imgUrl": "https://github.com/ThiagoWhispher.png"
+                }
+            ]
+        },
+        {
+            "name": "jessescn/ControleAcademico",
+            "difficulty": "intermediario",
+            "mentors": [
+                {
+                    "name": "jessescn",
+                    "imgUrl": "https://github.com/jessescn.png"
+                }
+            ]
         }
     ]
 }

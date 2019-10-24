@@ -1,24 +1,13 @@
 // @flow
 import React from 'react';
-import type { Repository } from '../commons/repository/repository';
 import type { Mentor as MentorCardProps } from './mentor';
 
-import './MentorCard.css';
+import './Mentor.css';
 
-const renderRepositories = (repositoriesList: Repository[]) =>
-    repositoriesList.map(repository => (
-        <li className="repository-mentor" key={repository.nameWithOwner}>
-            {repository.nameWithOwner}
-        </li>
-    ));
-
-const MentorCard = ({ name, imgUrl, repositoriesList }: MentorCardProps) => (
+const MentorCard = ({ name, imgUrl }: MentorCardProps) => (
     <div className="card-mentor">
         <img className="img-mentor" src={imgUrl} alt={name} />
         <figcaption className="name-mentor">{name}</figcaption>
-        <ul className="repository-list-mentor">
-            {renderRepositories(repositoriesList)}
-        </ul>
     </div>
 );
 
