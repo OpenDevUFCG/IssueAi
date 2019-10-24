@@ -18,11 +18,11 @@ type AppState = {
     sort: SortFieldOption,
 };
 
-function updateListState(data: Repository[], cursor) {
+function updateListState(data: Repository[], cursor, hasNextPage) {
     return (state: AppState) => ({
         repositoryList: [...state.repositoryList, ...data],
         cursor,
-        emptyRequest: !data.length,
+        hasNextPage,
     });
 }
 
@@ -30,7 +30,7 @@ const initialState = {
     repositoryList: [],
     cursor: null,
     loading: true,
-    emptyRequest: false,
+    hasNextPage: false,
     sort: SortField.STARS_DESC,
 };
 
@@ -44,10 +44,12 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     updateRepositoryList = () => {
         const { cursor, sort } = this.state;
         this.setState({ loading: true });
-        getRepositories(cursor, { sort }).then(({ repos, lastCursor }) => {
-            this.setState(updateListState(repos, lastCursor));
-            this.setState({ loading: false });
-        });
+        getRepositories(cursor, { sort }).then(
+            ({ repos, lastCursor, hasNextPage }) => {
+                this.setState(updateListState(repos, lastCursor, hasNextPage));
+                this.setState({ loading: false });
+            }
+        );
     };
 
     handleSortChange = (sort: SortFieldOption) => {
@@ -61,13 +63,13 @@ export default class ProjectsPage extends React.Component<void, AppState> {
     };
 
     render() {
-        const { emptyRequest, repositoryList, loading, sort } = this.state;
+        const { hasNextPage, repositoryList, loading, sort } = this.state;
         return (
             <div className="projects-container">
                 <OptionBar sort={sort} onChange={this.handleSortChange} />
                 <RepositoryGrid repositories={repositoryList} />
                 <div className="footer">
-                    {!emptyRequest && (
+                    {hasNextPage && (
                         <button
                             type="button"
                             className="show-more-btn"

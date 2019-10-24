@@ -55,14 +55,14 @@ const getRepositories = async (
 
     const {
         nodes: repos,
-        pageInfo: { endCursor },
+        pageInfo: { endCursor, hasNextPage },
     } = response.data.search;
 
     let lastCursor = endCursor;
     if (lastCursor) lastCursor = lastCursor.replace('=', '');
     if (!lastCursor) lastCursor = after;
 
-    return { repos: repos.map(transformRepository), lastCursor };
+    return { repos: repos.map(transformRepository), lastCursor, hasNextPage };
 };
 
 export default getRepositories;
