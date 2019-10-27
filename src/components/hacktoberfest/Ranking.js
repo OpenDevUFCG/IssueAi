@@ -7,6 +7,8 @@ import participants from '../../../data/contributors.json';
 import './Ranking.css';
 import Loading from '../commons/loading/Loading';
 
+const HACKTOBERFEST_DATE = { day: 19, month: 9, year: 2019 };
+
 const repositories = pluck('name', projects.repositories);
 const filterByOurProjects = node =>
     repositories.includes(node.repository.nameWithOwner) ||
@@ -17,9 +19,9 @@ const filterByDate = pullRequests =>
         const today = new Date();
         const prDate = new Date(pr.createdAt);
         return (
-            prDate.getDate() === 19 &&
-            prDate.getMonth() === 9 &&
-            prDate.getFullYear() === 2019
+            prDate.getDate() === HACKTOBERFEST_DATE.day &&
+            prDate.getMonth() === HACKTOBERFEST_DATE.month &&
+            prDate.getFullYear() === HACKTOBERFEST_DATE.year
         );
     });
 
@@ -51,8 +53,6 @@ const Ranking = () => {
     });
     const contributions = !loading && prStatistics(data.search.nodes);
     const sortedContributions = sortByPrs(contributions);
-    console.log(contributions);
-
     return (
         <>
             <table className="table">
