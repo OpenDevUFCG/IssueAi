@@ -1,5 +1,5 @@
 import React from 'react';
-import { pluck } from 'ramda';
+import { pluck, sortWith, descend, prop } from 'ramda';
 import { useQuery } from '@apollo/react-hooks';
 import RankingQuery from '../../graphql/ranking.graphql';
 import projects from '../../../data/repositories.json';
@@ -17,9 +17,9 @@ const filterByDate = pullRequests =>
         const today = new Date();
         const prDate = new Date(pr.createdAt);
         return (
-            prDate.getDate() === today.getDate() &&
-            prDate.getMonth() === today.getMonth() &&
-            prDate.getFullYear() === today.getFullYear()
+            prDate.getDate() === 19 &&
+            prDate.getMonth() === 9 &&
+            prDate.getFullYear() === 2019
         );
     });
 
@@ -31,11 +31,14 @@ const prStatistics = contributions =>
         let prs = contribution.pullRequests.nodes.filter(filterByOurProjects);
         prs = filterByDate(prs);
         return {
+            login: contribution.login,
+            avatarUrl: contribution.avatarUrl,
             openPrs: filterPrsByState(prs, 'OPEN').length,
             mergedPrs: filterPrsByState(prs, 'MERGED').length,
         };
     });
 
+const sortByPrs = sortWith([descend(prop('mergedPrs'))]);
 const Ranking = () => {
     const contributors = participants.reduce(
         (accum, current) => `${accum} user:${current.github_user}`,
@@ -47,11 +50,14 @@ const Ranking = () => {
         fetchPolicy: 'network-only',
     });
     const contributions = !loading && prStatistics(data.search.nodes);
-    console.log(data);
+    const sortedContributions = sortByPrs(contributions);
+    console.log(contributions);
+
     return (
         <>
             <table className="table">
                 <tr>
+                    <th></th>
                     <th></th>
                     <th>Usuário</th>
                     <th>PRs Abertos</th>
@@ -62,12 +68,15 @@ const Ranking = () => {
                         const profileUrl = `https://github.com/${el.login}`;
                         return (
                             <tr>
+                                <td>{`#${i + 1}`}</td>
                                 <td>
                                     <a href={profileUrl}>
                                         <img
                                             className="avatar"
-                                            alt={el.login}
-                                            src={el.avatarUrl}
+                                            alt={sortedContributions[i].login}
+                                            src={
+                                                sortedContributions[i].avatarUrl
+                                            }
                                         />
                                     </a>
                                 </td>
@@ -75,11 +84,11 @@ const Ranking = () => {
                                     <a
                                         className="contributor-name"
                                         href={profileUrl}>
-                                        {el.login}
+                                        {sortedContributions[i].login}
                                     </a>
                                 </td>
-                                <td>{contributions[i].openPrs}</td>
-                                <td>{contributions[i].mergedPrs}</td>
+                                <td>{sortedContributions[i].openPrs}</td>
+                                <td>{sortedContributions[i].mergedPrs}</td>
                             </tr>
                         );
                     })}
