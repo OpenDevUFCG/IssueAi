@@ -75,7 +75,11 @@ export default class ProjectsPage extends React.Component<void, AppState> {
                             className="show-more-btn"
                             onClick={this.updateRepositoryList}>
                             {loading ? (
-                                <div className="loader" alt="loader"></div>
+                                <div
+                                    className="loader"
+                                    role="img"
+                                    aria-label="loading"
+                                />
                             ) : (
                                 <h2 className="show-more-btn-text">Ver mais</h2>
                             )}
