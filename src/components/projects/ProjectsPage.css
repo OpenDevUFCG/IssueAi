@@ -27,7 +27,10 @@
     display: block;
     margin: auto;
     height: 100%;
-    content: url('../../../assets/loader.gif');
+    background-image: url('../../../assets/loader.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .show-more-btn {
