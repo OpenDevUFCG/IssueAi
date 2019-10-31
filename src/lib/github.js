@@ -3,6 +3,8 @@ import axios from 'axios';
 import projects from '../../data/repositories.json';
 import contributors from '../../data/contributors.json';
 import searchRepoQuery from '../graphql/queries';
+import { SortField } from './constants';
+import type { GetRepositoryOptions } from './options';
 
 const getAxiosInstance = () => {
     const token = process.env.GITHUB_TOKEN || '';
@@ -30,14 +32,22 @@ const transformRepository = (githubJson: any) => ({
     stargazersCount: githubJson.stargazers.totalCount,
 });
 
-const getRepositories = async (after: string | any, quantity: number = 6) => {
+const getSortQuery = (sort: SortField) => `sort:${sort}`;
+
+const getRepositories = async (
+    after: string | any,
+    options: GetRepositoryOptions,
+    quantity: number = 12
+) => {
     const { repositories } = projects;
 
     let query = repositories.reduce(
         (accum, current) => ` ${accum} repo:${current.name}`,
         ''
     );
-    query = `org:${projects.org}${query}`;
+    query = `org:${projects.org}${query} `;
+
+    query += getSortQuery(options.sort);
 
     const response = await requestGithub(
         searchRepoQuery(query, quantity, after)
@@ -45,14 +55,14 @@ const getRepositories = async (after: string | any, quantity: number = 6) => {
 
     const {
         nodes: repos,
-        pageInfo: { endCursor },
+        pageInfo: { endCursor, hasNextPage },
     } = response.data.search;
 
     let lastCursor = endCursor;
     if (lastCursor) lastCursor = lastCursor.replace('=', '');
     if (!lastCursor) lastCursor = after;
 
-    return { repos: repos.map(transformRepository), lastCursor };
+    return { repos: repos.map(transformRepository), lastCursor, hasNextPage };
 };
 
 export default getRepositories;

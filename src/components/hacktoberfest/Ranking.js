@@ -1,11 +1,13 @@
 import React from 'react';
-import { pluck } from 'ramda';
+import { pluck, sortWith, descend, prop } from 'ramda';
 import { useQuery } from '@apollo/react-hooks';
 import RankingQuery from '../../graphql/ranking.graphql';
 import projects from '../../../data/repositories.json';
 import participants from '../../../data/contributors.json';
 import './Ranking.css';
 import Loading from '../commons/loading/Loading';
+
+const HACKTOBERFEST_DATE = { day: 19, month: 9, year: 2019 };
 
 const repositories = pluck('name', projects.repositories);
 const filterByOurProjects = node =>
@@ -17,9 +19,9 @@ const filterByDate = pullRequests =>
         const today = new Date();
         const prDate = new Date(pr.createdAt);
         return (
-            prDate.getDate() === today.getDate() &&
-            prDate.getMonth() === today.getMonth() &&
-            prDate.getFullYear() === today.getFullYear()
+            prDate.getDate() === HACKTOBERFEST_DATE.day &&
+            prDate.getMonth() === HACKTOBERFEST_DATE.month &&
+            prDate.getFullYear() === HACKTOBERFEST_DATE.year
         );
     });
 
@@ -31,11 +33,14 @@ const prStatistics = contributions =>
         let prs = contribution.pullRequests.nodes.filter(filterByOurProjects);
         prs = filterByDate(prs);
         return {
+            login: contribution.login,
+            avatarUrl: contribution.avatarUrl,
             openPrs: filterPrsByState(prs, 'OPEN').length,
             mergedPrs: filterPrsByState(prs, 'MERGED').length,
         };
     });
 
+const sortByPrs = sortWith([descend(prop('mergedPrs'))]);
 const Ranking = () => {
     const contributors = participants.reduce(
         (accum, current) => `${accum} user:${current.github_user}`,
@@ -47,31 +52,46 @@ const Ranking = () => {
         fetchPolicy: 'network-only',
     });
     const contributions = !loading && prStatistics(data.search.nodes);
-    console.log(data);
+    const sortedContributions = sortByPrs(contributions);
     return (
         <>
             <table className="table">
                 <tr>
+                    <th></th>
                     <th></th>
                     <th>Usuário</th>
                     <th>PRs Abertos</th>
                     <th>PRs mergeados</th>
                 </tr>
                 {!loading &&
-                    data.search.nodes.map((el, i) => (
-                        <tr>
-                            <td>
-                                <img
-                                    className="avatar"
-                                    alt={el.login}
-                                    src={el.avatarUrl}
-                                />
-                            </td>
-                            <td>{el.login}</td>
-                            <td>{contributions[i].openPrs}</td>
-                            <td>{contributions[i].mergedPrs}</td>
-                        </tr>
-                    ))}
+                    data.search.nodes.map((el, i) => {
+                        const profileUrl = `https://github.com/${el.login}`;
+                        return (
+                            <tr>
+                                <td>{`#${i + 1}`}</td>
+                                <td>
+                                    <a href={profileUrl}>
+                                        <img
+                                            className="avatar"
+                                            alt={sortedContributions[i].login}
+                                            src={
+                                                sortedContributions[i].avatarUrl
+                                            }
+                                        />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a
+                                        className="contributor-name"
+                                        href={profileUrl}>
+                                        {sortedContributions[i].login}
+                                    </a>
+                                </td>
+                                <td>{sortedContributions[i].openPrs}</td>
+                                <td>{sortedContributions[i].mergedPrs}</td>
+                            </tr>
+                        );
+                    })}
             </table>
             {loading && (
                 <div className="loading">

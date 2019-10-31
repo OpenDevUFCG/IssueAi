@@ -4,8 +4,116 @@
         "github_user": "douglaslimaxx"
     },
     {
+        "name": "Jonatas Ferreira",
+        "github_user": "jonataslima13"
+    },
+    {
+        "name": "Luis Eduardo",
+        "github_user": "luismafra"
+    },
+    {
+        "name": "Mirlla Marques",
+        "github_user": "mirllamarques"
+    },
+    {
+        "name": "Savio Gusmao Lafrande de Medeiros",
+        "github_user": "medeirosavio"
+    },
+    {
+        "name": "Felipe de Amorim",
+        "github_user": "FelipeAmorimFerreira"
+    },
+    {
+        "name": "Lourival Netto",
+        "github_user": "lulnetto"
+    },
+    {
         "name": "Vinicius Barbosa",
         "github_user": "viniciusbds"
+    },
+    {
+        "name": "Júlia Fernandes Alves",
+        "github_user": "juliafealves"
+    },
+    {
+        "name": "Arthur Macena",
+        "github_user": "arthurmacena"
+    },
+    {
+        "name": "José Davi",
+        "github_user": "JoseDavi"
+    },
+    {
+        "name": "Anderson Clemente",
+        "github_user": "andersonclemente"
+    },
+    {
+        "name": "Ruan Gomes",
+        "github_user": "ruangoa"
+    },
+    {
+        "name": "Felipe de S. Siqueira",
+        "github_user": "felipesqra"
+    },
+    {
+        "name": "Jerônimo Jairo",
+        "github_user": "jeron7"
+    },
+    {
+        "name": "Caetano Albuquerque",
+        "github_user": "caetanobca"
+    },
+    {
+        "name": "Wellisson Gomes",
+        "github_user": "wellissongomes"
+    },
+    {
+        "name": "Lucas Barreto",
+        "github_user": "lucasmfb"
+    },
+    {
+        "name": "Sheila paiva",
+        "github_user": "sheilapaiva"
+    },
+    {
+        "name": "Marcos Silva",
+        "github_user": "marcossilvaxx"
+    },
+    {
+        "name": "Arthur Ferrão",
+        "github_user": "ArthurFerrao"
+    },
+    {
+        "name": "Tulio Araujo Cunha",
+        "github_user": "tulioac"
+    },
+    {
+        "name": "Mateus Matias",
+        "github_user": "ummatias"
+    },
+    {
+        "name": "Leonardo Veiga",
+        "github_user": "leleoveiga"
+    },
+    {
+        "name": "Pedro Donato",
+        "github_user": "PedroDCN"
+    },
+    {
+        "name": "Izabella Ribeiro",
+        "github_user": "izabri"
+    },
+    {
+        "name": "Anderson dos Santos",
+        "github_user": "andersonstv"
+    },
+    {
+        "name": "Leandra Oliveira",
+        "github_user": "leandraOliveiraS"
+    },
+    {
+        "name": "Helen Cavalcanti",
+        "github_user": "helenbc"
     },
     {
         "name": "Eduardo Pereira",
@@ -15,16 +123,21 @@
         "name": "Luana Melo",
         "github_user": "luanabm"
     },
-    { 
-      "name": "Helen Cavalcanti",
-      "github_user": "helenbc"
+    {
+        "name": "Pedro Lima",
+        "github_user": "pedrosqra"
     },
     {
-         "name": "Pedro Lima",
-        "github_user": "pedrosqra"
-    },{
         "name": "Maely Brandão",
         "github_user": "mxlysb"
+    },
+    {
+        "name": "Antonio Bertino",
+        "github_user": "AntonioNtV"
+    },
+    {
+        "name": "Rodrigo Eloy",
+        "github_user": "rodrigoEC"
     },
     {
         "name": "Arthur Guedes",
@@ -33,10 +146,6 @@
     {
         "name": "Matheus Santana",
         "github_user": "mathsantana"
-    },
-    {
-      "name": "Rodrigo Eloy",
-      "github_user": "rodrigoEC"
     },
     {
         "name": "Arthur Cavalcante",
@@ -53,12 +162,37 @@
     {
         "name": "Andrielly Lucena",
         "github_user": "andriellyll"
-    },{
+    },
+    {
         "name": "Dayvid Daniel",
         "github_user": "dayvidds"
-    }
+    },
     {
         "name": "Ana Beatriz Truta",
         "github_user": "beatriztruta"
+    },
+    {
+        "name": "Anna Beatriz Lucena",
+        "github_user": "annabeatrizlucena"
+    },
+    {
+        "name": "Gabriel Mareco",
+        "github_user": "gabrielmbs"
+    },
+    {
+        "name": "Rich Elton",
+        "github_user": "rickecr"
+    },
+    {
+        "name": "Ana Carolina Chaves",
+        "github_user": "anacarolinacv"
+    },
+    {
+        "name": "Luciano Erick",
+        "github_user": "lucianerick"
+    },
+	{
+        "name": "Vitória Heliane",
+        "github_user": "vitoriaHeliane"
     }
 ]
