@@ -33,9 +33,5 @@ yarn
 ### Rodar o site em desenvolvimento
 
 ```sh
-yarn start
+yarn dev
 ```
-
-## Informações adicionais
-
-Usamos [Flow](https://flow.org/) para garantir a qualidade do nosso código seguindo os padrões propostos pelo Flow.
