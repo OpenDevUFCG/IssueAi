@@ -1,20 +1,13 @@
-// @flow
+import React from 'react'
+import './teamPage.css'
 
-import React from 'react';
-import type { MemberProps } from './member';
-import './teamPage.css';
+const TeamMember = ({ name, urlGithub }) => (
+  <div className="member">
+    <a href={urlGithub}>
+      <img className="member-image" src={`${urlGithub}.png`} alt={urlGithub} />
+    </a>
+    <figcaption className="member-name">{name}</figcaption>
+  </div>
+)
 
-const TeamMember = ({ name, urlGithub }: MemberProps) => (
-    <div className="member">
-        <a href={urlGithub}>
-            <img
-                className="member-image"
-                src={`${urlGithub}.png`}
-                alt={urlGithub}
-            />
-        </a>
-        <figcaption className="member-name">{name}</figcaption>
-    </div>
-);
-
-export default TeamMember;
+export default TeamMember

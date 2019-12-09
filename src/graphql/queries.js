@@ -1,5 +1,3 @@
-// @flow
-
 const repoStatsQuery = `
 fragment SearchResultFields on SearchResultItemConnection {
     nodes {
@@ -26,22 +24,18 @@ fragment SearchResultFields on SearchResultItemConnection {
             }
         }
     }
-}`;
+}`
 
 const contributorStatsQuery = `
 fragment SearchResultFields on SearchResultItemConnection {
 }
 
-`;
+`
 
-const searchRepoQuery = (
-    query: string,
-    quantity: number,
-    after: string | any = null
-) => {
-    let customAfter = after;
-    if (after) customAfter = `"${after}"`;
-    return `{
+const searchRepoQuery = (query, quantity, after) => {
+  let customAfter = after
+  if (after) customAfter = `"${after}"`
+  return `{
         search(
             first: ${quantity},
             after: ${customAfter},
@@ -55,7 +49,7 @@ const searchRepoQuery = (
                 hasNextPage
             }
         }
-    } ${repoStatsQuery}`;
-};
+    } ${repoStatsQuery}`
+}
 
-export default searchRepoQuery;
+export default searchRepoQuery

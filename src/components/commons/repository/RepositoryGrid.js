@@ -1,22 +1,13 @@
-// @flow
-import * as React from 'react';
-import RepositoryCard from './RepositoryCard';
-import type { Repository } from './repository';
+import * as React from 'react'
+import RepositoryCard from './RepositoryCard'
 
-type RepositoryListProps = {
-    repositories: Repository[],
-};
+const listRepos = list =>
+  list.map(repository => (
+    <RepositoryCard key={repository.nameWithOwner} repository={repository} />
+  ))
 
-const listRepos = (list: Repository[]) =>
-    list.map(repository => (
-        <RepositoryCard
-            key={repository.nameWithOwner}
-            repository={repository}
-        />
-    ));
+const RepositoryGrid = ({ repositories }) => (
+  <div className="repository-grid">{listRepos(repositories)}</div>
+)
 
-const RepositoryGrid = ({ repositories }: RepositoryListProps) => (
-    <div className="repository-grid">{listRepos(repositories)}</div>
-);
-
-export default RepositoryGrid;
+export default RepositoryGrid
