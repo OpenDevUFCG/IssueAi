@@ -1,32 +1,64 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import getRepositories from '../../lib/github'
+import { getRepositoriesSearchQuery } from '../../lib/github'
+import { useQuery } from '@apollo/react-hooks'
+import repositoriesQuery from '../../graphql/repositories.graphql'
 import { SortField } from '../../lib/constants'
 import { RepositoryGrid, OptionBar } from '../../components'
 
 import './homePage.css'
 
 const HomePage = () => {
-  const [loading, setLoading] = useState(false)
-  const [repositories, setRepositories] = useState([])
-  const [cursor, setCursor] = useState(null)
   const [sort, setSort] = useState(SortField.STARS_DESC)
-  const [hasNextPage, setHasNextPage] = useState(false)
+  const [cursor, setCursor] = useState(null)
+  const { data, loading, error, fetchMore } = useQuery(repositoriesQuery, {
+    variables: {
+      first: 12,
+      repositories: getRepositoriesSearchQuery(sort),
+      cursor,
+    },
+  })
+
+  const { search } = data || {}
+  const { nodes: repositories, pageInfo } = search || {}
+  const { hasNextPage, endCursor } = pageInfo || {}
 
   useEffect(() => {
-    updateRepositories()
-  }, [sort])
+    if (endCursor) {
+      setCursor(endCursor.replace('=', ''))
+    }
+  })
 
   const updateRepositories = () => {
-    setLoading(true)
-    getRepositories(cursor, { sort }).then(
-      ({ repos, lastCursor, hasNextPage }) => {
-        setRepositories(repos)
-        setCursor(lastCursor)
-        setHasNextPage(hasNextPage)
-        setLoading(false)
-      }
-    )
+    fetchMore({
+      query: repositoriesQuery,
+      variables: {
+        first: 12,
+        repositories: getRepositoriesSearchQuery(sort),
+        cursor,
+      },
+      updateQuery: (previousResult, { fetchMoreResult }) => {
+        const previousEntry = previousResult.entry
+        console.log(previousEntry)
+        const { search: newSearch } = fetchMoreResult || {}
+        const { nodes: newRepositories, pageInfo } = newSearch || {}
+        const { hasNextPage, endCursor: newCursor } = pageInfo || {}
+        if (endCursor) {
+          setCursor(endCursor.replace('=', ''))
+        }
+        return {
+          endCursor: newCursor,
+          hasNextPage,
+          entry: {
+            repositories: [
+              ...newRepositories,
+              ...previousEntry.data.repositories,
+            ],
+          },
+          __typename: previousEntry.__typename,
+        }
+      },
+    })
   }
 
   return (
@@ -37,7 +69,7 @@ const HomePage = () => {
           setSort(sort)
         }}
       />
-      <RepositoryGrid repositories={repositories} />
+      <RepositoryGrid repositories={repositories || []} />
       <div className="footer">
         {hasNextPage && (
           <button

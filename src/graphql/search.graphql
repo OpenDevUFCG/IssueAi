@@ -1,0 +1,37 @@
+query repositories($first: Int, $after: String, $repositories: String!) {
+  search(first: $first, after: $after, query: $repositories, type: REPOSITORY) {
+    ...SearchResultFields
+    repositoryCount
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+
+fragment SearchResultFields on SearchResultItemConnection {
+  nodes {
+    ... on Repository {
+      nameWithOwner
+      description
+      url
+      forkCount
+      object(expression: "master") {
+        ... on Commit {
+          history {
+            totalCount
+          }
+        }
+      }
+      issues(states: OPEN) {
+        totalCount
+      }
+      pullRequests(states: OPEN) {
+        totalCount
+      }
+      stargazers {
+        totalCount
+      }
+    }
+  }
+}

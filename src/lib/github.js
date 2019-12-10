@@ -1,8 +1,5 @@
 import axios from 'axios'
 import projects from '../../data/repositories.json'
-import contributors from '../../data/contributors.json'
-import searchRepoQuery from '../graphql/queries'
-import { SortField } from './constants'
 
 const getAxiosInstance = () => {
   const token = process.env.GITHUB_TOKEN || ''
@@ -32,29 +29,42 @@ const transformRepository = githubJson => ({
 
 const getSortQuery = sort => `sort:${sort}`
 
-const getRepositories = async (after, options, quantity = 12) => {
-  const { repositories } = projects
+// const getRepositories = async (after, options, quantity = 12) => {
+//   const { repositories } = projects
 
+//   let query = repositories.reduce(
+//     (accum, current) => ` ${accum} repo:${current.name}`,
+//     ''
+//   )
+//   query = `org:${projects.org}${query} `
+
+//   query += getSortQuery(options.sort)
+
+//   const response = await requestGithub(repositoriesQuery(query, quantity, after))
+
+//   const {
+//     nodes: repos,
+//     pageInfo: { endCursor, hasNextPage },
+//   } = response.data.search
+
+//   let lastCursor = endCursor
+//   if (lastCursor) lastCursor = lastCursor.replace('=', '')
+//   if (!lastCursor) lastCursor = after
+
+//   return { repos: repos.map(transformRepository), lastCursor, hasNextPage }
+// }
+
+export const getRepositoriesSearchQuery = sort => {
+  const { repositories } = projects
   let query = repositories.reduce(
     (accum, current) => ` ${accum} repo:${current.name}`,
     ''
   )
   query = `org:${projects.org}${query} `
 
-  query += getSortQuery(options.sort)
+  query += `sort:${sort}`
 
-  const response = await requestGithub(searchRepoQuery(query, quantity, after))
-
-  const {
-    nodes: repos,
-    pageInfo: { endCursor, hasNextPage },
-  } = response.data.search
-
-  let lastCursor = endCursor
-  if (lastCursor) lastCursor = lastCursor.replace('=', '')
-  if (!lastCursor) lastCursor = after
-
-  return { repos: repos.map(transformRepository), lastCursor, hasNextPage }
+  return query
 }
 
-export default getRepositories
+// export default getRepositories
