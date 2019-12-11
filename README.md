@@ -2,8 +2,6 @@
 
 ![IssueAi Logo](https://imgur.com/iLumm5K.png)
 
-# [HACKTOBERFEST](#você-na-hacktoberfest)
-
 É uma dúvida? Issue ai. É um problema? Issue ai. Quer contribuir? Issue ai. Não sabe onde tá? Issue ai. Tá afim de discutir? Issue ai. Não sabe o que é IssueAi? Issue ai.
 
 Sinta-se a vontade para discutir por meio de issues, aqui é um espaço aberto para compartilhar ideias sobre projetos open source da UFCG. Abra uma Issue e respeite o código de conduta.
@@ -45,17 +43,6 @@ Os dados dos repositórios usados para mostrar são recuperados a partir dos arq
 ## Como Contribuir
 
 Deseja contribuir? Leia nosso [CONTRIBUTING.md](CONTRIBUTING.md) e Issue Ai! E PR AI!
-
-
-## Você na Hacktoberfest
-
-Para que a sua contribuição conte no HacktoberFest da OpenDevUFCG, siga os seguintes passos:
-
-1. Crie um fork do issueai
-2. Adicione seu nome e usuário do github [nesse arquivo](/data/contributors.json)
-3. Crie uma pr
-
-Quando nossos maintainers aprovarem, se encontre na seção do [hacktoberfest](https://issueai.opendevufcg.org)
 
 ## Nós
 
