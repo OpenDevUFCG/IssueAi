@@ -1,9 +1,5 @@
-query repositoriesQuery(
-  $first: Int = 12
-  $after: String
-  $repositories: String!
-) {
-  search(first: $first, after: $after, query: $repositories, type: REPOSITORY) {
+query repositoriesQuery($repositories: String!, $cursor: String) {
+  search(first: 9, after: $cursor, query: $repositories, type: REPOSITORY) {
     ...SearchResultFields
     repositoryCount
     pageInfo {

@@ -15,17 +15,17 @@ const RepositoryStats = ({ repository }) => (
   <div className="repository-stats">
     <Stat
       iconClass="fa-star"
-      statCount={repository.stargazersCount}
+      statCount={repository.stargazers.totalCount}
       tooltipMessage="Stars"
     />
     <Stat
       iconClass="fa-exclamation-circle"
-      statCount={repository.issuesCount}
+      statCount={repository.issues.totalCount}
       tooltipMessage="Issues"
     />
     <Stat
       iconClass="fa-code-branch"
-      statCount={repository.pullRequestsCount}
+      statCount={repository.pullRequests.totalCount}
       tooltipMessage="Pull Requests"
     />
     <Stat
@@ -47,7 +47,7 @@ const RepositoryCard = ({ repository }) => {
           <h6 className="repository-owner">{owner}</h6>
         </header>
         <p className="repository-description">
-          <Emoji text={repository.description} />
+          <Emoji text={repository.description || ''} />
         </p>
         <RepositoryStats className="repository-stats" repository={repository} />
       </div>

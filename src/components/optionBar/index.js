@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SortField } from '../../lib/constants'
+import { SortField } from '../../utils/constants'
 import './OptionBar.css'
 
 const OptionBar = ({ sort, onChange }) => {
