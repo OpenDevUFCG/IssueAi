@@ -1,0 +1,118 @@
+/**
+ * Header.css
+ *
+ * These are the styles for the header component that was built as a navigation bar.
+ *
+ * Index
+ * - Header Content
+ */
+
+.header {
+  width: 100%;
+  background-color: #3ab7f1;
+  color: #ffffff;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Class used to keep the header at the top of the page even when it is rolled */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/**
+ * Header Content
+ *
+ * Defines the appearance of the header content with its multiple parts:
+ * - Nav Option
+ * - Nav Brand
+ */
+
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  padding: 20px 0 20px 0;
+  align-items: center;
+}
+
+/**
+ * Nav Option
+ *
+ * Defines the appearance and behaviour of the navigation option component.
+ */
+
+.nav-option {
+  margin: 10px;
+  width: fit-content;
+}
+
+.nav-option:hover {
+  color: #1c5975;
+  transition: color 0.3s ease-out;
+}
+
+.nav-option + .nav-option {
+  margin-left: 40px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: space-between;
+  }
+
+  .nav-option {
+    margin-top: 20px;
+  }
+
+  .nav-option + .nav-option {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+}
+
+/**
+ * Nav Brand
+ *
+ * Defines the appearance and behaviour of the navigation brand component.
+ */
+
+.nav-brand {
+  margin: 0;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.nav-brand img {
+  width: 100px;
+  height: auto;
+  filter: brightness(0) invert(1); /* Sets the color of the image to white */
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-brand img {
+    width: 70px;
+  }
+}
+
+/**
+ * Wrapper Nav Options
+ *
+ * Defines the position of the navigation links.
+ */
+
+.wrapper-nav-options {
+  align-items: baseline;
+  display: flex;
+}
+
+.wrapper-nav-options .nav-option:nth-child(n + 2) {
+  margin-left: 10px;
+}

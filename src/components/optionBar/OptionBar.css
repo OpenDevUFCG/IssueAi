@@ -1,0 +1,8 @@
+.option-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sort-select > .label {
+  margin-right: 5px;
+}
