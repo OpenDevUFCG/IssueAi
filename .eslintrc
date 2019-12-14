@@ -1,50 +1,31 @@
 {
     "parser": "babel-eslint",
     "extends": [ 
-        "airbnb",
+        "eslint:recommended",
+        "plugin:react/recommended",
         "prettier",
-        "prettier/flowtype",
-        "prettier/react"
+        "prettier/react",
+        "plugin:jsx-a11y/recommended"
     ],
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "es6": true
     },
     "plugins": [
-        "react",
-        "flowtype",
+        "react-hooks",
         "jsx-a11y",
-        "import"
+        "import",
+        "prettier"
     ],
+    "settings": {
+        "react": {
+          "pragma": "React",
+          "version": "detect"
+        }
+    },
     "rules": {
-        "max-len": ["error", {
-            "code": 80
-        }],
-        "linebreak-style": 0,
-        "react/jsx-filename-extension": [1, {
-                "extensions": [".js", ".jsx"]
-            }
-        ],
-        "react/prefer-stateless-function": [2, {
-                "ignorePureComponents": true
-            }
-        ],
-        "react/forbid-prop-types": [0, {
-            "forbid": []
-        }],
-        "import/extensions": [1, "never", {
-            "svg": "always"
-        }],
-        "import/no-extraneous-dependencies": ["error", {
-                "devDependencies": true,
-                "optionalDependencies": false,
-                "peerDependencies": false
-            }
-        ],
-        "indent": ["error", 4, {
-            "ignoredNodes": ["JSXElement *", "JSXElement"]
-        }],
-        "react/jsx-indent": ["error", 4],
-        "flowtype/define-flow-type": 1
+        "prettier/prettier": "error",
+        "no-await-in-loop": "error"
     }
 }

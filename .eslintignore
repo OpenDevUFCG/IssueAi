@@ -2,4 +2,3 @@ node_modules/
 docs/
 public/
 webpack.config.js
-flow-typed/
