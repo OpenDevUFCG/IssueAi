@@ -80,22 +80,32 @@
             ]
         },
         {
-            "name": "Rickecr/PyGraph",
+            "name": "richramalho/PyGraph",
             "difficulty": "intermediario",
             "mentors": [
                 {
-                    "name": "Rickecr",
-                    "imgUrl": "https://github.com/Rickecr.png"
+                    "name": "richramalho",
+                    "imgUrl": "https://github.com/richramalho.png"
                 }
             ]
         },
         {
-            "name": "Rickecr/CamaraDosDeputados",
+            "name": "richramalho/CamaraDosDeputados",
             "difficulty": "iniciante",
             "mentors": [
                 {
-                    "name": "Rickecr",
-                    "imgUrl": "https://github.com/Rickecr.png"
+                    "name": "richramalho",
+                    "imgUrl": "https://github.com/richramalho.png"
+                }
+            ]
+        },
+        {
+            "name": "richramalho/DuckORM",
+            "difficulty": "avancado",
+            "mentors": [
+                {
+                    "name": "richramalho",
+                    "imgUrl": "https://github.com/richramalho.png"
                 }
             ]
         },
